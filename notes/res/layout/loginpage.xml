@@ -47,7 +47,7 @@
         android:ems="10"
         android:inputType="textEmailAddress" 
          android:hint="abc@xyz.com"
-         android:background="@android:color/holo_orange_light">
+         android:background="@android:color/background_dark">
         <requestFocus />
     </EditText>
 
@@ -61,7 +61,7 @@
         android:ems="10"
         android:inputType="textPassword"
          android:hint="*********" 
-         android:background="@android:color/holo_orange_light"/>
+         android:background="@android:color/background_dark"/>
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView1"
