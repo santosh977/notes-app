@@ -11,7 +11,7 @@ notes-app
 
 ## Feature Request
 
-Have an idea? Add it [here](https://github.com/maridco/marid/issues/)!
+Have an idea? Add it [here](https://github.com/santosh977/notes-app/issues/)!
 
 ## License
 
