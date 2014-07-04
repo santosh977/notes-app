@@ -16,6 +16,9 @@ public void onClick(View v) {
 	startActivity(new Intent(Loginpage.this,Signup.class));
 	
      }
+public void imageSelect(View v) {
+
+}
 }
     
 
