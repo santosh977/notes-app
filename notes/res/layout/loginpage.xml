@@ -5,19 +5,14 @@
     android:background="@drawable/ll"
     android:orientation="vertical" >
 
-    
-
-    
-
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-       
         android:layout_marginRight="20dp"
         android:onClick="onClick"
-        android:text="Signup"/>
+        android:text="Signup" />
 
     <Button
         android:id="@+id/button2"
@@ -26,7 +21,7 @@
         android:layout_below="@+id/button1"
         android:layout_marginLeft="9dp"
         android:layout_marginTop="142dp"
-       android:onClick="Function1"
+        android:onClick="Function1"
         android:text="Login" />
 
     <CheckBox
@@ -44,10 +39,11 @@
         android:layout_alignLeft="@+id/button2"
         android:layout_below="@+id/button1"
         android:layout_marginLeft="16dp"
+        android:background="@android:color/background_dark"
         android:ems="10"
-        android:inputType="textEmailAddress" 
-         android:hint="abc@xyz.com"
-         android:background="@android:color/background_dark">
+        android:hint="abc@xyz.com"
+        android:inputType="textEmailAddress" >
+
         <requestFocus />
     </EditText>
 
@@ -58,10 +54,10 @@
         android:layout_alignLeft="@+id/editText1"
         android:layout_below="@+id/editText1"
         android:layout_marginTop="38dp"
+        android:background="@android:color/background_dark"
         android:ems="10"
-        android:inputType="textPassword"
-         android:hint="*********" 
-         android:background="@android:color/background_dark"/>
+        android:hint="*********"
+        android:inputType="textPassword" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView1"
@@ -76,45 +72,45 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" 
-            android:layout_marginBottom="1dp">
-            
-            
-            <ImageView android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/asquizs"
-             />
-           <ImageView android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@drawable/tnp"
-             />
-           <ImageView android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/bns"
-             />
-           <ImageView android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/chat1"
-             />
-           <ImageView android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/newsfeed"
-             />
-           <ImageView android:id="@+id/imageView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/university_collage"
-             />
-           
-            
-            
-            
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/asquizs" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/tnp" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bns" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/chat1" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/newsfeed" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/university_collage" />
         </LinearLayout>
     </HorizontalScrollView>
-    
+
 </RelativeLayout>

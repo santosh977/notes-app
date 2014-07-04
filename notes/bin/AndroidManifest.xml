@@ -22,9 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity  android:name="Homepage"   />
-        <activity  android:name="Loginpage"   />
-         <activity  android:name="Signup"   />
+        <activity android:name="Homepage" />
+        <activity android:name="Loginpage" />
+        <activity android:name="Signup" />
     </application>
 
 </manifest>

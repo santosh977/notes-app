@@ -11,7 +11,6 @@ public class Loginpage extends Activity {@Override
 	setContentView(R.layout.loginpage);}
 public void Function1(View v) {
 	startActivity(new Intent(Loginpage.this,Homepage.class));
-	
      }
 public void onClick(View v) {
 	startActivity(new Intent(Loginpage.this,Signup.class));
