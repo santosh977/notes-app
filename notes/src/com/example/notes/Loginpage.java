@@ -10,15 +10,13 @@ public class Loginpage extends Activity {@Override
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.loginpage);}
 public void Function1(View v) {
-	startActivity(new Intent(Loginpage.this,Homepage.class));
+	startActivity(new Intent(Loginpage.this,Homepage1.class));
+	
      }
 public void onClick(View v) {
 	startActivity(new Intent(Loginpage.this,Signup.class));
 	
      }
-public void imageSelect(View v) {
-
-}
 }
     
 

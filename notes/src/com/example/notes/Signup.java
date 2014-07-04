@@ -13,7 +13,7 @@ public class Signup extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.signup);}
 		public void Function1(View v) {
-			startActivity(new Intent(Signup.this,Homepage.class));
+			startActivity(new Intent(Signup.this,Homepage1.class));
 			
 		     }    
 	}
