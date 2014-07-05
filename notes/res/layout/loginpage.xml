@@ -2,62 +2,22 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ll"
+      android:background="@drawable/blu1"
     android:orientation="vertical" >
+
+    
+
+    
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
         android:layout_alignParentRight="true"
+       
         android:layout_marginRight="20dp"
         android:onClick="onClick"
-        android:text="Signup" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="142dp"
-        android:onClick="Function1"
-        android:text="Login" />
-
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/button1"
-        android:layout_marginTop="200dp"
-        android:text="Remember Password" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_below="@+id/button1"
-        android:layout_marginLeft="16dp"
-        android:background="@android:color/background_dark"
-        android:ems="10"
-        android:hint="abc@xyz.com"
-        android:inputType="textEmailAddress" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_below="@+id/editText1"
-        android:layout_marginTop="38dp"
-        android:background="@android:color/background_dark"
-        android:ems="10"
-        android:hint="*********"
-        android:inputType="textPassword" />
+        android:text="Signup"/>
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView1"
@@ -67,63 +27,90 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/button2"
-        android:layout_marginTop="30dp" >
+        android:layout_marginTop="30dp" 
+          >
 
         <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal"
+             >
+            
+            <ImageView android:id="@+id/imageView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/asquz"
+            
+             />
+           <ImageView android:id="@+id/imageView2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/tnp1"
+        
+             />
+           <ImageView android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:orientation="horizontal" >
-
-            <ImageView
-                android:id="@+id/imageView0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/notes"
-                android:onClick="imageSelect" />
-            
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/asquizs"
-                android:onClick="imageSelect" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/tnp" 
-                android:onClick="imageSelect" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/bns" 
-                android:onClick="imageSelect" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/chat1" 
-                android:onClick="imageSelect" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/newsfeed" 
-                android:onClick="imageSelect" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/university_collage" 
-                android:onClick="imageSelect" />
+            android:src="@drawable/bns"
+            />
+         
+           <ImageView android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/newsfeed"
+         
+             />
+         
+           <ImageView android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/clg12"
+      
+             />
+            <ImageView android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cht"
+       
+             />
+           
         </LinearLayout>
     </HorizontalScrollView>
 
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_below="@+id/button1"
+        android:ems="10"
+        android:hint="abc@xyz.com"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_below="@+id/editText1"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="*********"
+        android:inputType="textPassword" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editText2"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="16dp"
+        android:onClick="Function1"
+        android:text="Login" />
+    
 </RelativeLayout>

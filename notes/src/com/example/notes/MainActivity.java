@@ -20,7 +20,7 @@ loading.setText("Loading...\n\nPlease Wait\n\nUn Momento");
 	Thread timer = new Thread(){
 		public void run(){
 			try{
-				sleep(3000);
+				sleep(2000);
 				
 			}catch(InterruptedException e){
 				e.printStackTrace();
