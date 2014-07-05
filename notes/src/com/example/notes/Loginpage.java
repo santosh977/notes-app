@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class Loginpage extends Activity {@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +18,16 @@ public void onClick(View v) {
 	
      }
 public void imageSelect(View v) {
-
+	switch(v.getId())
+{
+	case R.id.imageView0:
+		startActivity(new Intent(getApplicationContext(),NotesActivity.class));
+		break;
+	case R.id.imageView2:
+		startActivity(new Intent(getApplicationContext(),Members.class));
+		break;
+	default:Toast.makeText(getApplicationContext(), "TODO",Toast.LENGTH_LONG).show();
+}
 }
 }
     

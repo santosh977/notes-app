@@ -22,9 +22,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="Homepage" />
-        <activity android:name="Loginpage" />
-        <activity android:name="Signup" />
+        <activity android:name="com.example.notes.Homepage" />
+        <activity android:name="com.example.notes.Loginpage" />
+        <activity android:name="com.example.notes.Signup" />
+        <activity
+            android:name="com.example.notes.NotesActivity"
+            android:label="@string/title_activity_notes" >
+        </activity>
+        <activity
+            android:name="com.example.notes.Members"
+            android:label="@string/title_activity_members" >
+        </activity>
     </application>
 
 </manifest>
