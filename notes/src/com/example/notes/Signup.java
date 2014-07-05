@@ -12,7 +12,7 @@ public class Signup extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.signup);}
-		public void Function1(View v) {
+		public void Function2(View v) {
 			startActivity(new Intent(Signup.this,Homepage1.class));
 			
 		     }    

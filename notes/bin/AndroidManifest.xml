@@ -22,9 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.notes.Homepage" />
+        <activity android:name="com.example.notes.Homepage1" />
         <activity android:name="com.example.notes.Loginpage" />
         <activity android:name="com.example.notes.Signup" />
+        <activity android:name="com.example.notes.Profdiv" />
+        <activity android:name="com.example.notes.Search" />
+        <activity android:name="com.example.notes.Upload" />
+        <activity android:name="com.example.notes.Submitnotes" />
+         <activity android:name="com.example.notes.Note" />
         <activity
             android:name="com.example.notes.NotesActivity"
             android:label="@string/title_activity_notes" >

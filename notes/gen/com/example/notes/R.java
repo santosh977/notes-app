@@ -83,16 +83,15 @@ public final class R {
         public static final int activity_main=0x7f030000;
         public static final int activity_profdiv=0x7f030001;
         public static final int activity_submitnotes=0x7f030002;
-        public static final int homepage=0x7f030003;
-        public static final int homepage1=0x7f030004;
-        public static final int loginpage=0x7f030005;
-        public static final int members=0x7f030006;
-        public static final int note=0x7f030007;
-        public static final int notes=0x7f030008;
-        public static final int row=0x7f030009;
-        public static final int search=0x7f03000a;
-        public static final int signup=0x7f03000b;
-        public static final int upload=0x7f03000c;
+        public static final int homepage1=0x7f030003;
+        public static final int loginpage=0x7f030004;
+        public static final int members=0x7f030005;
+        public static final int note=0x7f030006;
+        public static final int notes=0x7f030007;
+        public static final int row=0x7f030008;
+        public static final int search=0x7f030009;
+        public static final int signup=0x7f03000a;
+        public static final int upload=0x7f03000b;
     }
     public static final class menu {
         public static final int main=0x7f070000;

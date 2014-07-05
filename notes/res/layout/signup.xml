@@ -99,6 +99,7 @@
         android:layout_marginLeft="120dp"
         
         android:text="Submit" 
-        android:onClick="Function1"/>
+        android:onClick="Function2"
+       />
 
 </LinearLayout>
