@@ -11,10 +11,9 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/study"
+    android:orientation="vertical"
     tools:context=".SplashActivity" >
-<<<<<<< HEAD
 </LinearLayout>    
     <TextView
         android:id="@+id/textView2"
@@ -25,7 +24,3 @@
         android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 </RelativeLayout>
-=======
-
-</LinearLayout>
->>>>>>> 905a3504d9477e32ee7fd1c17331992eaf057157

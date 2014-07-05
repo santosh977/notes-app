@@ -20,7 +20,7 @@ loading.setText("Loading...\n\nPlease Wait\n\nUn Momento");
 	Thread timer = new Thread(){
 		public void run(){
 			try{
-				sleep(2000);
+				sleep(3000);
 				
 			}catch(InterruptedException e){
 				e.printStackTrace();
@@ -28,6 +28,7 @@ loading.setText("Loading...\n\nPlease Wait\n\nUn Momento");
 				//Intent openMainActivity =  new Intent("com.boston.startingpoint.MAINACTIVITY");
 				Intent openMainActivity =  new Intent(MainActivity.this,Loginpage.class);
 				startActivity(openMainActivity);
+				finish();
 			}
 		}
 	};

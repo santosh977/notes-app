@@ -12,13 +12,11 @@ public class Loginpage extends Activity {@Override
 	setContentView(R.layout.loginpage);}
 public void Function1(View v) {
 	startActivity(new Intent(Loginpage.this,Homepage1.class));
-	
      }
 public void onClick(View v) {
 	startActivity(new Intent(Loginpage.this,Signup.class));
 	
      }
-<<<<<<< HEAD
 public void imageSelect(View v) {
 	switch(v.getId())
 {
@@ -31,8 +29,6 @@ public void imageSelect(View v) {
 	default:Toast.makeText(getApplicationContext(), "TODO",Toast.LENGTH_LONG).show();
 }
 }
-=======
->>>>>>> 905a3504d9477e32ee7fd1c17331992eaf057157
 }
     
 

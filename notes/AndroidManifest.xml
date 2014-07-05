@@ -22,7 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
         <activity android:name="com.example.notes.Homepage" />
         <activity android:name="com.example.notes.Loginpage" />
         <activity android:name="com.example.notes.Signup" />
@@ -34,18 +33,6 @@
             android:name="com.example.notes.Members"
             android:label="@string/title_activity_members" >
         </activity>
-=======
-        <activity  android:name="Homepage1"   />
-        <activity  android:name="Loginpage"   />
-         <activity  android:name="Signup"   />
-         <activity  android:name="Search"   />
-         <activity  android:name="Note"   />
-         <activity  android:name="Upload"   />
-         <activity  android:name="Profdiv"   />
-         <activity  android:name="Submitnotes"   />
-         
-         
->>>>>>> 905a3504d9477e32ee7fd1c17331992eaf057157
     </application>
 
 </manifest>

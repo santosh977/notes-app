@@ -17,16 +17,9 @@ TextView item;
 		
 		item=new TextView(getApplicationContext());
 		item.setText("Notes 1: Android is freeeee  !!!");
-		exlist.addView(item,0);
+		//exlist.addView(item,0);
 		item.setText("Notes 2: We make Design and Code and Run.");
-		exlist.addView(item,1);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.notes, menu);
-		return true;
+		//exlist.addView(item,1);
 	}
 
 }
