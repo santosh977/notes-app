@@ -1,13 +1,16 @@
 package com.example.notes;
 
-import android.app.Activity;
-import android.content.Intent;
+import android.annotation.SuppressLint;
+import android.app.Fragment;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
-public class Note extends Activity {
+@SuppressLint("NewApi")
+public class Note extends Fragment {
 	//int i;
-
+/*
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -24,6 +27,16 @@ public class Note extends Activity {
 		startActivity(new Intent(Note.this,Profdiv.class));
 		
 	     }
+	*/
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+ 
+        View rootView = inflater.inflate(R.layout.notes, container, false);
+         
+        return rootView;
+    }
 	
 		     }    
 	

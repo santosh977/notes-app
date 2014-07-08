@@ -20,9 +20,9 @@ loading.setText("Loading...\n\nPlease Wait\n\nUn Momento");
 	Thread timer = new Thread(){
 		public void run(){
 			try{
-				sleep(3000);
+				//sleep(3000);
 				
-			}catch(InterruptedException e){
+			}catch(Exception e){
 				e.printStackTrace();
 			}finally{
 				//Intent openMainActivity =  new Intent("com.boston.startingpoint.MAINACTIVITY");

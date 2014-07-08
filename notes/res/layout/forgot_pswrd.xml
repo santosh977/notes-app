@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#20b2aa"  >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:text="FORGOT PASSWORD"
+        android:textColor="@android:color/white" />
+
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="34dp"
+            android:src="@drawable/msg" />
+
+        <EditText
+            android:id="@+id/dialogMail"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageView1"
+            android:background="@android:color/transparent"
+            android:hint="Email Address"
+          android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/white" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp" >
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:background="#FFBF00"
+            android:gravity="center"
+            android:text="Submit" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:visibility="invisible" >
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:background="#FFBF00"
+            android:gravity="center"
+            android:text="Submit" />
+    </RelativeLayout>
+
+</LinearLayout>

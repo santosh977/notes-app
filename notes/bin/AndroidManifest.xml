@@ -30,6 +30,8 @@
         <activity android:name="com.example.notes.Upload" />
         <activity android:name="com.example.notes.Submitnotes" />
          <activity android:name="com.example.notes.Note" />
+         <activity android:name="com.example.notes.Loginpage1" />
+         <activity android:name="com.example.notes.TabsPagerAdapter" />
         <activity
             android:name="com.example.notes.NotesActivity"
             android:label="@string/title_activity_notes" >

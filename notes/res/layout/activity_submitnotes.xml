@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     
     tools:context=".Submitnotes"
-    android:background="@drawable/background" >
+    android:background="#20b2aa" >
 
     <ListView
         android:id="@+id/listView1"

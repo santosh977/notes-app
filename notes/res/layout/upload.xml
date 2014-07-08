@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" 
-   android:background="@drawable/background">
+   android:background="#20b2aa">
 
     <EditText
         android:id="@+id/editText2"
@@ -26,8 +26,7 @@
         android:layout_below="@+id/editText2"
         android:hint="Branch"   
         android:ems="10" />
-       
-    
+  
 
     <EditText
         android:id="@+id/editText5"

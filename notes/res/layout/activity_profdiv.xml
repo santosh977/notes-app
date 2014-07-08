@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Profdiv"
-    android:background="@drawable/background" >
+    android:background="#20b2aa" >
 
     <QuickContactBadge
         android:id="@+id/quickContactBadge1"
