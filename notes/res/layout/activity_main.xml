@@ -7,14 +7,16 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".SplashActivity" >
-<LinearLayout
-    android:id="@+id/LinearLayout1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/study"
-    android:orientation="vertical"
-    tools:context=".SplashActivity" >
-</LinearLayout>    
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/study"
+        android:orientation="vertical"
+        tools:context=".SplashActivity" >
+    </LinearLayout>
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -23,4 +25,5 @@
         android:layout_centerVertical="true"
         android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
 </RelativeLayout>

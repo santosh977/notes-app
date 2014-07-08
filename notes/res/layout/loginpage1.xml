@@ -131,7 +131,6 @@
             android:layout_alignLeft="@+id/EditMail"
             android:background="@android:color/white" >
         </RelativeLayout>
-
     </RelativeLayout>
 
 </RelativeLayout>

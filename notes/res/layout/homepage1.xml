@@ -16,54 +16,55 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >
-        
+
             <ImageButton
-        android:id="@+id/asquz"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/asquz" 
-        android:onClick="imageSelect"/>
-            
-           <ImageButton
-        android:id="@+id/tnp1"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/tnp1" 
-        android:onClick="imageSelect"/>
-           <ImageButton
-        android:id="@+id/bns"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/bns"         
-        android:onClick="imageSelect"/>
-           <ImageButton
-        android:id="@+id/newsfeed"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/newsfeed"          
-        android:onClick="imageSelect"/>
-           <ImageButton
-        android:id="@+id/clg12"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/clg12" 
-        android:onClick="imageSelect"/>
-           <ImageButton
-        android:id="@+id/cht"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/cht"  
-        android:onClick="imageSelect"/>
-          
-            
-            
+                android:id="@+id/asquz"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/asquz"
+                android:onClick="imageSelect" />
+
+            <ImageButton
+                android:id="@+id/tnp1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/tnp1"
+                android:onClick="imageSelect" />
+
+            <ImageButton
+                android:id="@+id/bns"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/bns"
+                android:onClick="imageSelect" />
+
+            <ImageButton
+                android:id="@+id/newsfeed"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/newsfeed"
+                android:onClick="imageSelect" />
+
+            <ImageButton
+                android:id="@+id/clg12"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/clg12"
+                android:onClick="imageSelect" />
+
+            <ImageButton
+                android:id="@+id/cht"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/cht"
+                android:onClick="imageSelect" />
         </LinearLayout>
     </ScrollView>
-  
-  </RelativeLayout>
+
+</RelativeLayout>
