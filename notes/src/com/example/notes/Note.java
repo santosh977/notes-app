@@ -9,35 +9,29 @@ import android.view.ViewGroup;
 
 @SuppressLint("NewApi")
 public class Note extends Fragment {
-	//int i;
-/*
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.note);}
-	public void Search(View v) {
-		startActivity(new Intent(Note.this,Search.class));
-		
-	     }
-	public void Upload(View v) {
-		startActivity(new Intent(Note.this,Upload.class));
-		
-	     }
-	public void Switchprofile(View v) {
-		startActivity(new Intent(Note.this,Profdiv.class));
-		
-	     }
-	*/
+	// int i;
+	/*
+	 * @Override protected void onCreate(Bundle savedInstanceState) {
+	 * super.onCreate(savedInstanceState); setContentView(R.layout.note);}
+	 * public void Search(View v) { startActivity(new
+	 * Intent(Note.this,Search.class));
+	 * 
+	 * } public void Upload(View v) { startActivity(new
+	 * Intent(Note.this,Upload.class));
+	 * 
+	 * } public void Switchprofile(View v) { startActivity(new
+	 * Intent(Note.this,Profdiv.class));
+	 * 
+	 * }
+	 */
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
- 
-        View rootView = inflater.inflate(R.layout.notes, container, false);
-         
-        return rootView;
-    }
-	
-		     }    
-	
-		
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+
+		View rootView = inflater.inflate(R.layout.notes, container, false);
+
+		return rootView;
+	}
+
+}

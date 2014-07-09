@@ -6,19 +6,16 @@ import android.view.Menu;
 import android.widget.TextView;
 
 public class Members extends Activity {
-TextView tv;
-String names;
+	TextView tv;
+	String names;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.members);
-		names= 	"\n Nikhar" +
-				"\n Gunjan" +
-				"\n Divya" +
-				"\n Sapna"+
-				"\n Santosh" +
-				"\n Divyavrat";
-		tv=(TextView)findViewById(R.id.textView1);
+		names = "\n Nikhar" + "\n Gunjan" + "\n Divya" + "\n Sapna"
+				+ "\n Santosh" + "\n Divyavrat";
+		tv = (TextView) findViewById(R.id.textView1);
 		tv.setText(names);
 	}
 

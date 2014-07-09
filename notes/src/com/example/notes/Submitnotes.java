@@ -15,8 +15,8 @@ public class Submitnotes extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_submitnotes);
 		getIntent().getExtras().getInt("x");
-		lv= (ListView)findViewById(R.id.listView1);
-		ArrayList<String> ar= new ArrayList<String>();
+		lv = (ListView) findViewById(R.id.listView1);
+		ArrayList<String> ar = new ArrayList<String>();
 		ar.add("engineering physics");
 		ar.add("dbms");
 		ar.add("dms");
@@ -27,8 +27,8 @@ public class Submitnotes extends Activity {
 		ar.add("daa");
 		ar.add("artificial intelligence");
 		ar.add("robotics");
-		lv.setAdapter(new ArrayAdapter<String>(getApplicationContext(), R.layout.row, ar));
+		lv.setAdapter(new ArrayAdapter<String>(getApplicationContext(),
+				R.layout.row, ar));
 	}
 
-	
 }

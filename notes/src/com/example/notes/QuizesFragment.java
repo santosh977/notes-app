@@ -14,25 +14,25 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.AbsListView.OnScrollListener;
 
-public class QuizesFragment extends ListFragment{
-	
+public class QuizesFragment extends ListFragment {
+
 	private QuickReturnListView mListView;
 	private View mHeader;
 	private TextView mQuickReturnView;
 	private View mPlaceHolder;
-	
+
 	private int mCachedVerticalScrollRange;
 	private int mQuickReturnHeight;
-	
+
 	private static final int STATE_ONSCREEN = 0;
 	private static final int STATE_OFFSCREEN = 1;
 	private static final int STATE_RETURNING = 2;
 	private int mState = STATE_ONSCREEN;
 	private int mScrollY;
 	private int mMinRawY = 0;
-	
+
 	private TranslateAnimation anim;
-	
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -42,25 +42,24 @@ public class QuizesFragment extends ListFragment{
 		mPlaceHolder = mHeader.findViewById(R.id.placeholder);
 		return view;
 	}
-	
+
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		
+
 		mListView = (QuickReturnListView) getListView();
-		
+
 		mQuickReturnView.setText("Quizes");
 		mListView.addHeaderView(mHeader);
-		
-		String[] array = new String[] { "Andi", "Andi", "Android",
+
+		String[] array = new String[] { "Andi", "Andi", "Android", "Android",
 				"Android", "Android", "Android", "Android", "Android",
 				"Android", "Android", "Android", "Android", "Android",
-				"Android", "Android", "Android" };
-		
+				"Android", "Android" };
+
 		setListAdapter(new ArrayAdapter<String>(getActivity(),
-				R.layout.list_item,
-				R.id.text1, array));
-		
+				R.layout.list_item, R.id.text1, array));
+
 		mListView.getViewTreeObserver().addOnGlobalLayoutListener(
 				new ViewTreeObserver.OnGlobalLayoutListener() {
 					@Override
@@ -76,10 +75,10 @@ public class QuizesFragment extends ListFragment{
 			@Override
 			public void onScroll(AbsListView view, int firstVisibleItem,
 					int visibleItemCount, int totalItemCount) {
-				
+
 				mScrollY = 0;
 				int translationY = 0;
-				
+
 				if (mListView.scrollYIsComputed()) {
 					mScrollY = mListView.getComputedScrollY();
 				}
@@ -88,7 +87,7 @@ public class QuizesFragment extends ListFragment{
 						- Math.min(
 								mCachedVerticalScrollRange
 										- mListView.getHeight(), mScrollY);
-				
+
 				switch (mState) {
 				case STATE_OFFSCREEN:
 					if (rawY <= mMinRawY) {
@@ -125,7 +124,7 @@ public class QuizesFragment extends ListFragment{
 					}
 					break;
 				}
-				
+
 				/** this can be used if the build is below honeycomb **/
 				if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.HONEYCOMB) {
 					anim = new TranslateAnimation(0, 0, translationY,
