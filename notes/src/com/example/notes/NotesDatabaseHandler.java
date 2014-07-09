@@ -9,17 +9,17 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DatabaseHandler extends SQLiteOpenHelper {
+public class NotesDatabaseHandler extends SQLiteOpenHelper {
 
 	// All Static variables
 	// Database Version
 	private static final int DATABASE_VERSION = 1;
 
 	// Database Name
-	private static final String DATABASE_NAME = "usersManager";
+	private static final String DATABASE_NAME = "notes";
 
 	// Contacts table name
-	private static final String TABLE_CONTACTS = "users";
+	private static final String TABLE_CONTACTS = "notes";
 
 	// Contacts Table Columns names
 	private static final String KEY_NAME = "name";
@@ -28,10 +28,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private static final String KEY_SEMESTER = "semester";
 	private static final String KEY_COLLEGE = "college";
 	private static final String KEY_CITY = "city";
-	private static final String KEY_EMAIL = "email";
-	private static final String KEY_PASSWORD = "password";
+	private static final String KEY_PROFESSOR = "professor";
+	private static final String KEY_NOTES = "notes";
 
-	public DatabaseHandler(Context context) {
+	public NotesDatabaseHandler(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
 
@@ -41,8 +41,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
 				+ KEY_NAME + " TEXT," + KEY_BRANCH + " TEXT," + KEY_YEAR
 				+ " INTEGER," + KEY_SEMESTER + " INTEGER," + KEY_COLLEGE
-				+ " TEXT," + KEY_CITY + " TEXT," + KEY_EMAIL + " TEXT,"
-				+ KEY_PASSWORD + " TEXT" + ")";
+				+ " TEXT," + KEY_CITY + " TEXT," + KEY_PROFESSOR + " TEXT,"
+				+ KEY_NOTES + " TEXT" + ")";
 		db.execSQL(CREATE_CONTACTS_TABLE);
 	}
 
@@ -61,7 +61,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	 */
 
 	// Adding new contact
-	void addContact(Users users) {
+	void addContact(NotesData users) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		ContentValues values = new ContentValues();
@@ -71,8 +71,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		values.put(KEY_SEMESTER, users.getSemester());
 		values.put(KEY_COLLEGE, users.getCollege()); // Name
 		values.put(KEY_CITY, users.getCity()); // Name
-		values.put(KEY_EMAIL, users.getEmail()); // Name
-		values.put(KEY_PASSWORD, users.getPassword()); // Name
+		values.put(KEY_PROFESSOR, users.getProfessor()); // Name
+		values.put(KEY_NOTES, users.getNotes()); // Name
 
 		// Inserting Row
 		db.insert(TABLE_CONTACTS, null, values);
@@ -80,17 +80,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	}
 
 	// Getting single contact
-	Users getContact(int id) {
+	NotesData getContact(int id) {
 		SQLiteDatabase db = this.getReadableDatabase();
 
 		Cursor cursor = db.query(TABLE_CONTACTS, new String[] { KEY_NAME,
 				KEY_BRANCH, KEY_YEAR, KEY_SEMESTER, KEY_COLLEGE, KEY_CITY,
-				KEY_EMAIL, KEY_PASSWORD }, KEY_NAME + "=?",
+				KEY_PROFESSOR, KEY_NOTES }, KEY_NAME + "=?",
 				new String[] { String.valueOf(id) }, null, null, null, null);
 		if (cursor != null)
 			cursor.moveToFirst();
 
-		Users contact = new Users(cursor.getString(0), cursor.getString(1),
+		NotesData contact = new NotesData(cursor.getString(0), cursor.getString(1),
 				Integer.parseInt(cursor.getString(2)), Integer.parseInt(cursor
 						.getString(3)), cursor.getString(4),
 				cursor.getString(5), cursor.getString(6), cursor.getString(7));
@@ -99,8 +99,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	}
 
 	// Getting All Contacts
-	public List<Users> getAllContacts() {
-		List<Users> contactList = new ArrayList<Users>();
+	public List<NotesData> getAllContacts() {
+		List<NotesData> contactList = new ArrayList<NotesData>();
 		// Select All Query
 		String selectQuery = "SELECT  * FROM " + TABLE_CONTACTS;
 
@@ -110,15 +110,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		// looping through all rows and adding to list
 		if (cursor.moveToFirst()) {
 			do {
-				Users contact = new Users();
+				NotesData contact = new NotesData();
 				contact.setName(cursor.getString(0));
 				contact.setBranch(cursor.getString(1));
 				contact.setYear(Integer.parseInt(cursor.getString(2)));
 				contact.setSemester(Integer.parseInt(cursor.getString(3)));
 				contact.setCollege(cursor.getString(4));
 				contact.setCity(cursor.getString(5));
-				contact.setEmail(cursor.getString(6));
-				contact.setPassword(cursor.getString(7));
+				contact.setProfessor(cursor.getString(6));
+				contact.setNotes(cursor.getString(7));
 				// Adding contact to list
 				contactList.add(contact);
 			} while (cursor.moveToNext());
@@ -129,7 +129,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	}
 
 	// Updating single contact
-	public int updateContact(Users users) {
+	public int updateContact(NotesData users) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		ContentValues values = new ContentValues();
@@ -139,8 +139,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		values.put(KEY_SEMESTER, users.getSemester());
 		values.put(KEY_COLLEGE, users.getCollege()); // Name
 		values.put(KEY_CITY, users.getCity()); // Name
-		values.put(KEY_EMAIL, users.getEmail()); // Name
-		values.put(KEY_PASSWORD, users.getPassword());
+		values.put(KEY_PROFESSOR, users.getProfessor()); // Name
+		values.put(KEY_NOTES, users.getNotes());
 		// updating row
 
 		return db.update(TABLE_CONTACTS, values, KEY_NAME + " = ?",
@@ -148,7 +148,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	}
 
 	// Deleting single contact
-	public void deleteContact(Users contact) {
+	public void deleteContact(NotesData contact) {
 		SQLiteDatabase db = this.getWritableDatabase();
 		db.delete(TABLE_CONTACTS, KEY_NAME + " = ?",
 				new String[] { String.valueOf(contact.getName()) });

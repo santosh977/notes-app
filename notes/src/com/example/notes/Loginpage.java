@@ -70,7 +70,6 @@ public class Loginpage extends Activity {
 			@Override
 			public void onClick(View v) {
 				startActivity(new Intent(Loginpage.this, Loginpage1.class));
-
 			}
 		});
 
@@ -81,7 +80,14 @@ public class Loginpage extends Activity {
 
 			}
 		});
+		((Button) findViewById(R.id.button1)).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
 
+				startActivity(new Intent(Loginpage.this, NotesActivity.class));
+			}
+		});
 		/*
 		 * btnbk.setBackgroundResource(R.drawable.bkarrow);
 		 * btnfr.setBackgroundResource(R.drawable.arrow);

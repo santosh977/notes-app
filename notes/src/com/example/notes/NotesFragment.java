@@ -1,18 +1,25 @@
 package com.example.notes;
 
+import java.util.List;
+
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.animation.TranslateAnimation;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class NotesFragment extends ListFragment {
 
@@ -49,20 +56,20 @@ public class NotesFragment extends ListFragment {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-
 		mListView = (QuickReturnListView) getListView();
 
 		mQuickReturnView.setText("Notes");
 		mListView.addHeaderView(mHeader);
 
-		String[] array = new String[] { "Andi", "Andi", "Android", "Android",
-				"Android", "Android", "Android", "Android", "Android",
-				"Android", "Android", "Android", "Android", "Android",
-				"Android", "Android" };
-
-		setListAdapter(new ArrayAdapter<String>(getActivity(),
-				R.layout.list_item, R.id.text1, array));
-
+		String[] array = new String[] { ">> Add Notes <<", ">> Search <<", ">> Switch to profile <<"};
+ArrayAdapter<String> adpnew= new ArrayAdapter<String>(getActivity(),
+		R.layout.list_item, R.id.text1, array);
+		setListAdapter(adpnew);
+		
+		NotesDatabaseHandler db = new NotesDatabaseHandler(getActivity().getApplicationContext());
+		List<NotesData> users = db.getAllContacts();
+		for (NotesData cn : users) {
+		adpnew.add(cn.getName());}
 		mListView.getViewTreeObserver().addOnGlobalLayoutListener(
 				new ViewTreeObserver.OnGlobalLayoutListener() {
 					@Override
@@ -138,12 +145,26 @@ public class NotesFragment extends ListFragment {
 				} else {
 					mQuickReturnView.setTranslationY(translationY);
 				}
+				
 
 			}
-
 			@Override
 			public void onScrollStateChanged(AbsListView view, int scrollState) {
 			}
 		});
+		OnItemClickListener listSelect = new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				if(arg2==1){
+					startActivity(new Intent(getActivity().getApplicationContext(),NewNotes.class));
+					getActivity().finish();
+				}
+				
+			}
+		};
+		
+		mListView.setOnItemClickListener(listSelect);
 	}
 }

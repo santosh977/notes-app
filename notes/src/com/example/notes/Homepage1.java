@@ -22,6 +22,10 @@ public class Homepage1 extends Activity {
 	 */
 	public void imageSelect(View v) {
 		switch (v.getId()) {
+		case R.id.notes:
+			startActivity(new Intent(getApplicationContext(),
+					NotesActivity.class));
+			break;
 		case R.id.asquz:
 			startActivity(new Intent(getApplicationContext(),
 					NotesActivity.class));
@@ -29,10 +33,9 @@ public class Homepage1 extends Activity {
 		case R.id.tnp1:
 			startActivity(new Intent(getApplicationContext(), Members.class));
 			break;
-		/*
-		 * case R.id.bns: startActivity(new
-		 * Intent(getApplicationContext(),Note.class)); break;
-		 */
+		/*case R.id.notes: startActivity(new
+		 Intent(getApplicationContext(),Note.class)); break;*/
+		 
 
 		default:
 			Toast.makeText(getApplicationContext(), "TODO", Toast.LENGTH_LONG)

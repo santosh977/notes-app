@@ -5,35 +5,30 @@
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="32dp"
-        android:layout_marginRight="34dp"
-        android:text="switch to profile"
-         android:onClick="Switchprofile"
-         />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="Search"
+        android:text="search" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:layout_marginRight="22dp"
-        android:layout_marginTop="59dp"
-        android:layout_toLeftOf="@+id/button3"
-        android:text="upload"
-         android:onClick="Upload" />
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/button1"
+        android:onClick="Upload"
+        android:text="upload" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/button2"
-        android:text="search" 
-        android:onClick="Search"/>
+        android:layout_toRightOf="@+id/button2"
+        android:onClick="Switchprofile"
+        android:text="switch to profile" />
 
 </RelativeLayout>
