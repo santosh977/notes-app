@@ -25,10 +25,10 @@ public class  Homepage1 extends Activity {
 			case R.id.tnp1:
 				startActivity(new Intent(getApplicationContext(),Members.class));
 				break;
-			case R.id.bns:
+			/*case R.id.bns:
 				startActivity(new Intent(getApplicationContext(),Note.class));
 				break;
-				
+				*/
 				
 				
 			default:Toast.makeText(getApplicationContext(), "TODO",Toast.LENGTH_LONG).show();

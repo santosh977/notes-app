@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class Loginpage1 extends Activity {
@@ -26,7 +25,7 @@ public class Loginpage1 extends Activity {
 		List<Users> users = db.getAllContacts();       
 		//Toast.makeText(getApplicationContext(),(((EditText)findViewById(R.id.Editpass)).getText()).toString(), Toast.LENGTH_LONG).show();
         for (Users cn : users) {
-            //String log = "Id: "+cn.getID()+" ,Name: " + cn.getName() + " ,Phone: " + cn.getPhoneNumber();
+           // String log = "\n\n Name: " + cn.getName() + " ,Password: " + cn.getPassword();
                 // Writing Contacts to log
         //Log.d("Name: ", log);
          if( cn.getPassword().equals((((EditText)findViewById(R.id.Editpass)).getText()).toString())&&cn.getEmail().equals((((EditText)findViewById(R.id.EditMail)).getText()).toString()))

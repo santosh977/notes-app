@@ -12,8 +12,9 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="32dp"
         android:layout_marginRight="34dp"
-        android:onClick="Switchprofile"
-        android:text="switch to profile" />
+        android:text="switch to profile"
+         android:onClick="Switchprofile"
+         />
 
     <Button
         android:id="@+id/button2"
@@ -23,8 +24,8 @@
         android:layout_marginRight="22dp"
         android:layout_marginTop="59dp"
         android:layout_toLeftOf="@+id/button3"
-        android:onClick="Upload"
-        android:text="upload" />
+        android:text="upload"
+         android:onClick="Upload" />
 
     <Button
         android:id="@+id/button1"
@@ -32,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/button2"
-        android:onClick="Search"
-        android:text="search" />
+        android:text="search" 
+        android:onClick="Search"/>
 
 </RelativeLayout>

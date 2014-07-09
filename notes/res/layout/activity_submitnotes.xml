@@ -2,8 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#20b2aa"
-    tools:context=".Submitnotes" >
+    
+    tools:context=".Submitnotes"
+    android:background="#20b2aa" >
 
     <ListView
         android:id="@+id/listView1"
