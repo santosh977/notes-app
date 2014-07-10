@@ -46,7 +46,7 @@ public class Loginpage extends Activity {
 				is.setBackgroundResource(imageIDs[indexCount]);
 
 			} finally {
-				handle.postDelayed(this,1000);
+				handle.postDelayed(this, 1000);
 			}
 
 		}
@@ -80,14 +80,16 @@ public class Loginpage extends Activity {
 
 			}
 		});
-		((Button) findViewById(R.id.button1)).setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
+		((Button) findViewById(R.id.button1))
+				.setOnClickListener(new OnClickListener() {
 
-				startActivity(new Intent(Loginpage.this, NotesActivity.class));
-			}
-		});
+					@Override
+					public void onClick(View arg0) {
+
+						startActivity(new Intent(Loginpage.this,
+								NotesActivity.class));
+					}
+				});
 		/*
 		 * btnbk.setBackgroundResource(R.drawable.bkarrow);
 		 * btnfr.setBackgroundResource(R.drawable.arrow);
@@ -109,7 +111,7 @@ public class Loginpage extends Activity {
 		is.setInAnimation(in);
 		is.setOutAnimation(out);
 		is.setBackgroundResource(imageIDs[0]);
-		handle.postDelayed(r,1000);
+		handle.postDelayed(r, 1000);
 
 		/*
 		 * btnStart.setOnClickListener(new OnClickListener() {

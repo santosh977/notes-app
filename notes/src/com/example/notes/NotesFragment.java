@@ -1,5 +1,6 @@
 package com.example.notes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.annotation.SuppressLint;
@@ -9,7 +10,6 @@ import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.animation.TranslateAnimation;
@@ -19,7 +19,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class NotesFragment extends ListFragment {
 
@@ -60,16 +59,23 @@ public class NotesFragment extends ListFragment {
 
 		mQuickReturnView.setText("Notes");
 		mListView.addHeaderView(mHeader);
-
-		String[] array = new String[] { ">> Add Notes <<", ">> Search <<", ">> Switch to profile <<"};
-ArrayAdapter<String> adpnew= new ArrayAdapter<String>(getActivity(),
-		R.layout.list_item, R.id.text1, array);
-		setListAdapter(adpnew);
-		
-		NotesDatabaseHandler db = new NotesDatabaseHandler(getActivity().getApplicationContext());
+		List<String> listitems = new ArrayList<String>();
+		listitems.add(">> Add Notes <<");
+		listitems.add(">> Search <<");
+		listitems.add(">> Switch to profile <<");
+		NotesDatabaseHandler db = new NotesDatabaseHandler(getActivity()
+				.getApplicationContext());
 		List<NotesData> users = db.getAllContacts();
 		for (NotesData cn : users) {
-		adpnew.add(cn.getName());}
+			listitems.add(cn.getNotes());
+		}
+
+		ArrayAdapter<String> adpnew = new ArrayAdapter<String>(getActivity(),
+				R.layout.list_item, R.id.text1, listitems);
+		setListAdapter(adpnew);
+
+		// Toast.makeText(getActivity(), "Check", Toast.LENGTH_LONG).show();
+
 		mListView.getViewTreeObserver().addOnGlobalLayoutListener(
 				new ViewTreeObserver.OnGlobalLayoutListener() {
 					@Override
@@ -145,9 +151,9 @@ ArrayAdapter<String> adpnew= new ArrayAdapter<String>(getActivity(),
 				} else {
 					mQuickReturnView.setTranslationY(translationY);
 				}
-				
 
 			}
+
 			@Override
 			public void onScrollStateChanged(AbsListView view, int scrollState) {
 			}
@@ -157,14 +163,15 @@ ArrayAdapter<String> adpnew= new ArrayAdapter<String>(getActivity(),
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
-				if(arg2==1){
-					startActivity(new Intent(getActivity().getApplicationContext(),NewNotes.class));
+				if (arg2 == 1) {
+					startActivity(new Intent(getActivity()
+							.getApplicationContext(), NewNotes.class));
 					getActivity().finish();
 				}
-				
+
 			}
 		};
-		
+
 		mListView.setOnItemClickListener(listSelect);
 	}
 }

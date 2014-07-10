@@ -13,22 +13,15 @@ public class NewNotes extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_new_notes);
 	}
- 
-	public void upload(View v)
-	{
+
+	public void upload(View v) {
 		NotesDatabaseHandler db = new NotesDatabaseHandler(this);
 		db.addContact(new NotesData(((EditText) findViewById(R.id.editText2))
-				.getText().toString(),
-				"a",
-				1,
-				1,
-						"a",
-						"a",
-				"a",
-				((EditText) findViewById(R.id.editText1)).getText()
-						.toString()));
-		
-		startActivity(new Intent(getApplicationContext(),NotesActivity.class));
+				.getText().toString(), "a", 1, 1, "a", "a", "a",
+				((EditText) findViewById(R.id.editText1)).getText().toString()));
+
+		db.getAllContacts();
+		startActivity(new Intent(getApplicationContext(), NotesActivity.class));
 		finish();
 	}
 

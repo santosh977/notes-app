@@ -25,7 +25,8 @@ public class Note extends Fragment {
 	 * 
 	 * }
 	 */
-TextView tv;
+	TextView tv;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

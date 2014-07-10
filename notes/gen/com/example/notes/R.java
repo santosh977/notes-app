@@ -16,6 +16,7 @@ public final class R {
         public static final int top_item=0x7f040000;
     }
     public static final class dimen {
+        public static final int Buttonwidth=0x7f050005;
         /**  Default screen margins, per the Android Design guidelines. 
 
          Customize dimensions originally defined in res/values/dimens.xml (such as

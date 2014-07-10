@@ -90,9 +90,9 @@ public class NotesDatabaseHandler extends SQLiteOpenHelper {
 		if (cursor != null)
 			cursor.moveToFirst();
 
-		NotesData contact = new NotesData(cursor.getString(0), cursor.getString(1),
-				Integer.parseInt(cursor.getString(2)), Integer.parseInt(cursor
-						.getString(3)), cursor.getString(4),
+		NotesData contact = new NotesData(cursor.getString(0),
+				cursor.getString(1), Integer.parseInt(cursor.getString(2)),
+				Integer.parseInt(cursor.getString(3)), cursor.getString(4),
 				cursor.getString(5), cursor.getString(6), cursor.getString(7));
 		// return contact
 		return contact;

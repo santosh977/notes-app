@@ -18,6 +18,5 @@ public class Emailvalidation {
 	public boolean checkEmail(String email) {
 		return EMAIL_ADDRESS_PATTERN.matcher(email).matches();
 	}
-	
 
 }

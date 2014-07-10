@@ -3,7 +3,7 @@ package com.example.notes;
 public class NotesData {
 
 	// private variables
-	String name, college, city, branch, professor,notes;
+	String name, college, city, branch, professor, notes;
 	int semester, year;
 
 	// Empty constructor
@@ -57,7 +57,7 @@ public class NotesData {
 		this.branch = branch;
 	}
 
-		public int getSemester() {
+	public int getSemester() {
 		return semester;
 	}
 
@@ -88,7 +88,5 @@ public class NotesData {
 	public void setNotes(String notes) {
 		this.notes = notes;
 	}
-
-	
 
 }
