@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/top_height"
          android:background="#20b2aa" /> 
-         -->
+    -->
+
     <View
         android:id="@+id/placeholder"
         android:layout_width="match_parent"

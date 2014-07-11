@@ -2,7 +2,7 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppTheme" parent="android:Theme.Holo.Light" />
 
@@ -18,20 +18,11 @@
         <item name="android:textAppearance">?android:textAppearanceLarge</item>
         <item name="android:textColor">@color/sticky_item_text</item>
     </style>
-     <style name="AppTheme" parent="AppBaseTheme">
+
+    <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->

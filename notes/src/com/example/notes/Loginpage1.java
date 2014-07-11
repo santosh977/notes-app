@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -24,6 +25,20 @@ public class Loginpage1 extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.loginpage1);
+		 CheckBox checkBox = (CheckBox) findViewById(R.id.chkAutosave);
+	        checkBox.setOnClickListener(new View.OnClickListener() 
+	        {
+	            public void onClick(View v) {
+	                if (((CheckBox)v).isChecked()) 
+	                	Toast.makeText(getBaseContext(), 
+	                			"CheckBox is checked", 
+	                    		Toast.LENGTH_LONG).show();
+	                else
+	                	Toast.makeText(getBaseContext(), 
+	                			"CheckBox is unchecked", 
+	                    		Toast.LENGTH_LONG).show();
+	            }
+	        });
 	}
 
 	public void Function8(View v) {
