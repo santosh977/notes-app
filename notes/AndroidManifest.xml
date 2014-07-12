@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.notes"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.notes.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.notes.Loginpage" />
+        <activity android:name="com.example.notes.Signup" />
+        <activity android:name="com.example.notes.Profdiv" />
+        <activity android:name="com.example.notes.Search" />
+        <activity android:name="com.example.notes.Upload" />
+        <activity android:name="com.example.notes.Submitnotes" />
+        <activity android:name="com.example.notes.Note" />
+        <activity android:name="com.example.notes.Loginpage1" />
+        <activity android:name="com.example.notes.TabsPagerAdapter" />
+        <activity android:name="com.example.notes.NotesFragement" />
+        <activity android:name="com.example.notes.AssignmentFragement" />
+        <activity android:name="com.example.notes.QuizesFragement" />
+        <activity android:name="com.example.notes.Clges" />
+        <activity android:name="com.example.notes.CollapseAnimation" />
+        <activity android:name="com.example.notes.LayerStack" />
+        <!-- android:name="com.example.notes.NotesActivity -->
+        <activity android:name="com.example.notes.Forgot" />
+        <activity android:name="com.example.notes.scrolltab" />
+        <activity
+            android:name="com.example.notes.NotesActivity"
+            android:label="@string/title_activity_notes" >
+        </activity>
+        <activity
+            android:name="com.example.notes.Members"
+            android:label="@string/title_activity_members" >
+        </activity>
+        <activity
+            android:name="com.example.notes.NewNotes"
+            android:label="@string/title_activity_new_notes" >
+        </activity>
+        <activity
+            android:name="com.example.notes.NewsFeed"
+            android:label="@string/title_activity_news_feed" >
+        </activity>
+    </application>
+
+</manifest>
