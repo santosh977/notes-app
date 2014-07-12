@@ -1,6 +1,10 @@
 notes-app
 =========
 
+## Demo
+
+Use the APK in bin folder.
+
 ## Contributing
 
 1. [Fork it](https://help.github.com/articles/fork-a-repo)
