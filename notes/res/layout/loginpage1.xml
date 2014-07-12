@@ -65,16 +65,6 @@
             android:onClick="Function9"
             android:text="" />
 
-        <TextView
-            android:id="@+id/Forgetpass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/textView2"
-            android:layout_below="@+id/BtnLogin"
-            android:layout_marginTop="49dp"
-            android:text="Forget Password ?"
-            android:textColor="@android:color/white" />
-
         <Button
             android:id="@+id/BtnLogin"
             android:layout_width="150dp"
@@ -95,6 +85,7 @@
             android:layout_alignLeft="@+id/rel4"
             android:layout_marginBottom="26dp"
             android:background="@android:color/transparent"
+            
             android:hint="Password"
             android:inputType="textPassword"
             android:textColor="@android:color/white" >
@@ -119,6 +110,7 @@
             android:layout_alignLeft="@+id/Editpass"
             android:layout_marginBottom="25dp"
             android:background="@android:color/transparent"
+           android:inputType="textEmailAddress"
             android:hint="Email Address" />
 
         <RelativeLayout
@@ -134,11 +126,33 @@
             android:id="@+id/chkAutosave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Forgetpass"
-            android:layout_marginTop="16dp"
-            android:layout_toRightOf="@+id/rel5"
+            android:layout_alignLeft="@+id/BtnLogin"
+            android:layout_alignTop="@+id/rel6"
             android:text="Remember Me"
             android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/Forgetpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/textView2"
+            android:layout_below="@+id/chkAutosave"
+            android:layout_marginTop="17dp"
+            android:text="Forget Password ?"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/AppBaseTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/Forgetpass"
+            android:layout_alignLeft="@+id/Forgetpass"
+            android:layout_alignRight="@+id/Forgetpass"
+            android:layout_alignTop="@+id/Forgetpass"
+            android:background="@android:color/transparent"
+            android:onClick="Function10" />
+
     </RelativeLayout>
 
 </RelativeLayout>

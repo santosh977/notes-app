@@ -90,7 +90,10 @@ public class Loginpage1 extends Activity {
 		startActivity(new Intent(Loginpage1.this, Signup.class));
 
 	}
+	public void Function10(View v) {
+		startActivity(new Intent(Loginpage1.this, Forgot.class));
 
+	}
 	// validating email id
 	private boolean isValidEmail(String email) {
 		String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"

@@ -17,7 +17,7 @@ import android.widget.ViewSwitcher.ViewFactory;
 public class Loginpage extends Activity {
 	ImageSwitcher is;
 
-	Button btnbk, btnfr, b, b1;
+	Button btnbk, btnfr, b, b1,btnn2;
 	Animation in, out;
 
 	// ,btnStart,btnStop
@@ -66,6 +66,8 @@ public class Loginpage extends Activity {
 		btnfr = (Button) findViewById(R.id.btnfr);
 		b = (Button) findViewById(R.id.BtnLogin);
 		b1 = (Button) findViewById(R.id.BtnSignup);
+		btnn2 = (Button) findViewById(R.id.btnn2);
+		
 		b.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -73,6 +75,16 @@ public class Loginpage extends Activity {
 			}
 		});
 
+		btnn2.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(Loginpage.this, LayerStack.class));
+
+			}
+		});
+       
+		
+		
 		b1.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -132,7 +144,7 @@ public class Loginpage extends Activity {
 		 * 
 		 * } });
 		 */
-
+		
 		btnfr.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -161,7 +173,7 @@ public class Loginpage extends Activity {
 
 			}
 		});
-
+		
 	}
 
 	@Override
@@ -170,7 +182,10 @@ public class Loginpage extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	public void Fun(View v) {
+		startActivity(new Intent(Loginpage.this, Clges.class));
 
+	}
 }
 
 /*

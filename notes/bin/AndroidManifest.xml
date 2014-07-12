@@ -35,6 +35,11 @@
         <activity android:name="com.example.notes.NotesFragement" />
         <activity android:name="com.example.notes.AssignmentFragement" />
         <activity android:name="com.example.notes.QuizesFragement" />
+         <activity android:name="com.example.notes.Clges" />
+          <activity android:name="com.example.notes.CollapseAnimation" />
+           <activity android:name="com.example.notes.LayerStack" />
+          <!--  android:name="com.example.notes.NotesActivity-->      
+           <activity android:name="com.example.notes.Forgot" />
         <activity
             android:name="com.example.notes.NotesActivity"
             android:label="@string/title_activity_notes" >
