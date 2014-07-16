@@ -150,10 +150,11 @@ public class NotesDatabaseHandler extends SQLiteOpenHelper {
 	// Deleting single contact
 	public void deleteContact(NotesData contact) {
 		SQLiteDatabase db = this.getWritableDatabase();
-		db.delete(TABLE_CONTACTS, KEY_NAME + " = ?",
-				new String[] { String.valueOf(contact.getName()) });
+		db.delete(TABLE_CONTACTS, KEY_NOTES + " = ?",
+				new String[] { String.valueOf(contact.getNotes()) });
+
 		db.close();
-		// TODO
+
 	}
 
 	// Getting contacts Count

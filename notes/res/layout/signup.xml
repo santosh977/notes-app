@@ -29,7 +29,8 @@
         android:layout_width="260dp"
         android:layout_height="35dp"
         android:layout_marginLeft="58dp"
-        android:drawSelectorOnTop="true" />
+        android:drawSelectorOnTop="true" 
+      />
 
     <Spinner
         android:id="@+id/spinner2"

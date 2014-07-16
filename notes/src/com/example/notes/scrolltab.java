@@ -82,6 +82,13 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 			lv = (ListView) findViewById(R.id.listView1);
 			lv.setAdapter(new IconicAdapter(this));
 			return lv;
+		} else if (tag.equals("Search")) {
+			startActivity(new Intent(getApplicationContext(), Search.class));
+			finish();
+			final TextView tv = new TextView(this);
+			tv.setText(tag + " is Loading...");
+			// lv.setAdapter(null);
+			return tv;
 		}
 		// break;
 		else {
@@ -98,10 +105,12 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 
 		public IconicAdapter(Context context) {
 			super(context, R.layout.list, R.id.textView1, arr);
+
 		}
 
 		public View getView(int position, View view, ViewGroup parent) {
 			View list = super.getView(position, view, parent);
+
 			img = (ImageView) list.findViewById(R.id.imageView1);
 			txt = (TextView) list.findViewById(R.id.textView2);
 			txtcount = (TextView) list.findViewById(R.id.textView3);
@@ -117,7 +126,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 				// btn.setVisibility(View.INVISIBLE);
 			} else {
 				img.setImageDrawable(getResources().getDrawable(arr2.get(1)));
-				btn.setText("View");
+				btn.setText("Delete");
 			}
 			// img.setImageResource(arr2.get(position));
 
@@ -125,20 +134,43 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 
 				@Override
 				public void onClick(View v) {
-					int position = Integer
-							.parseInt(((TextView) v
-									.findViewById(R.id.textView3)).getText()
-									.toString());
-					if (position == 0) {
-						startActivity(new Intent(getApplicationContext(),
-								NewNotes.class));
-						finish();
-					} else
-						Toast.makeText(getApplicationContext(), "TODO",
+					if (v.getId() == R.id.button1) {
+						Toast.makeText(getApplicationContext(), v.toString(),
 								Toast.LENGTH_LONG).show();
+						int position = Integer.parseInt((((TextView) v
+								.findViewById(R.id.textView3)).getText())
+								.toString());
+						position = position;
+						if (position != 0) {
+							NotesDatabaseHandler db = new NotesDatabaseHandler(
+									getApplicationContext());
+							List<NotesData> users = db.getAllContacts();
+							/*
+							 * Toast.makeText(getApplicationContext(),users.get(1
+							 * ).getNotes(), Toast.LENGTH_LONG).show();
+							 */
+
+							db.deleteContact(users.get(position - 1));
+							startActivity(new Intent(getApplicationContext(),
+									scrolltab.class));
+							finish();
+						}
+					} else {
+						int position = Integer.parseInt(((TextView) v
+								.findViewById(R.id.textView3)).getText()
+								.toString());
+						if (position == 0) {
+							startActivity(new Intent(getApplicationContext(),
+									NewNotes.class));
+							finish();
+						} else {
+							Toast.makeText(getApplicationContext(), "TODO",
+									Toast.LENGTH_LONG).show();
+						}
+					}
 				}
 			};
-
+			btn.setOnClickListener(NotesListButtonClick);
 			list.setOnClickListener(NotesListButtonClick);
 			return list;
 		}

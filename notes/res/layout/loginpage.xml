@@ -74,4 +74,13 @@
         android:onClick="onClick"
         android:text="Slider" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/btnbk"
+        android:text="Button"
+       android:onClick="Function" />
+
 </RelativeLayout>

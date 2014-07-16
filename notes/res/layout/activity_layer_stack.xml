@@ -7,6 +7,7 @@
 
     <!-- Menu Panel -->
     <RelativeLayout
+        
            android:id="@+id/menuPanel"
            android:layout_height="match_parent"
            android:layout_width="wrap_content"
@@ -26,7 +27,7 @@
                 android:textColor="@android:color/white"
                 android:text="@string/menu_title">     
             </TextView>
-               
+              
             <View
 		        android:id="@+id/menu_item_divider_1"
 		        android:layout_width="fill_parent"
@@ -36,24 +37,52 @@
 		        android:layout_below="@+id/menu_title_1"
 		        android:background="#b5b5b5"/>
             
+               <LinearLayout
+            android:id="@+id/profile_cell"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_60"
+            android:orientation="horizontal" 
+             android:layout_below="@+id/menu_item_divider_1">
+
+            <ImageView
+                android:layout_width="@dimen/dim_27"
+                android:layout_height="@dimen/dim_27"
+                android:gravity="center_vertical"
+                android:background="@drawable/avatar_contact"
+                 android:layout_marginLeft="15dp"
+                   android:layout_marginTop="5dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dim_13"
+                        android:layout_marginBottom="@dimen/dim_7"
+                android:gravity="center_vertical"
+                android:text="Name"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+            
+           
+		        
             <TextView
                 android:id="@+id/menu_item_1"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
-                android:layout_marginLeft="15dp"             
-                android:gravity="center_vertical"
                 android:layout_below="@+id/menu_item_divider_1"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
                 android:text="@string/item_1"
                 android:clickable="true"
-                android:onClick="SliderClick">     
-            </TextView>     
-             <View
-		        android:id="@+id/menu_item_divider_2"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_1"
 		        android:layout_width="fill_parent"
 		        android:layout_height="0.5dp"
 		        android:layout_marginLeft="5dp"
 		        android:layout_marginRight="5dp"
-		        android:layout_below="@+id/menu_item_1"
+		        android:layout_below="@+id/menu_title_1"
 		        android:background="#b5b5b5"/> 
             <TextView
                 android:id="@+id/menu_item_2"
@@ -66,15 +95,15 @@
                 android:clickable="true"
                 android:onClick="SliderClick">
             </TextView>
-            <View
-		        android:id="@+id/menu_item_divider_3"
+             <View
+		        android:id="@+id/menu_item_divider_2"
 		        android:layout_width="fill_parent"
 		        android:layout_height="0.5dp"
 		        android:layout_marginLeft="5dp"
 		        android:layout_marginRight="5dp"
-		        android:layout_below="@+id/menu_item_2"
+		        android:layout_below="@+id/menu_item_1"
 		        android:background="#b5b5b5"/> 
-            <TextView
+            <!-- <TextView
                 android:id="@+id/menu_item_3"
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
@@ -92,7 +121,250 @@
 		        android:layout_marginLeft="5dp"
 		        android:layout_marginRight="5dp"
 		        android:layout_below="@+id/menu_item_2"
+		        android:background="#b5b5b5" />--> 
+		         <TextView
+                android:id="@+id/menu_item_4"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_4"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_4"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_4"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_2"
+		        android:background="#b5b5b5" /> 
+		         <TextView
+                android:id="@+id/menu_item_5"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_5"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_5"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_5"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_4"
+		        android:background="#b5b5b5" /> 
+		        
+		                  
+            <TextView
+                android:id="@+id/menu_item_6"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_6"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_6"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_6"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_5"
+		        android:background="#b5b5b5" /> 
+		        
+		                  
+             <TextView
+                android:id="@+id/menu_item_7"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_7"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_7"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_7"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_6"
+		        android:background="#b5b5b5" /> 
+		        
+		                  
+            <TextView
+                android:id="@+id/menu_item_8"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_8"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_8"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_8"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_7"
+		        android:background="#b5b5b5" /> 
+		        
+		                  
+            <TextView
+                android:id="@+id/menu_item_9"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_9"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_9"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_9"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_8"
+		        android:background="#b5b5b5" /> 
+		        
+              <TextView
+                android:id="@+id/menu_item_10"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_10"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_10"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_10"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_9"
+		        android:background="#b5b5b5" /> 
+  
+            
+             <TextView
+                android:id="@+id/menu_item_11"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_11"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_11"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_11"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_10"
+		        android:background="#b5b5b5" /> 
+		        <TextView
+                android:id="@+id/menu_item_13"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_12"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_13"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_12"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_11"
+		        android:background="#b5b5b5" /> 
+		                  
+           <!--  
+            <TextView
+                android:id="@+id/menu_item_7"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_7"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_7"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_7"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_6"
 		        android:background="#b5b5b5" />           
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/menu_item_10"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_10"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_10"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_10"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_9"
+		        android:background="#b5b5b5" />           
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/menu_item_11"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_11"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_11"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_11"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_10"
+		        android:background="#b5b5b5" />      -->      
             </RelativeLayout>
             
        <!-- Sliding Panel -->     

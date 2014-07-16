@@ -36,9 +36,19 @@
         <activity android:name="com.example.notes.QuizesFragement" />
         <activity android:name="com.example.notes.Clges" />
         <activity android:name="com.example.notes.CollapseAnimation" />
-        <activity android:name="com.example.notes.LayerStack" />
+        <activity android:name="com.example.notes.CustomGrid" />
+        <activity android:name="com.example.notes.Item" />
+        <activity
+            android:name="com.example.notes.LayerStack"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.example.notes.Purpose"
+            android:label="@string/about_text"
+            android:theme="@android:style/Theme.Dialog" />
         <!-- android:name="com.example.notes.NotesActivity -->
-        <activity android:name="com.example.notes.Forgot" />
+        <activity
+            android:name="com.example.notes.Forgot"
+            android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name="com.example.notes.scrolltab" />
         <activity
             android:name="com.example.notes.NotesActivity"
@@ -55,6 +65,14 @@
         <activity
             android:name="com.example.notes.NewsFeed"
             android:label="@string/title_activity_news_feed" >
+        </activity>
+        <activity
+            android:name="com.example.notes.Chatroom"
+            android:label="@string/title_activity_chatroom" >
+        </activity>
+        <activity
+            android:name="com.example.notes.Usernotes"
+            android:label="@string/title_activity_usernotes" >
         </activity>
     </application>
 

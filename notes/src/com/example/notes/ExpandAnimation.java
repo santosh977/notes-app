@@ -9,8 +9,8 @@ import android.view.Gravity;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
-import android.widget.LinearLayout;
 import android.widget.FrameLayout.LayoutParams;
+import android.widget.LinearLayout;
 
 public class ExpandAnimation extends TranslateAnimation implements
 		Animation.AnimationListener {

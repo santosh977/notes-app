@@ -180,6 +180,12 @@ public class Loginpage extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
+	public void Function(View v) {
+		startActivity(new Intent(Loginpage.this, Purpose.class));
+
+	}
+
 }
 
 /*

@@ -126,11 +126,32 @@ public class LayerStack extends Activity {
 	public void SliderClick(View v) {
 		switch (v.getId()) {
 		case R.id.menu_item_2:
+			startActivity(new Intent(getApplicationContext(), LayerStack.class));
+			break;
+		case R.id.menu_item_1:
+			startActivity(new Intent(getApplicationContext(), Profdiv.class));
+			break;
+		case R.id.menu_item_4:
+			startActivity(new Intent(getApplicationContext(), Upload.class));
+			break;
+		case R.id.menu_item_6:
+			startActivity(new Intent(getApplicationContext(), Chatroom.class));
+			break;
+		case R.id.menu_item_7:// NewsFeed
+			startActivity(new Intent(getApplicationContext(), NewsFeed.class));
+			break;
+		case R.id.menu_item_10:
 			startActivity(new Intent(getApplicationContext(), Members.class));
 			break;
-		case R.id.menu_item_3:
-			startActivity(new Intent(getApplicationContext(), Clges.class));
+		case R.id.menu_item_11:
+			startActivity(new Intent(getApplicationContext(), Loginpage.class));
+			finish();
 			break;
+
+		case R.id.menu_item_13:
+			startActivity(new Intent(getApplicationContext(), CustomGrid.class));
+			break;
+
 		default:
 			Toast.makeText(getApplicationContext(), "TODO", Toast.LENGTH_LONG)
 					.show();

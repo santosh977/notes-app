@@ -28,7 +28,7 @@
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignParentRight="true"
         android:layout_marginRight="15dp"
-        android:text="Button"/>
+        android:text="Delete"/>
 
     <ImageView
         android:id="@+id/imageView1"

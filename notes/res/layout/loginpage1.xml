@@ -111,15 +111,6 @@
             android:background="@android:color/white" >
         </RelativeLayout>
 
-        <CheckBox
-            android:id="@+id/chkAutosave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/BtnLogin"
-            android:layout_alignTop="@+id/rel6"
-            android:text="Remember Me"
-            android:textColor="@android:color/white" />
-
         <TextView
             android:id="@+id/Forgetpass"
             android:layout_width="wrap_content"
@@ -131,6 +122,15 @@
             android:textColor="@android:color/white" 
             android:clickable="true"
             android:onClick="Function10"/>
+
+        <CheckBox
+            android:id="@+id/chkAutosave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/Forgetpass"
+            android:layout_alignTop="@+id/rel6"
+            android:text="Remember Me"
+            android:textColor="@android:color/white" />
 
     </RelativeLayout>
 
