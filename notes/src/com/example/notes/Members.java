@@ -1,6 +1,7 @@
 package com.example.notes;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.TextView;
@@ -13,6 +14,8 @@ public class Members extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.members);
+
+		startActivity(new Intent(Members.this, Purpose.class));
 		names = "\n Nikhar" + "\n Gunjan" + "\n Divya" + "\n Sapna"
 				+ "\n Santosh" + "\n Divyavrat";
 		tv = (TextView) findViewById(R.id.textView1);

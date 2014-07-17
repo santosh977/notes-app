@@ -39,6 +39,7 @@
         <activity android:name="com.example.notes.CollapseAnimation" />
         <activity android:name="com.example.notes.CustomGrid" />
         <activity android:name="com.example.notes.Item" />
+        <activity android:name="com.example.notes.Handlers" />
         <activity
             android:name="com.example.notes.LayerStack"
             android:theme="@android:style/Theme.NoTitleBar" />

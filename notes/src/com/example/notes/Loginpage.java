@@ -181,11 +181,6 @@ public class Loginpage extends Activity {
 		return true;
 	}
 
-	public void Function(View v) {
-		startActivity(new Intent(Loginpage.this, Purpose.class));
-
-	}
-
 }
 
 /*
