@@ -112,6 +112,12 @@ public class LayerStack extends Activity {
 		case R.id.clg12:
 			startActivity(new Intent(getApplicationContext(), Clges.class));
 			break;
+		case R.id.cht:
+			startActivity(new Intent(getApplicationContext(), Chatroom.class));
+			break;
+		case R.id.newsfeed:
+			startActivity(new Intent(getApplicationContext(), NewsFeed.class));
+			break;
 		/*
 		 * case R.id.notes: startActivity(new
 		 * Intent(getApplicationContext(),Note.class)); break;

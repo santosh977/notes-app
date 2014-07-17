@@ -1,40 +1,34 @@
 package com.example.notes;
 
-import android.app.ListActivity;
+import java.util.ArrayList;
+
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.CheckedTextView;
 import android.widget.ListView;
-import android.widget.Toast;
 
-public class Submitnotes extends ListActivity {
-
-	String[] Subjects = { "DAA", "AOS", "AI", "TOC", "DBMS", "DMS",
-
-	};
+public class Submitnotes extends Activity {
+	ListView lv;
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_submitnotes);
-
-		ListView lstView = getListView();
-		// lstView.setChoiceMode(ListView.CHOICE_MODE_NONE);
-		// lstView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-		lstView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-		lstView.setTextFilterEnabled(true);
-
-		setListAdapter(new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_checked, Subjects));
-	}
-
-	public void onListItemClick(ListView parent, View v, int position, long id) {
-		CheckedTextView item = (CheckedTextView) v;
-		Toast.makeText(this,
-				Subjects[position] + " checked : " + !item.isChecked(),
-				Toast.LENGTH_SHORT).show();
-		// item.removeTextChangedListener(watcher);
+		getIntent().getExtras().getInt("x");
+		lv = (ListView) findViewById(R.id.listView1);
+		ArrayList<String> ar = new ArrayList<String>();
+		ar.add("engineering physics");
+		ar.add("dbms");
+		ar.add("dms");
+		ar.add("computer architecture");
+		ar.add("ads");
+		ar.add("tef");
+		ar.add("computer networks");
+		ar.add("daa");
+		ar.add("artificial intelligence");
+		ar.add("robotics");
+		lv.setAdapter(new ArrayAdapter<String>(getApplicationContext(),
+				R.layout.row, ar));
 	}
 
 }

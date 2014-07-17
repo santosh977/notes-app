@@ -199,39 +199,40 @@ public class Loginpage1 extends Activity {
 		// List<Users> users = db.getAllContacts();
 		final String Email = email.getText().toString();
 		final String Pass = pass.getText().toString();
+
 		if (!isValidEmail(Email)) {
 			email.setError("Invalid Email");
+			return;
 		}
 		if (!isValidPassword(Pass)) {
 			pass.setError("Invalid Password");
-		} else {
-			// String log = "\n\n Name: " + cn.getName() + " ,Password: " +
-			// cn.getPassword();
-			// Writing Contacts to log
-			// Log.d("Name: ", log);
-			contactList = new ArrayList<HashMap<String, String>>();
-			// Calling async task to get json
-			String urlquery = "http://wscubetech.org/app/appkit/login.php";
-			urlquery = new String(
-					urlquery
-							+ "?userid="
-							+ (((EditText) findViewById(R.id.EditMail))
-									.getText()).toString()
-							+ "&upass="
-							+ (((EditText) findViewById(R.id.Editpass))
-									.getText()).toString());
-
-			GetContacts jsonResult = new GetContacts(urlquery);
-			jsonResult.execute();
-
-			// while(!jsonResult.finished){}
-			// ResultGet();
+			return;
 		}
+		// String log = "\n\n Name: " + cn.getName() + " ,Password: " +
+		// cn.getPassword();
+		// Writing Contacts to log
+		// Log.d("Name: ", log);
+		contactList = new ArrayList<HashMap<String, String>>();
+		// Calling async task to get json
+		String urlquery = "http://wscubetech.org/app/appkit/login.php";
+		urlquery = new String(
+				urlquery
+						+ "?userid="
+						+ (((EditText) findViewById(R.id.EditMail)).getText())
+								.toString()
+						+ "&upass="
+						+ (((EditText) findViewById(R.id.Editpass)).getText())
+								.toString());
 
-		// Toast.makeText(getApplicationContext(),(((EditText)findViewById(R.id.Editpass)).getText()).toString(),
-		// Toast.LENGTH_LONG).show();
+		GetContacts jsonResult = new GetContacts(urlquery);
+		jsonResult.execute();
 
+		// while(!jsonResult.finished){}
+		// ResultGet();
 	}
+
+	// Toast.makeText(getApplicationContext(),(((EditText)findViewById(R.id.Editpass)).getText()).toString(),
+	// Toast.LENGTH_LONG).show();
 
 	public void Function9(View v) {
 		startActivity(new Intent(Loginpage1.this, Signup.class));

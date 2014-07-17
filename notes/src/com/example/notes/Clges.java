@@ -1,75 +1,58 @@
 package com.example.notes;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.BaseAdapter;
 import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 public class Clges extends Activity {
-	// ---the images to display---
-	Integer[] imageIDs = { R.drawable.pic1, R.drawable.pic2, R.drawable.pic3 };
+	GridView gridView;
+	ArrayList<Item> gridArray = new ArrayList<Item>();
+	CustomGridViewAdapter customGridAdapter;
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_clges);
 
-		GridView gridView = (GridView) findViewById(R.id.gridview);
-		gridView.setAdapter(new ImageAdapter(this));
+		// set grid view item
+		Bitmap homeIcon = BitmapFactory.decodeResource(this.getResources(),
+				R.drawable.home);
+		Bitmap userIcon = BitmapFactory.decodeResource(this.getResources(),
+				R.drawable.personal);
 
+		gridArray.add(new Item("colg_name", userIcon));
+		gridArray.add(new Item("colg_name", userIcon));
+		gridArray.add(new Item("colg_name", userIcon));
+		gridArray.add(new Item("colg_name", userIcon));
+		gridArray.add(new Item("colg_name", userIcon));
+		gridArray.add(new Item("colg_name", userIcon));
+		gridArray.add(new Item("colg_name", userIcon));
+		gridArray.add(new Item("colg_name", userIcon));
+		gridArray.add(new Item("colg_name", userIcon));
+		gridArray.add(new Item("colg_name", userIcon));
+		gridArray.add(new Item("colg_name", userIcon));
+		gridArray.add(new Item("colg_name", userIcon));
+
+		gridView = (GridView) findViewById(R.id.gridView1);
+		customGridAdapter = new CustomGridViewAdapter(this, R.layout.row_grid,
+				gridArray);
 		gridView.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View v,
 					int position, long id) {
-				Toast.makeText(getBaseContext(),
-						"pic" + (position + 1) + " selected",
-						Toast.LENGTH_SHORT).show();
+				startActivity(new Intent(getApplicationContext(),
+						Handlers.class));
+
 			}
 		});
-	}
-
-	public class ImageAdapter extends BaseAdapter {
-		private Context context;
-
-		public ImageAdapter(Context c) {
-			context = c;
-		}
-
-		// ---returns the number of images---
-		public int getCount() {
-			return imageIDs.length;
-		}
-
-		// ---returns the item---
-		public Object getItem(int position) {
-			return position;
-		}
-
-		// ---returns the ID of an item---
-		public long getItemId(int position) {
-			return position;
-		}
-
-		// ---returns an ImageView view---
-		public View getView(int position, View convertView, ViewGroup parent) {
-			ImageView imageView;
-			if (convertView == null) {
-				imageView = new ImageView(context);
-				imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
-				imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-				imageView.setPadding(5, 5, 5, 5);
-			} else {
-				imageView = (ImageView) convertView;
-			}
-			imageView.setImageResource(imageIDs[position]);
-			return imageView;
-		}
+		gridView.setAdapter(customGridAdapter);
 	}
 
 }
