@@ -30,25 +30,6 @@ public class Loginpage1 extends Activity {
 	Button login;
 
 	// private static String url = "http://api.androidhive.info/contacts/";
-	private static String urlquery = "http://wscubetech.org/app/appkit/login.php";
-
-	// JSON Node names
-	private static final String TAG_CONTACTS = "Tstudy_users";
-	// private static final String TAG_ID = "id";
-	private static final String TAG_NAME = "name";
-	/*
-	 * private static final String TAG_EMAIL = "userid"; private static final
-	 * String TAG_ADDRESS = "address"; private static final String TAG_GENDER =
-	 * "gender"; private static final String TAG_PHONE = "phone"; private static
-	 * final String TAG_PHONE_MOBILE = "mobile"; private static final String
-	 * TAG_PHONE_HOME = "home"; private static final String TAG_PHONE_OFFICE =
-	 * "office";
-	 */
-	// contacts JSONArray
-	JSONArray contacts = null;
-
-	// Hashmap for ListView
-	ArrayList<HashMap<String, String>> contactList;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -68,14 +49,32 @@ public class Loginpage1 extends Activity {
 		// new GetContacts().execute();
 	}
 
+	// Hashmap for ListView
+	ArrayList<HashMap<String, String>> contactList;
+
 	/**
 	 * Async task class to get json by making HTTP call
 	 * */
 	private class GetContacts extends AsyncTask<Void, Void, Void> {
-		boolean finished;
+		// boolean finished;
 		String url;
 		private ProgressDialog pDialog;
 		String jsonStr;
+
+		// JSON Node names
+		private static final String TAG_CONTACTS = "Tstudy_users";
+		// private static final String TAG_ID = "id";
+		private static final String TAG_NAME = "name";
+		/*
+		 * private static final String TAG_EMAIL = "userid"; private static
+		 * final String TAG_ADDRESS = "address"; private static final String
+		 * TAG_GENDER = "gender"; private static final String TAG_PHONE =
+		 * "phone"; private static final String TAG_PHONE_MOBILE = "mobile";
+		 * private static final String TAG_PHONE_HOME = "home"; private static
+		 * final String TAG_PHONE_OFFICE = "office";
+		 */
+		// contacts JSONArray
+		JSONArray contacts = null;
 
 		public GetContacts(String url_arg) {
 			url = url_arg;
@@ -84,7 +83,7 @@ public class Loginpage1 extends Activity {
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			finished = false;
+			// finished = false;
 			// Showing progress dialog
 			pDialog = new ProgressDialog(Loginpage1.this);
 			pDialog.setMessage("Please wait...");
@@ -155,7 +154,7 @@ public class Loginpage1 extends Activity {
 		@Override
 		protected void onPostExecute(Void result) {
 			super.onPostExecute(result);
-			finished = true;
+			// finished = true;
 			// Dismiss the progress dialog
 			if (pDialog.isShowing())
 				pDialog.dismiss();
@@ -179,7 +178,7 @@ public class Loginpage1 extends Activity {
 			return;
 		}
 		contact = contactList.get(0);
-		if (contact.get(TAG_NAME).equals("null")) {
+		if (contact.get("name").equals("null")) {
 			Toast.makeText(getApplicationContext(), "Wrong Email or Password",
 					Toast.LENGTH_LONG).show();
 		} else {
@@ -212,6 +211,7 @@ public class Loginpage1 extends Activity {
 			// Log.d("Name: ", log);
 			contactList = new ArrayList<HashMap<String, String>>();
 			// Calling async task to get json
+			String urlquery = "http://wscubetech.org/app/appkit/login.php";
 			urlquery = new String(
 					urlquery
 							+ "?userid="
@@ -220,7 +220,7 @@ public class Loginpage1 extends Activity {
 							+ "&upass="
 							+ (((EditText) findViewById(R.id.Editpass))
 									.getText()).toString());
-			// TODO
+
 			GetContacts jsonResult = new GetContacts(urlquery);
 			jsonResult.execute();
 
@@ -255,9 +255,10 @@ public class Loginpage1 extends Activity {
 
 	// validating password with retype password
 	private boolean isValidPassword(String pass) {
-		// TODO
-		if (true)
-			return true;
+
+		/*
+		 * if (true) return true;
+		 */
 		if (pass != null && pass.length() >= 8 && pass.length() <= 20) {
 			return true;
 		}

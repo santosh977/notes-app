@@ -150,7 +150,8 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 							 * ).getNotes(), Toast.LENGTH_LONG).show();
 							 */
 
-							db.deleteContact(users.get(position - 1));
+							// db.deleteContact(users.get(position - 1));
+							db.deleteContact(users.get(0));
 							startActivity(new Intent(getApplicationContext(),
 									scrolltab.class));
 							finish();
