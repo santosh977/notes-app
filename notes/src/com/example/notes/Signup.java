@@ -78,7 +78,7 @@ public class Signup extends Activity {
 		ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, state);
 		s1.setAdapter(adapter2);
-
+		s1.setPrompt("Select a State");
 		s1.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
@@ -93,10 +93,11 @@ public class Signup extends Activity {
 			}
 		});
 		s2 = (Spinner) findViewById(R.id.spinner2);
+
 		ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, city);
 		s2.setAdapter(adapter3);
-
+		s2.setPrompt("Select a City");
 		s2.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
@@ -114,7 +115,7 @@ public class Signup extends Activity {
 		ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, collagename);
 		s3.setAdapter(adapter1);
-
+		s3.setPrompt("Select a College");
 		s3.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
@@ -133,7 +134,7 @@ public class Signup extends Activity {
 		ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, branch);
 		s5.setAdapter(adapter4);
-
+		s5.setPrompt("Select a Branch");
 		s5.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
@@ -151,7 +152,7 @@ public class Signup extends Activity {
 		ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, year);
 		s6.setAdapter(adapter5);
-
+		s6.setPrompt("Select a Year");
 		s6.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
@@ -169,7 +170,7 @@ public class Signup extends Activity {
 		ArrayAdapter<String> adapter6 = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, semester);
 		s7.setAdapter(adapter6);
-
+		s7.setPrompt("Select a Semester");
 		s7.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {

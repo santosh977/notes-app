@@ -29,7 +29,8 @@
         android:layout_width="260dp"
         android:layout_height="35dp"
         android:layout_marginLeft="58dp"
-        android:drawSelectorOnTop="true" 
+        android:drawSelectorOnTop="true"
+        android:spinnerMode="dialog"
       />
 
     <Spinner
@@ -37,42 +38,48 @@
         android:layout_width="260dp"
         android:layout_height="35dp"
         android:layout_marginLeft="58dp"
-        android:drawSelectorOnTop="true" />
+        android:drawSelectorOnTop="true" 
+        android:spinnerMode="dialog"/>
 
     <Spinner
         android:id="@+id/spinner3"
         android:layout_width="260dp"
         android:layout_height="35dp"
         android:layout_marginLeft="58dp"
-        android:drawSelectorOnTop="true" />
+        android:drawSelectorOnTop="true" 
+        android:spinnerMode="dialog"/>
 
     <Spinner
         android:id="@+id/spinner4"
         android:layout_width="260dp"
         android:layout_height="35dp"
         android:layout_marginLeft="58dp"
-        android:drawSelectorOnTop="true" />
+        android:drawSelectorOnTop="true" 
+        android:spinnerMode="dialog"/>
 
     <Spinner
         android:id="@+id/spinner5"
         android:layout_width="260dp"
         android:layout_height="35dp"
         android:layout_marginLeft="58dp"
-        android:drawSelectorOnTop="true" />
+        android:drawSelectorOnTop="true"
+        android:spinnerMode="dialog" />
 
     <Spinner
         android:id="@+id/spinner6"
         android:layout_width="260dp"
         android:layout_height="35dp"
         android:layout_marginLeft="58dp"
-        android:drawSelectorOnTop="true" />
+        android:drawSelectorOnTop="true" 
+        android:spinnerMode="dialog"/>
 
     <Spinner
         android:id="@+id/spinner7"
         android:layout_width="260dp"
         android:layout_height="35dp"
         android:layout_marginLeft="58dp"
-        android:drawSelectorOnTop="true" />
+        android:drawSelectorOnTop="true"
+        android:spinnerMode="dialog" />
 
     <EditText
         android:id="@+id/editText9"
