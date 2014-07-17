@@ -27,6 +27,7 @@ public class ServiceHandler {
 
 	/**
 	 * Making service call
+	 * 
 	 * @url - url to make request
 	 * @method - http request method
 	 * */
@@ -36,6 +37,7 @@ public class ServiceHandler {
 
 	/**
 	 * Making service call
+	 * 
 	 * @url - url to make request
 	 * @method - http request method
 	 * @params - http request params
@@ -47,7 +49,7 @@ public class ServiceHandler {
 			DefaultHttpClient httpClient = new DefaultHttpClient();
 			HttpEntity httpEntity = null;
 			HttpResponse httpResponse = null;
-			
+
 			// Checking http request method type
 			if (method == POST) {
 				HttpPost httpPost = new HttpPost(url);
@@ -80,7 +82,7 @@ public class ServiceHandler {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		return response;
 
 	}
