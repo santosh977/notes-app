@@ -22,9 +22,9 @@ public class QuickJSON extends AsyncTask<Void, Void, Void> {
 	// Hashmap for ListView
 	ArrayList<HashMap<String, String>> contactList;
 	// JSON Node names
-	private static final String TAG_CONTACTS = "Tstudy_users";
+	public String TABLE_NAME = "study_users";
 	// private static final String TAG_ID = "id";
-	private static final String TAG_NAME = "name";
+	public String TAG1 = "name";
 	/*
 	 * private static final String TAG_EMAIL = "userid"; private static final
 	 * String TAG_ADDRESS = "address"; private static final String TAG_GENDER =
@@ -70,14 +70,14 @@ public class QuickJSON extends AsyncTask<Void, Void, Void> {
 				// contacts=new JSONArray(jsonStr);
 
 				// Getting JSON Array node
-				contacts = jsonObj.getJSONArray(TAG_CONTACTS);
+				contacts = jsonObj.getJSONArray(TABLE_NAME);
 
 				// looping through All Contacts
 				for (int i = 0; i < contacts.length(); i++) {
 					JSONObject c = contacts.getJSONObject(i);
 
 					/* String id = c.getString(TAG_ID); */
-					String name = c.getString(TAG_NAME);
+					String name = c.getString(TAG1);
 					// String email = c.getString(TAG_EMAIL);
 					// String address = c.getString(TAG_ADDRESS);
 					// String gender = c.getString(TAG_GENDER);
@@ -94,7 +94,7 @@ public class QuickJSON extends AsyncTask<Void, Void, Void> {
 
 					// adding each child node to HashMap key => value
 					// contact.put(TAG_ID, id);
-					contact.put(TAG_NAME, name);
+					contact.put(TAG1, name);
 
 					// contact.put(TAG_EMAIL, email);
 					// contact.put(TAG_PHONE_MOBILE, mobile);

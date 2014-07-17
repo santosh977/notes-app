@@ -1,14 +1,26 @@
 package com.example.notes;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class Upload extends Activity {
+	private final int sel_pic = 1;
+	private ImageView prof;
+	
+	
 	Spinner s1, s2, s3, s4, s5, s6;
 
 	String[] mainstream = { "Engineering", "MBA",
@@ -35,7 +47,8 @@ public class Upload extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.upload);
-
+		prof = (ImageView) findViewById(R.id.imageView1);
+		
 		// ---Spinner View---
 		s4 = (Spinner) findViewById(R.id.spinner4);
 		ArrayAdapter<String> adapter7 = new ArrayAdapter<String>(this,
@@ -96,8 +109,15 @@ public class Upload extends Activity {
 
 	@SuppressLint("NewApi")
 	public void Clik(View view) {
-		Intent pickerIntent = new Intent(Intent.ACTION_ATTACH_DATA);
-		pickerIntent.setTypeAndNormalize(INPUT_SERVICE);
+		//Intent pickerIntent = new Intent(Intent.ACTION_ATTACH_DATA);
+		//pickerIntent.setTypeAndNormalize(INPUT_SERVICE);
+//startActivity(pickerIntent);
+		
+		Intent photoPickerIntent = new Intent(
+				Intent.ACTION_PICK);
+		photoPickerIntent.setType("*/*");
+		startActivityForResult(photoPickerIntent, sel_pic);
+		Toast.makeText(getApplicationContext(), "File Selected", Toast.LENGTH_LONG).show();
 
 		/*
 		 * Intent intent = new
@@ -112,5 +132,28 @@ public class Upload extends Activity {
 		 * startActivityForResult(photoPickerIntent, sel_pic);
 		 */
 
+	}
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode,
+			Intent imageReturnedIntent) {
+		super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
+
+		switch (requestCode) {
+		case sel_pic:
+			if (resultCode == RESULT_OK) {
+				try {
+					final Uri imageUri = imageReturnedIntent.getData();
+					final InputStream imageStream = getContentResolver()
+							.openInputStream(imageUri);
+					final Bitmap selectedImage = BitmapFactory
+							.decodeStream(imageStream);
+					prof.setImageBitmap(selectedImage);
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+			}
+		}
 	}
 }

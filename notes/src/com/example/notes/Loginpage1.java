@@ -62,7 +62,7 @@ public class Loginpage1 extends Activity {
 		String jsonStr;
 
 		// JSON Node names
-		private static final String TAG_CONTACTS = "Tstudy_users";
+		private static final String TAG_CONTACTS = "study_users";
 		// private static final String TAG_ID = "id";
 		private static final String TAG_NAME = "name";
 		/*
@@ -236,7 +236,7 @@ public class Loginpage1 extends Activity {
 
 	public void Function9(View v) {
 		startActivity(new Intent(Loginpage1.this, Signup.class));
-
+finish();
 	}
 
 	public void Function10(View v) {

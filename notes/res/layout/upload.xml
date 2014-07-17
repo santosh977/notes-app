@@ -62,12 +62,12 @@
         android:spinnerMode="dialog"/>
      
     <EditText
-          android:id="@+id/editText1"
-          android:layout_width="271dp"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="50dp"
-          android:hint="Proffesor Name"
-          android:inputType="textPersonName" />
+        android:id="@+id/editText1"
+        android:layout_width="271dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:hint="Professor Name"
+        android:inputType="textPersonName" />
 
       <EditText
           android:id="@+id/editText2"
@@ -109,6 +109,13 @@
           android:layout_marginLeft="120dp"
           android:layout_marginTop="30dp"
           android:text="Upload" />
+
+      <ImageView
+          android:id="@+id/imageView1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/avatar_contact" />
+
   </LinearLayout>
 
 </RelativeLayout>

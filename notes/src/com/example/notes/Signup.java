@@ -166,7 +166,26 @@ public class Signup extends Activity {
 
 			QuickJSON jsonResult = new QuickJSON(urlquery);
 			jsonResult.execute();
-			startActivity(new Intent(Signup.this, LayerStack.class));
+			/*Thread timer = new Thread() {
+				public boolean finished=false;
+				public void run() {
+					try {
+						sleep(3000);
+
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally {
+						finished=true;
+					}
+				}
+			};
+			timer.start();
+			while(timer){}
+			Toast.makeText(getApplicationContext(),
+					jsonResult.jsonStr,
+					Toast.LENGTH_LONG).show();
+			
+*/			startActivity(new Intent(Signup.this, LayerStack.class));
 			finish();
 
 		} else {
