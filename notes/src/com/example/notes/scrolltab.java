@@ -69,7 +69,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 		TabName = new String("Projects");
 		tabHost.addTab(tabHost.newTabSpec(TabName).setIndicator(TabName)
 				.setContent(this));
-		
+
 	}
 
 	public View createTabContent(String tag) {
@@ -80,14 +80,12 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 			lv = (ListView) findViewById(R.id.listView1);
 			lv.setAdapter(new IconicAdapter(this));
 			return lv;
-		}/* else if (tag.equals("Search")) {
-			startActivity(new Intent(getApplicationContext(), Search.class));
-			finish();
-			final TextView tv = new TextView(this);
-			tv.setText(tag + " is Loading...");
-			// lv.setAdapter(null);
-			return tv;
-		}*/
+		}/*
+		 * else if (tag.equals("Search")) { startActivity(new
+		 * Intent(getApplicationContext(), Search.class)); finish(); final
+		 * TextView tv = new TextView(this); tv.setText(tag + " is Loading...");
+		 * // lv.setAdapter(null); return tv; }
+		 */
 		// break;
 		else {
 			final TextView tv = new TextView(this);

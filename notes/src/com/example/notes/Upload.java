@@ -10,7 +10,9 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -18,9 +20,9 @@ import android.widget.Toast;
 public class Upload extends Activity {
 	private final int sel_pic = 1;
 	private ImageView prof;
-	
-	
-	Spinner s1, s2, s3, s4, s5, s6,s7,s8;
+	Intent imageSelectintenetIntent;
+
+	Spinner s1, s2, s3, s4, s5, s6, s7, s8;
 
 	String[] mainstream = { "Engineering", "MBA",
 
@@ -44,16 +46,17 @@ public class Upload extends Activity {
 	String[] country = { "India", "Australia",
 
 	};
-	
-	String[] category = { "Notes", "Assignment","quizzes","",
+
+	String[] category = { "Notes", "Assignment", "quizzes", "",
 
 	};
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.upload);
 		prof = (ImageView) findViewById(R.id.imageView1);
-		
+
 		// ---Spinner View---
 		s4 = (Spinner) findViewById(R.id.spinner4);
 		ArrayAdapter<String> adapter7 = new ArrayAdapter<String>(this,
@@ -101,7 +104,22 @@ public class Upload extends Activity {
 		s8.setAdapter(adapter8);
 		s8.setPrompt("Select a Category");
 
+		((Button) findViewById(R.id.button3))
+				.setOnClickListener(new OnClickListener() {
 
+					@Override
+					public void onClick(View arg0) {
+						startActivity(new Intent(getApplicationContext(),
+								NewNotes.class));
+						finish();
+					}
+				});
+	}
+
+	public void UploadFunc(View v) {
+		Toast.makeText(getApplicationContext(),
+				imageSelectintenetIntent.getData().getPath().toString(),
+				Toast.LENGTH_LONG).show();
 	}
 
 	/*
@@ -125,16 +143,15 @@ public class Upload extends Activity {
 
 	@SuppressLint("NewApi")
 	public void Clik(View view) {
-		//Intent pickerIntent = new Intent(Intent.ACTION_ATTACH_DATA);
-		//pickerIntent.setTypeAndNormalize(INPUT_SERVICE);
-//startActivity(pickerIntent);
-		
-		Intent photoPickerIntent = new Intent(
-				Intent.ACTION_PICK);
+		// Intent pickerIntent = new Intent(Intent.ACTION_ATTACH_DATA);
+		// pickerIntent.setTypeAndNormalize(INPUT_SERVICE);
+		// startActivity(pickerIntent);
+
+		Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
 		photoPickerIntent.setType("*/*");
 		startActivityForResult(photoPickerIntent, sel_pic);
-		Toast.makeText(getApplicationContext(), "File Selected", Toast.LENGTH_LONG).show();
-
+		Toast.makeText(getApplicationContext(), "File Selected",
+				Toast.LENGTH_LONG).show();
 		/*
 		 * Intent intent = new
 		 * Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE); File file =
@@ -143,17 +160,18 @@ public class Upload extends Activity {
 		 * intent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
 		 * startActivityForResult(intent, TAKE_PICTURE); }
 		 * 
-		 * // TODO Auto-generated method stub Intent photoPickerIntent = new
-		 * Intent( Intent.ACTION_PICK); photoPickerIntent.setType("image/*");
+		 * Intent photoPickerIntent = new Intent( Intent.ACTION_PICK);
+		 * photoPickerIntent.setType("image/*");
 		 * startActivityForResult(photoPickerIntent, sel_pic);
 		 */
 
 	}
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode,
 			Intent imageReturnedIntent) {
 		super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
-
+		imageSelectintenetIntent = imageReturnedIntent;
 		switch (requestCode) {
 		case sel_pic:
 			if (resultCode == RESULT_OK) {

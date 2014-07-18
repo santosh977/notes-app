@@ -236,7 +236,7 @@ public class Loginpage1 extends Activity {
 
 	public void Function9(View v) {
 		startActivity(new Intent(Loginpage1.this, Signup.class));
-finish();
+		finish();
 	}
 
 	public void Function10(View v) {

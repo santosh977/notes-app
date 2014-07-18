@@ -92,7 +92,7 @@ public final class R {
         public static final int btnfr=0x7f090047;
         public static final int btnn2=0x7f09004b;
         public static final int button1=0x7f09002d;
-        public static final int button2=0x7f090033;
+        public static final int button2=0x7f09002e;
         public static final int button3=0x7f090051;
         public static final int chkAutosave=0x7f090050;
         public static final int cht=0x7f090029;
@@ -111,11 +111,11 @@ public final class R {
         public static final int header=0x7f09001d;
         public static final int header_vertical_divider_1=0x7f09001e;
         public static final int imageView1=0x7f090020;
-        public static final int imageView2=0x7f090030;
+        public static final int imageView2=0x7f090031;
         public static final int is=0x7f090046;
         public static final int item_image=0x7f090052;
         public static final int item_text=0x7f090053;
-        public static final int listView1=0x7f09002e;
+        public static final int listView1=0x7f09002f;
         public static final int membership_layout=0x7f09003a;
         public static final int menuPanel=0x7f090003;
         public static final int menuViewButton=0x7f09001f;
@@ -148,7 +148,7 @@ public final class R {
         public static final int notes=0x7f090023;
         public static final int pager=0x7f09005e;
         public static final int profile_cell=0x7f090006;
-        public static final int quickContactBadge1=0x7f09002f;
+        public static final int quickContactBadge1=0x7f090030;
         public static final int rel=0x7f09004c;
         public static final int rel1=0x7f09003d;
         public static final int rel2=0x7f09003f;
@@ -167,9 +167,9 @@ public final class R {
         public static final int spinner7=0x7f09005b;
         public static final int spinner8=0x7f090054;
         public static final int submit=0x7f090044;
-        public static final int textView1=0x7f090031;
+        public static final int textView1=0x7f090032;
         public static final int textView2=0x7f09002b;
-        public static final int textView3=0x7f090032;
+        public static final int textView3=0x7f090033;
         public static final int textView4=0x7f090034;
         public static final int textView5=0x7f090035;
         public static final int tnp1=0x7f090025;
@@ -208,7 +208,8 @@ public final class R {
         public static final int new_notes=0x7f080003;
         public static final int news_feed=0x7f080004;
         public static final int notes=0x7f080005;
-        public static final int usernotes=0x7f080006;
+        public static final int uploadss=0x7f080006;
+        public static final int usernotes=0x7f080007;
     }
     public static final class string {
         public static final int about_text=0x7f060018;
@@ -239,6 +240,7 @@ public final class R {
         public static final int title_activity_new_notes=0x7f060007;
         public static final int title_activity_news_feed=0x7f06000f;
         public static final int title_activity_notes=0x7f060002;
+        public static final int title_activity_uploadss=0x7f06001d;
         public static final int title_activity_usernotes=0x7f06001c;
     }
     public static final class style {

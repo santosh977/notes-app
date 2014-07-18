@@ -114,15 +114,28 @@
           />
 
    </LinearLayout>
-      
+      <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="#20b2aa"
+      android:orientation="horizontal" 
+                android:layout_marginBottom="4dp"
+      >
       <Button
           android:id="@+id/button2"
           style="?android:attr/buttonStyleSmall"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginLeft="120dp"
-          android:layout_marginTop="30dp"
-          android:text="Upload" />
+            android:text="Upload" 
+            android:onClick="UploadFunc"/>
+      <Button
+          android:id="@+id/button3"
+          style="?android:attr/buttonStyleSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="20dp"
+            android:text="Raw" /></LinearLayout>
 
       <ImageView
           android:id="@+id/imageView1"

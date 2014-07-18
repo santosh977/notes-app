@@ -82,7 +82,7 @@ public class Profdiv extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
-				
+
 				if (count == 0) {
 
 					edit.setText("SAVE");
@@ -98,7 +98,6 @@ public class Profdiv extends Activity {
 						@Override
 						public void onClick(View arg0) {
 
-							
 							Intent photoPickerIntent = new Intent(
 									Intent.ACTION_PICK);
 							photoPickerIntent.setType("image/*");
@@ -138,7 +137,7 @@ public class Profdiv extends Activity {
 		submit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-			
+
 				Intent abc = new Intent(getApplicationContext(),
 						Submitnotes.class);
 				abc.putExtra("x", 1);

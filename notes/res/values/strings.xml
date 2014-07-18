@@ -30,5 +30,6 @@
     <string name="item_13">Users</string>
     <string name="title_activity_chatroom">Chatroom</string>
     <string name="title_activity_usernotes">Usernotes</string>
+    <string name="title_activity_uploadss">Uploadss</string>
 
 </resources>

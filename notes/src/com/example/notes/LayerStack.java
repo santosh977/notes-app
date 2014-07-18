@@ -100,12 +100,11 @@ public class LayerStack extends Activity {
 		imageView1.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				startActivity(new Intent(getApplicationContext(), Search.class));
-	
+
 			}
 		});
 
 	}
-	
 
 	public void imageSelect(View v) {
 		switch (v.getId()) {
@@ -148,7 +147,7 @@ public class LayerStack extends Activity {
 			startActivity(new Intent(getApplicationContext(), Profdiv.class));
 			break;
 		case R.id.menu_item_4:
-			startActivity(new Intent(getApplicationContext(), Upload.class));
+			startActivity(new Intent(getApplicationContext(), NewNotes.class));
 			break;
 		case R.id.menu_item_6:
 			startActivity(new Intent(getApplicationContext(), Chatroom.class));
