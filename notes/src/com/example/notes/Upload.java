@@ -1,6 +1,5 @@
 package com.example.notes;
 
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 import android.annotation.SuppressLint;
@@ -21,7 +20,7 @@ public class Upload extends Activity {
 	private ImageView prof;
 	
 	
-	Spinner s1, s2, s3, s4, s5, s6;
+	Spinner s1, s2, s3, s4, s5, s6,s7,s8;
 
 	String[] mainstream = { "Engineering", "MBA",
 
@@ -42,7 +41,13 @@ public class Upload extends Activity {
 	String[] year = { "1", "2", "3", "4", "5",
 
 	};
+	String[] country = { "India", "Australia",
 
+	};
+	
+	String[] category = { "Notes", "Assignment","quizzes","",
+
+	};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -85,6 +90,17 @@ public class Upload extends Activity {
 				android.R.layout.simple_spinner_item, year);
 		s6.setAdapter(adapter5);
 		s6.setPrompt("Select a Year");
+		s7 = (Spinner) findViewById(R.id.spinner7);
+		ArrayAdapter<String> adapter6 = new ArrayAdapter<String>(this,
+				android.R.layout.simple_spinner_item, country);
+		s7.setAdapter(adapter6);
+		s7.setPrompt("Select a Country");
+		s8 = (Spinner) findViewById(R.id.spinner8);
+		ArrayAdapter<String> adapter8 = new ArrayAdapter<String>(this,
+				android.R.layout.simple_spinner_item, category);
+		s8.setAdapter(adapter8);
+		s8.setPrompt("Select a Category");
+
 
 	}
 

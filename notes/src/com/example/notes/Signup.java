@@ -25,7 +25,10 @@ import android.widget.Toast;
 
 public class Signup extends Activity {
 	// int i;
-	Spinner s1, s2, s3, s4, s5, s6, s7;
+	Spinner s1, s2, s3, s4, s5, s6, s7, s8;
+	String[] country = { "India", "Australia",
+
+	};
 
 	String[] mainstream = { "Engineering", "MBA",
 
@@ -95,6 +98,12 @@ public class Signup extends Activity {
 		s7.setAdapter(adapter6);
 		s7.setPrompt("Select a Semester");
 
+		s8 = (Spinner) findViewById(R.id.spinner8);
+		ArrayAdapter<String> adapter8 = new ArrayAdapter<String>(this,
+				android.R.layout.simple_spinner_item, country);
+		s8.setAdapter(adapter8);
+		s8.setPrompt("Select a Country");
+
 	}
 
 	public void Function2(View v) {
@@ -162,30 +171,22 @@ public class Signup extends Activity {
 							.toString()
 					+ "&branch="
 					+ ((Spinner) findViewById(R.id.spinner5)).getSelectedItem()
+							.toString()
+					+ "&country="
+					+ ((Spinner) findViewById(R.id.spinner8)).getSelectedItem()
 							.toString();
 
 			QuickJSON jsonResult = new QuickJSON(urlquery);
 			jsonResult.execute();
-			/*Thread timer = new Thread() {
-				public boolean finished=false;
-				public void run() {
-					try {
-						sleep(3000);
-
-					} catch (Exception e) {
-						e.printStackTrace();
-					} finally {
-						finished=true;
-					}
-				}
-			};
-			timer.start();
-			while(timer){}
-			Toast.makeText(getApplicationContext(),
-					jsonResult.jsonStr,
-					Toast.LENGTH_LONG).show();
-			
-*/			startActivity(new Intent(Signup.this, LayerStack.class));
+			/*
+			 * Thread timer = new Thread() { public boolean finished=false;
+			 * public void run() { try { sleep(3000);
+			 * 
+			 * } catch (Exception e) { e.printStackTrace(); } finally {
+			 * finished=true; } } }; timer.start(); while(timer){}
+			 * Toast.makeText(getApplicationContext(), jsonResult.jsonStr,
+			 * Toast.LENGTH_LONG).show();
+			 */startActivity(new Intent(Signup.this, LayerStack.class));
 			finish();
 
 		} else {

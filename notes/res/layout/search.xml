@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#20b2aa" >
+     >
 
      <LinearLayout
          android:layout_width="match_parent"
@@ -11,6 +11,16 @@
          android:layout_alignParentTop="true"
          android:background="#20b2aa"
          android:orientation="vertical" >
+
+         <Spinner
+             android:id="@+id/spinner8"
+              android:layout_width="260dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="58dp"
+        android:drawSelectorOnTop="true"
+        android:spinnerMode="dialog"
+             
+             />
 
          <Spinner
         android:id="@+id/spinner1"

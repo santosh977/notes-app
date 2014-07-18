@@ -30,6 +30,7 @@ public class LayerStack extends Activity {
 	private RelativeLayout menuPanel;
 	private int panelWidth;
 	private ImageView menuViewButton;
+	private ImageView imageView1;
 
 	FrameLayout.LayoutParams menuPanelParameters;
 	FrameLayout.LayoutParams slidingPanelParameters;
@@ -95,8 +96,16 @@ public class LayerStack extends Activity {
 				}
 			}
 		});
+		imageView1 = (ImageView) findViewById(R.id.imageView1);
+		imageView1.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				startActivity(new Intent(getApplicationContext(), Search.class));
+	
+			}
+		});
 
 	}
+	
 
 	public void imageSelect(View v) {
 		switch (v.getId()) {

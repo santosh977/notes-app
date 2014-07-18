@@ -2,15 +2,15 @@ package com.example.notes;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 public class Search extends Activity {
 	// int i;
-	Spinner s1, s2, s3, s4, s5, s6, s7;
+	Spinner s1, s2, s3, s4, s5, s6, s7,s8;
+	String[] country = { "India", "Australia",
+
+	};
 
 	String[] mainstream = { "Engineering", "MBA",
 
@@ -81,6 +81,11 @@ public class Search extends Activity {
 				android.R.layout.simple_spinner_item, semester);
 		s7.setAdapter(adapter6);
 		s7.setPrompt("Select a Semester");
+		s8 = (Spinner) findViewById(R.id.spinner8);
+		ArrayAdapter<String> adapter8 = new ArrayAdapter<String>(this,
+				android.R.layout.simple_spinner_item, country);
+		s8.setAdapter(adapter8);
+		s8.setPrompt("Select a Country");
 
 	}
 }

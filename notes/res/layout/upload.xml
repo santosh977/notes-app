@@ -2,8 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#20b2aa"
-   
     tools:context=".MainActivity" >
 
   <LinearLayout
@@ -11,6 +9,14 @@
       android:layout_height="match_parent"
       android:background="#20b2aa"
       android:orientation="vertical" >
+
+      <Spinner
+          android:id="@+id/spinner7"
+         android:layout_width="260dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="58dp"
+        android:drawSelectorOnTop="true"
+        android:spinnerMode="dialog" />
 
       <Spinner
         android:id="@+id/spinner1"
@@ -60,6 +66,14 @@
         android:layout_marginLeft="58dp"
         android:drawSelectorOnTop="true" 
         android:spinnerMode="dialog"/>
+
+    <Spinner
+        android:id="@+id/spinner8"
+        android:layout_width="260dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="58dp"
+        android:drawSelectorOnTop="true" 
+        android:spinnerMode="dialog" />
      
     <EditText
         android:id="@+id/editText1"
