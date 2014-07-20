@@ -1,5 +1,7 @@
 package com.example.notes;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
 import android.annotation.SuppressLint;
@@ -9,15 +11,18 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Base64;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class Upload extends Activity {
+	String encodedString;
+	
 	private final int sel_pic = 1;
 	private ImageView prof;
 	Intent imageSelectintenetIntent;
@@ -111,15 +116,41 @@ public class Upload extends Activity {
 					public void onClick(View arg0) {
 						startActivity(new Intent(getApplicationContext(),
 								NewNotes.class));
-						finish();
-					}
-				});
-	}
+						finish();}});}
 
 	public void UploadFunc(View v) {
-		Toast.makeText(getApplicationContext(),
-				imageSelectintenetIntent.getData().getPath().toString(),
-				Toast.LENGTH_LONG).show();
+		
+		/*if(encodedString!=null){
+		String url = new String("http://wscubetech.org/app/appkit/upload.php"
+				+ "?sm_type=pic&sm_category=notes&sm_file="
+				+ encodedString);
+		//String CRLF="\n";
+		//url.replaceAll(CRLF,"A");
+		url.replaceAll("[^A-Za-z0-9/+]", "");
+		QuickJSON json = new QuickJSON(url);
+		json.TABLE_NAME = "study_material";
+		json.TAG1 = "sm_file";
+		Log.d("Encoded::",encodedString);
+		//Toast.makeText(getApplicationContext(),url.substring(0,60),
+		//Toast.LENGTH_LONG).show();
+		json.execute();
+		startActivity(new Intent(getApplicationContext(), scrolltab.class));
+		finish();}
+		else{
+			Toast.makeText(getApplicationContext(),"Select a image",
+					Toast.LENGTH_LONG).show();
+		}*/
+		
+		new UploadFile(Environment.getExternalStorageDirectory().getAbsolutePath()+"/Samsung/Image/","tulip2.jpg","http://wscubetech.org/app/appkit/uploadfile.php",Upload.this);
+		String url = new String("http://wscubetech.org/app/appkit/upload.php"
+				+ "?sm_type=pic&sm_category=notes&sm_file="
+				+ "tulip2.jpg");
+		QuickJSON json = new QuickJSON(url);
+		json.TABLE_NAME = "study_material";
+		json.TAG1 = "sm_file";
+		json.execute();
+		startActivity(new Intent(getApplicationContext(), scrolltab.class));
+		finish();
 	}
 
 	/*
@@ -148,10 +179,10 @@ public class Upload extends Activity {
 		// startActivity(pickerIntent);
 
 		Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
-		photoPickerIntent.setType("*/*");
+		photoPickerIntent.setType("image/*");
 		startActivityForResult(photoPickerIntent, sel_pic);
-		Toast.makeText(getApplicationContext(), "File Selected",
-				Toast.LENGTH_LONG).show();
+		//Log.v(ALARM_SERVICE, encodedString);
+		
 		/*
 		 * Intent intent = new
 		 * Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE); File file =
@@ -164,7 +195,7 @@ public class Upload extends Activity {
 		 * photoPickerIntent.setType("image/*");
 		 * startActivityForResult(photoPickerIntent, sel_pic);
 		 */
-
+		
 	}
 
 	@Override
@@ -177,10 +208,29 @@ public class Upload extends Activity {
 			if (resultCode == RESULT_OK) {
 				try {
 					final Uri imageUri = imageReturnedIntent.getData();
-					final InputStream imageStream = getContentResolver()
+					InputStream imageStream = getContentResolver()
+							.openInputStream(imageUri);
+					
+					byte[] bytes;
+					byte[] buffer = new byte[8192];
+					int bytesRead;
+					ByteArrayOutputStream output = new ByteArrayOutputStream();
+					try {
+					    while ((bytesRead = imageStream.read(buffer)) != -1) {
+					    output.write(buffer, 0, bytesRead);
+					}
+					} catch (IOException e) {
+					e.printStackTrace();
+					}
+					bytes = output.toByteArray();
+					encodedString = Base64.encodeToString(bytes,Base64.NO_PADDING|Base64.NO_WRAP);
+					
+					imageStream = getContentResolver()
 							.openInputStream(imageUri);
 					final Bitmap selectedImage = BitmapFactory
 							.decodeStream(imageStream);
+					/*Toast.makeText(getApplicationContext(),encodedString,
+							Toast.LENGTH_LONG).show();*/
 					prof.setImageBitmap(selectedImage);
 
 				} catch (Exception e) {

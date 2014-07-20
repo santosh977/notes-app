@@ -16,7 +16,7 @@
         android:layout_centerVertical="true"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:text="New Notes >> " >
+        android:text="NewText" >
 
         <requestFocus />
     </EditText>

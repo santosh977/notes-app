@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="#004686"
+    >
 
     <EditText
         android:id="@+id/editText1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="50dp"
         android:hint="Enter Name"
         android:inputType="textPersonName" >
@@ -17,16 +19,16 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="50dp"
         android:hint="abc@xyz.com"
         android:inputType="textEmailAddress" />
 
     <Spinner
         android:id="@+id/spinner8"
-        android:layout_width="260dp"
-        android:layout_height="35dp"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="58dp"
         android:drawSelectorOnTop="true"
         android:spinnerMode="dialog"
@@ -34,8 +36,8 @@
 
     <Spinner
         android:id="@+id/spinner1"
-        android:layout_width="260dp"
-        android:layout_height="35dp"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="58dp"
         android:drawSelectorOnTop="true"
         android:spinnerMode="dialog"
@@ -43,74 +45,76 @@
 
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="260dp"
-        android:layout_height="35dp"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="58dp"
         android:drawSelectorOnTop="true" 
         android:spinnerMode="dialog"/>
 
     <Spinner
         android:id="@+id/spinner3"
-        android:layout_width="260dp"
-        android:layout_height="35dp"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="58dp"
         android:drawSelectorOnTop="true" 
         android:spinnerMode="dialog"/>
 
     <Spinner
         android:id="@+id/spinner4"
-        android:layout_width="260dp"
-        android:layout_height="35dp"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="58dp"
         android:drawSelectorOnTop="true" 
         android:spinnerMode="dialog"/>
 
     <Spinner
         android:id="@+id/spinner5"
-        android:layout_width="260dp"
-        android:layout_height="35dp"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="58dp"
         android:drawSelectorOnTop="true"
         android:spinnerMode="dialog" />
 
     <Spinner
         android:id="@+id/spinner6"
-        android:layout_width="260dp"
-        android:layout_height="35dp"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="58dp"
         android:drawSelectorOnTop="true" 
         android:spinnerMode="dialog"/>
 
     <Spinner
         android:id="@+id/spinner7"
-        android:layout_width="260dp"
-        android:layout_height="35dp"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="58dp"
         android:drawSelectorOnTop="true"
         android:spinnerMode="dialog" />
 
     <EditText
         android:id="@+id/editText9"
-        android:layout_width="271dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
         android:layout_marginLeft="50dp"
         android:hint="Password"
         android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/editText10"
-        android:layout_width="272dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
         android:layout_marginLeft="50dp"
         android:hint="Confirm Password"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="120dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="15dp"
         android:onClick="Function2"
+        android:background="#FF0000"
         android:text="Submit" />
 
 </LinearLayout>

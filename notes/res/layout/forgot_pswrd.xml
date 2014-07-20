@@ -110,7 +110,7 @@
                 android:layout_below="@+id/menu_item_divider_3"
                 android:layout_marginLeft="15dp"
                 android:gravity="center_vertical"
-                android:text="@string/item_3"
+                android:text="@string/item_13"
                 android:clickable="true"
                 android:onClick="SliderClick">
             </TextView>
@@ -277,6 +277,7 @@
                 android:clickable="true"
                 android:onClick="SliderClick">
             </TextView>
+           
             <View
 		        android:id="@+id/menu_item_divider_11"
 		        android:layout_width="fill_parent"
@@ -284,25 +285,6 @@
 		        android:layout_marginLeft="5dp"
 		        android:layout_marginRight="5dp"
 		        android:layout_below="@+id/menu_item_10"
-		        android:background="#b5b5b5" /> 
-		        <TextView
-                android:id="@+id/menu_item_13"
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:layout_below="@+id/menu_item_divider_12"
-                android:layout_marginLeft="15dp"
-                android:gravity="center_vertical"
-                android:text="@string/item_13"
-                android:clickable="true"
-                android:onClick="SliderClick">
-            </TextView>
-            <View
-		        android:id="@+id/menu_item_divider_12"
-		        android:layout_width="fill_parent"
-		        android:layout_height="0.5dp"
-		        android:layout_marginLeft="5dp"
-		        android:layout_marginRight="5dp"
-		        android:layout_below="@+id/menu_item_11"
 		        android:background="#b5b5b5" /> 
 		                  
             </RelativeLayout>
@@ -460,8 +442,9 @@
             android:layout_height="30dp"
             android:background="#FFBF00"
             android:gravity="center"
-            android:text="Submit" />
-
+            android:text="Submit" 
+            android:onClick="sendEmail"/>
+<!-- 
         <RelativeLayout
             android:id="@+id/rel6"
             android:layout_width="wrap_content"
@@ -475,8 +458,9 @@
                 android:layout_height="30dp"
                 android:background="#FFBF00"
                 android:gravity="center"
-                android:text="Submit" />
-        </RelativeLayout>
+                android:text="Submit" 
+                android:onClick="sendEmail"/>
+        </RelativeLayout>-->
 
     </RelativeLayout>
 /RelativeLayout>

@@ -60,6 +60,7 @@ public class Signup extends Activity {
 		ArrayAdapter<String> adapter7 = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, mainstream);
 		s4.setAdapter(adapter7);
+		s4.setPrompt("Select a Main Stream");
 
 		s1 = (Spinner) findViewById(R.id.spinner1);
 		ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,

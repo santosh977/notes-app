@@ -66,6 +66,7 @@ public class QuickJSON extends AsyncTask<Void, Void, Void> {
 		if (jsonStr != null) {
 			try {
 				JSONObject jsonObj = new JSONObject(jsonStr);
+//				JSONObject jsonObj = new JSONObject(jsonStr.substring(jsonStr.indexOf("{"), jsonStr.lastIndexOf("}") + 1));
 
 				// contacts=new JSONArray(jsonStr);
 

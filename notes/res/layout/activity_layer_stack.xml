@@ -263,8 +263,27 @@
 		        android:layout_marginLeft="5dp"
 		        android:layout_marginRight="5dp"
 		        android:layout_below="@+id/menu_item_9"
-		        android:background="#b5b5b5" /> 
-  
+		        android:background="#b5b5b5" />
+
+            <TextView
+                android:id="@+id/menu_item_12"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:clickable="true"
+                android:layout_below="@+id/menu_item_divider_12"
+                android:gravity="center_vertical"
+                android:onClick="SliderClick"
+                android:text="@string/item_11" />
+
+            <View
+                android:id="@+id/menu_item_divider_12"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@+id/menu_item_11"
+                android:layout_marginRight="5dp"
+                android:background="#b5b5b5" />
             
              <TextView
                 android:id="@+id/menu_item_11"
@@ -273,10 +292,11 @@
                 android:layout_below="@+id/menu_item_divider_11"
                 android:layout_marginLeft="15dp"
                 android:gravity="center_vertical"
-                android:text="@string/item_11"
+                android:text="@string/item_13"
                 android:clickable="true"
                 android:onClick="SliderClick">
             </TextView>
+           
             <View
 		        android:id="@+id/menu_item_divider_11"
 		        android:layout_width="fill_parent"
@@ -285,26 +305,6 @@
 		        android:layout_marginRight="5dp"
 		        android:layout_below="@+id/menu_item_10"
 		        android:background="#b5b5b5" /> 
-		        <TextView
-                android:id="@+id/menu_item_13"
-                android:layout_width="fill_parent"
-                android:layout_height="50dp"
-                android:layout_below="@+id/menu_item_divider_12"
-                android:layout_marginLeft="15dp"
-                android:gravity="center_vertical"
-                android:text="@string/item_13"
-                android:clickable="true"
-                android:onClick="SliderClick">
-            </TextView>
-            <View
-		        android:id="@+id/menu_item_divider_12"
-		        android:layout_width="fill_parent"
-		        android:layout_height="0.5dp"
-		        android:layout_marginLeft="5dp"
-		        android:layout_marginRight="5dp"
-		        android:layout_below="@+id/menu_item_11"
-		        android:background="#b5b5b5" /> 
-		                  
            <!--  
             <TextView
                 android:id="@+id/menu_item_7"
@@ -453,7 +453,6 @@
                 android:id="@+id/tnp1"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_alignParentTop="true"
                 android:background="@drawable/tnp1"
                 android:onClick="imageSelect" />
 

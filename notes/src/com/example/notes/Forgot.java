@@ -2,12 +2,14 @@ package com.example.notes;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -88,18 +90,40 @@ public class Forgot extends Activity {
 
 				}
 			}
-		});
-
+		});	
 	}
+	public void sendEmail(View v) {
 
+	      String[] recipients = {(((EditText)findViewById(R.id.dialogMail)).getText().toString())};
+	      Intent email = new Intent(Intent.ACTION_SEND, Uri.parse("mailto:"));
+	      // prompts email clients only
+	      email.setType("message/rfc822");
+
+	      email.putExtra(Intent.EXTRA_EMAIL, recipients);
+	      email.putExtra(Intent.EXTRA_SUBJECT, "Password:");
+	      email.putExtra(Intent.EXTRA_TEXT, "Password");
+
+	      try {
+		    // the user can choose the email client
+	         startActivity(Intent.createChooser(email, "Choose an email client from..."));
+	     
+	      } catch (android.content.ActivityNotFoundException ex) {
+	         Toast.makeText(Forgot.this, "No email client installed.",
+	        		 Toast.LENGTH_LONG).show();
+	      }
+	   }
+	
 	public void SliderClick(View v) {
 
 		switch (v.getId()) {
+		case R.id.menu_item_1:
+			startActivity(new Intent(getApplicationContext(), Profdiv.class));
+			break;
 		case R.id.menu_item_2:
 			startActivity(new Intent(getApplicationContext(), LayerStack.class));
 			break;
 		case R.id.menu_item_3:
-			startActivity(new Intent(getApplicationContext(), Profdiv.class));
+			startActivity(new Intent(getApplicationContext(), Members.class));
 			break;
 		case R.id.menu_item_4:
 			startActivity(new Intent(getApplicationContext(), scrolltab.class));

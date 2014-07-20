@@ -11,7 +11,7 @@
     <ListView
         android:id="@+id/ListView1"
         android:layout_width="fill_parent"
-        android:layout_height="200dp" />
+        android:layout_height="64dp" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -21,6 +21,18 @@
     <ListView
         android:id="@+id/ListView2"
         android:layout_width="fill_parent"
-        android:layout_height="200dp" />
+        android:layout_height="123dp"
+        android:layout_weight="0.43" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="List 3" />
+
+    <ListView
+        android:id="@+id/ListView3"
+        android:layout_width="fill_parent"
+        android:layout_height="124dp"
+        android:layout_weight="0.41" />
 
 </LinearLayout>
