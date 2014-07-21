@@ -156,13 +156,14 @@ public class LayerStack extends Activity {
 			startActivity(new Intent(getApplicationContext(), NewsFeed.class));
 			break;
 		case R.id.menu_item_10:
-			startActivity(new Intent(getApplicationContext(), Members.class));
+			startActivity(new Intent(getApplicationContext(), Clges.class));
 			break;
-		case R.id.menu_item_12:
-			startActivity(new Intent(getApplicationContext(), Loginpage.class));
-			finish();
 		case R.id.menu_item_11:
 			startActivity(new Intent(getApplicationContext(), Members.class));
+			break;
+
+		case R.id.menu_item_13:
+			startActivity(new Intent(getApplicationContext(), Loginpage.class));
 			finish();
 			break;
 

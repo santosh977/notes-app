@@ -332,7 +332,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 					/*Toast.makeText(getApplicationContext(),fname,
 							Toast.LENGTH_LONG).show();*/
 					new Downld("http://wscubetech.org/app/updown/"+fname,fname,scrolltab.this);
-					Bitmap bitmap=BitmapFactory.decodeFile(Environment.getExternalStorageDirectory().getAbsolutePath()+"/"+fname);
+					Bitmap bitmap=BitmapFactory.decodeFile(Environment.getExternalStorageDirectory().getAbsolutePath()+"/NotesStation/"+fname);
 					img.setImageBitmap(bitmap);}
 				//btn.setText("Delete");
 			}

@@ -1,7 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     android:background="#004686" >
 
     <TextView
         android:layout_width="fill_parent"
@@ -11,7 +12,9 @@
     <ListView
         android:id="@+id/ListView1"
         android:layout_width="fill_parent"
-        android:layout_height="64dp" />
+        android:layout_height="@dimen/dim_64"
+         android:layout_weight="0.43"
+         />
 
     <TextView
         android:layout_width="fill_parent"
@@ -21,7 +24,7 @@
     <ListView
         android:id="@+id/ListView2"
         android:layout_width="fill_parent"
-        android:layout_height="123dp"
+        android:layout_height="@dimen/dim_123"
         android:layout_weight="0.43" />
 
     <TextView
@@ -32,7 +35,7 @@
     <ListView
         android:id="@+id/ListView3"
         android:layout_width="fill_parent"
-        android:layout_height="124dp"
+        android:layout_height="@dimen/dim_124"
         android:layout_weight="0.41" />
 
 </LinearLayout>

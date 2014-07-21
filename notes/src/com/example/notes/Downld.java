@@ -38,8 +38,9 @@ public class Downld {
     		urlConnection.connect();
 
     		//set the path where we want to save the file    		
-    		File SDCardRoot = Environment.getExternalStorageDirectory(); 
+    		File SDCardRoot = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/NotesStation/");
     		//create a new file, to save the downloaded file
+    		if(!SDCardRoot.exists())SDCardRoot.mkdir();
     		File file = new File(SDCardRoot,file_name);
 //File file = new File(SDCardRoot+"/NotesStation/",file_name);
 //if(!file.exists()){file.mkdir();}
