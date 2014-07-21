@@ -19,11 +19,12 @@ public class Downld {
     int downloadedSize = 0;
     int totalSize = 0;
     //TextView cur_val;
-    public String dwnload_file_path;
+    public String dwnload_file_path,file_name;
    Context c;
-      Downld(String Path,Context context)
+      Downld(String Path,String FileName,Context context)
       {c=context;
       dwnload_file_path=Path;
+      file_name=FileName;
       downloadFile();} 
     void downloadFile(){
     	
@@ -38,9 +39,11 @@ public class Downld {
 
     		//set the path where we want to save the file    		
     		File SDCardRoot = Environment.getExternalStorageDirectory(); 
-    		//create a new file, to save the downloaded file 
-    		File file = new File(SDCardRoot,"downloaded_file.png");
- 
+    		//create a new file, to save the downloaded file
+    		File file = new File(SDCardRoot,file_name);
+//File file = new File(SDCardRoot+"/NotesStation/",file_name);
+//if(!file.exists()){file.mkdir();}
+    		//while(!file.exists()){file.mkdir();}
     		FileOutputStream fileOutput = new FileOutputStream(file);
 
     		//Stream used for reading the data from the internet

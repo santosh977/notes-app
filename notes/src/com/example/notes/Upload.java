@@ -141,10 +141,10 @@ public class Upload extends Activity {
 					Toast.LENGTH_LONG).show();
 		}*/
 		
-		new UploadFile(Environment.getExternalStorageDirectory().getAbsolutePath()+"/Samsung/Image/","tulip2.jpg","http://wscubetech.org/app/appkit/uploadfile.php",Upload.this);
+		new UploadFile(Environment.getExternalStorageDirectory().getAbsolutePath(),"picture.jpg","http://wscubetech.org/app/appkit/uploadfile.php",Upload.this);
 		String url = new String("http://wscubetech.org/app/appkit/upload.php"
 				+ "?sm_type=pic&sm_category=notes&sm_file="
-				+ "tulip2.jpg");
+				+ "picture.jpg");
 		QuickJSON json = new QuickJSON(url);
 		json.TABLE_NAME = "study_material";
 		json.TAG1 = "sm_file";

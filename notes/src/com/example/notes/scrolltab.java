@@ -199,7 +199,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 							//byte[] completeImage;
 							//completeImage= Base64.decode(name,Base64.DEFAULT); 
 							//Bitmap bitmap = BitmapFactory.decodeByteArray(completeImage , 0, completeImage.length);
-							arr_pics.add(new PicNote(name,i-1));
+							arr_pics.add(new PicNote(name,i+1));
 							
 							}
 							// tmp hashmap for single contact
@@ -328,8 +328,11 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 				if(!found_id)img.setImageDrawable(getResources().getDrawable(arr2.get(1)));
 				
 				else{
-					new Downld("http://wscubetech.org/app/updown/"+arr_pics.get(i).getImgname(),scrolltab.this);
-					Bitmap bitmap=BitmapFactory.decodeFile(Environment.getExternalStorageDirectory().getAbsolutePath()+"/downloaded_file.png");
+					String fname=arr_pics.get(i).getImgname();
+					/*Toast.makeText(getApplicationContext(),fname,
+							Toast.LENGTH_LONG).show();*/
+					new Downld("http://wscubetech.org/app/updown/"+fname,fname,scrolltab.this);
+					Bitmap bitmap=BitmapFactory.decodeFile(Environment.getExternalStorageDirectory().getAbsolutePath()+"/"+fname);
 					img.setImageBitmap(bitmap);}
 				//btn.setText("Delete");
 			}
