@@ -101,8 +101,8 @@ public class Loginpage extends Activity {
 					}
 				});
 		
-		 * btnbk.setBackgroundResource(R.drawable.bkarrow);
-		 * btnfr.setBackgroundResource(R.drawable.arrow);
+ * btnbk.setBackgroundResource(R.drawable.bkarrow);
+ * btnfr.setBackgroundResource(R.drawable.arrow);
 		 
 		is.setFactory(new ViewFactory() {
 
@@ -124,23 +124,23 @@ public class Loginpage extends Activity {
 		handle.postDelayed(r, 1000);
 
 		
-		 * btnStart.setOnClickListener(new OnClickListener() {
-		 * 
-		 * 
-		 * 
-		 * 
-		 * @Override public void onClick(View arg0) { handle.postDelayed(r,
-		 * 4000);
-		 * 
-		 * } });
-		 * 
-		 * 
-		 * 
-		 * btnStop.setOnClickListener(new OnClickListener() {
-		 * 
-		 * @Override public void onClick(View arg0) { handle.removeCallbacks(r);
-		 * 
-		 * } });
+ * btnStart.setOnClickListener(new OnClickListener() {
+ * 
+ * 
+ * 
+ * 
+ * @Override public void onClick(View arg0) { handle.postDelayed(r,
+ * 4000);
+ * 
+ * } });
+ * 
+ * 
+ * 
+ * btnStop.setOnClickListener(new OnClickListener() {
+ * 
+ * @Override public void onClick(View arg0) { handle.removeCallbacks(r);
+ * 
+ * } });
 		 
 
 		btnfr.setOnClickListener(new OnClickListener() {
@@ -216,23 +216,9 @@ public class Loginpage extends Activity {
  * 
  * } }); }
  
-*/
-
-
-
-
-
-
-
-
-
-
-
+ */
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 
 package com.example.notes;
 
@@ -253,122 +239,120 @@ import android.widget.Toast;
 
 @SuppressLint("NewApi")
 public class Loginpage extends Activity {
-	
+
 	Button b, b1, btnn2;
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.loginpage);
 
-    ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
-    ImagePagerAdapter adapter = new ImagePagerAdapter();
-    viewPager.setAdapter(adapter);
-    viewPager.setClickable(true);
-    viewPager.setOnClickListener(new OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			Toast.makeText(getApplicationContext(), "Mensai no wuurod", Toast.LENGTH_LONG)
-			.show();
-			switch (v.getId()) {
-			case R.id.notes:
-				startActivity(new Intent(getApplicationContext(), scrolltab.class));
-				break;
-			
-			case R.id.tnp1:
-				startActivity(new Intent(getApplicationContext(), Members.class));
-				break;
-			case R.id.clg12:
-				startActivity(new Intent(getApplicationContext(), Clges.class));
-				break;
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.loginpage);
 
-			default:
+		ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
+		ImagePagerAdapter adapter = new ImagePagerAdapter();
+		viewPager.setAdapter(adapter);
+		viewPager.setClickable(true);
+		viewPager.setOnClickListener(new OnClickListener() {
 
-				Toast.makeText(getApplicationContext(), "TODO", Toast.LENGTH_LONG)
-						.show();
-			}	
-		}
-	});
-
-    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-    StrictMode.setThreadPolicy(policy);
-    
-    b = (Button) findViewById(R.id.BtnLogin);
-	b1 = (Button) findViewById(R.id.BtnSignup);
-	btnn2 = (Button) findViewById(R.id.btnn2);
-
-	b.setOnClickListener(new OnClickListener() {
-		@Override
-		public void onClick(View v) {
-			startActivity(new Intent(Loginpage.this, Loginpage1.class));
-		}
-	});
-
-	btnn2.setOnClickListener(new OnClickListener() {
-		@Override
-		public void onClick(View v) {
-			startActivity(new Intent(Loginpage.this, LayerStack.class));
-
-		}
-	});
-
-	b1.setOnClickListener(new OnClickListener() {
-		@Override
-		public void onClick(View v) {
-			startActivity(new Intent(Loginpage.this, Signup.class));
-
-		}
-	});
-	((Button) findViewById(R.id.button1))
-			.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View arg0) {
-
-					startActivity(new Intent(Loginpage.this,
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(getApplicationContext(), "Mensai no wuurod",
+						Toast.LENGTH_LONG).show();
+				switch (v.getId()) {
+				case R.id.notes:
+					startActivity(new Intent(getApplicationContext(),
 							scrolltab.class));
+					break;
+
+				case R.id.tnp1:
+					startActivity(new Intent(getApplicationContext(),
+							Members.class));
+					break;
+				case R.id.clg12:
+					startActivity(new Intent(getApplicationContext(),
+							Clges.class));
+					break;
+
+				default:
+
+					Toast.makeText(getApplicationContext(), "TODO",
+							Toast.LENGTH_LONG).show();
 				}
-			});
-  }
+			}
+		});
 
-  private class ImagePagerAdapter extends PagerAdapter {
-    private int[] mImages = new int[] {
-    		 R.drawable.notes,
-    		 R.drawable.tnp1,
-    	R.drawable.newsfeed,
-        R.drawable.clg12,
-        R.drawable.bns,
-        R.drawable.cht
-    };
-    
-			
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+				.permitAll().build();
+		StrictMode.setThreadPolicy(policy);
 
-    @Override
-    public int getCount() {
-      return mImages.length;
-    }
+		b = (Button) findViewById(R.id.BtnLogin);
+		b1 = (Button) findViewById(R.id.BtnSignup);
+		btnn2 = (Button) findViewById(R.id.btnn2);
 
-    @Override
-    public boolean isViewFromObject(View view, Object object) {
-      return view == ((ImageView) object);
-    }
+		b.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(Loginpage.this, Loginpage1.class));
+			}
+		});
 
-    @Override
-    public Object instantiateItem(ViewGroup container, int position) {
-      Context context = Loginpage.this;
-      ImageView imageView = new ImageView(context);
-      int padding = context.getResources().getDimensionPixelSize(
-          R.dimen.padding_medium);
-      imageView.setPadding(padding, padding, padding, padding);
-      imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-      imageView.setImageResource(mImages[position]);
-      ((ViewPager) container).addView(imageView, 0);
-      return imageView;
-    }
+		btnn2.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(Loginpage.this, LayerStack.class));
 
-    @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
-      ((ViewPager) container).removeView((ImageView) object);
-    }
-  }
+			}
+		});
+
+		b1.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(Loginpage.this, Signup.class));
+
+			}
+		});
+		((Button) findViewById(R.id.button1))
+				.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View arg0) {
+
+						startActivity(new Intent(Loginpage.this,
+								scrolltab.class));
+					}
+				});
+	}
+
+	private class ImagePagerAdapter extends PagerAdapter {
+		private int[] mImages = new int[] { R.drawable.notes, R.drawable.tnp1,
+				R.drawable.newsfeed, R.drawable.clg12, R.drawable.bns,
+				R.drawable.cht };
+
+		@Override
+		public int getCount() {
+			return mImages.length;
+		}
+
+		@Override
+		public boolean isViewFromObject(View view, Object object) {
+			return view == ((ImageView) object);
+		}
+
+		@Override
+		public Object instantiateItem(ViewGroup container, int position) {
+			Context context = Loginpage.this;
+			ImageView imageView = new ImageView(context);
+			int padding = context.getResources().getDimensionPixelSize(
+					R.dimen.padding_medium);
+			imageView.setPadding(padding, padding, padding, padding);
+			imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+			imageView.setImageResource(mImages[position]);
+			((ViewPager) container).addView(imageView, 0);
+			return imageView;
+		}
+
+		@Override
+		public void destroyItem(ViewGroup container, int position, Object object) {
+			((ViewPager) container).removeView((ImageView) object);
+		}
+	}
 }

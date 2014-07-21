@@ -10,7 +10,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,13 +17,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Upload extends Activity {
-	//String encodedString;
-	
+	// String encodedString;
+
 	String imgPath;
-	
+
 	private final int sel_pic = 1;
 	private ImageView prof;
 	Intent imageSelectintenetIntent;
@@ -118,42 +118,49 @@ public class Upload extends Activity {
 					public void onClick(View arg0) {
 						startActivity(new Intent(getApplicationContext(),
 								NewNotes.class));
-						finish();}});}
+						finish();
+					}
+				});
+	}
 
 	public void UploadFunc(View v) {
-		
-		/*if(encodedString!=null){
-		String url = new String("http://wscubetech.org/app/appkit/upload.php"
-				+ "?sm_type=pic&sm_category=notes&sm_file="
-				+ encodedString);
-		//String CRLF="\n";
-		//url.replaceAll(CRLF,"A");
-		url.replaceAll("[^A-Za-z0-9/+]", "");
-		QuickJSON json = new QuickJSON(url);
-		json.TABLE_NAME = "study_material";
-		json.TAG1 = "sm_file";
-		Log.d("Encoded::",encodedString);
-		//Toast.makeText(getApplicationContext(),url.substring(0,60),
-		//Toast.LENGTH_LONG).show();
-		json.execute();
-		startActivity(new Intent(getApplicationContext(), scrolltab.class));
-		finish();}
-		else{
-			Toast.makeText(getApplicationContext(),"Select a image",
+
+		/*
+		 * if(encodedString!=null){ String url = new
+		 * String("http://wscubetech.org/app/appkit/upload.php" +
+		 * "?sm_type=pic&sm_category=notes&sm_file=" + encodedString); //String
+		 * CRLF="\n"; //url.replaceAll(CRLF,"A");
+		 * url.replaceAll("[^A-Za-z0-9/+]", ""); QuickJSON json = new
+		 * QuickJSON(url); json.TABLE_NAME = "study_material"; json.TAG1 =
+		 * "sm_file"; Log.d("Encoded::",encodedString);
+		 * //Toast.makeText(getApplicationContext(),url.substring(0,60),
+		 * //Toast.LENGTH_LONG).show(); json.execute(); startActivity(new
+		 * Intent(getApplicationContext(), scrolltab.class)); finish();} else{
+		 * Toast.makeText(getApplicationContext(),"Select a image",
+		 * Toast.LENGTH_LONG).show(); }
+		 */
+		if (imgPath != null) {
+			// new
+			// UploadFile(Environment.getExternalStorageDirectory().getAbsolutePath(),"picture.jpg","http://wscubetech.org/app/appkit/uploadfile.php",Upload.this);
+			new UploadFile(imgPath.substring(0, imgPath.lastIndexOf('/')),
+					imgPath.substring(imgPath.lastIndexOf('/') + 1,
+							imgPath.length()),
+					"http://wscubetech.org/app/appkit/uploadfile.php",
+					Upload.this);
+			String url = new String(
+					"http://wscubetech.org/app/appkit/upload.php"
+							+ "?sm_type=pic&sm_category=notes&sm_file="
+							+ imgPath.substring(imgPath.lastIndexOf('/') + 1));
+			QuickJSON json = new QuickJSON(url);
+			json.TABLE_NAME = "study_material";
+			json.TAG1 = "sm_file";
+			json.execute();
+			startActivity(new Intent(getApplicationContext(), scrolltab.class));
+			finish();
+		} else {
+			Toast.makeText(getApplicationContext(), "Select a File",
 					Toast.LENGTH_LONG).show();
-		}*/
-		
-		//new UploadFile(Environment.getExternalStorageDirectory().getAbsolutePath(),"picture.jpg","http://wscubetech.org/app/appkit/uploadfile.php",Upload.this);
-		new UploadFile(imgPath.substring(0,imgPath.lastIndexOf('/')),imgPath.substring(imgPath.lastIndexOf('/')+1,imgPath.length()),"http://wscubetech.org/app/appkit/uploadfile.php",Upload.this);
-		String url = new String("http://wscubetech.org/app/appkit/upload.php"
-				+ "?sm_type=pic&sm_category=notes&sm_file="
-				+ imgPath.substring(imgPath.lastIndexOf('/')+1));
-		QuickJSON json = new QuickJSON(url);
-		json.TABLE_NAME = "study_material";
-		json.TAG1 = "sm_file";
-		json.execute();
-		startActivity(new Intent(getApplicationContext(), scrolltab.class));
-		finish();
+		}
 	}
 
 	/*
@@ -184,8 +191,8 @@ public class Upload extends Activity {
 		Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
 		photoPickerIntent.setType("image/*");
 		startActivityForResult(photoPickerIntent, sel_pic);
-		//Log.v(ALARM_SERVICE, encodedString);
-		
+		// Log.v(ALARM_SERVICE, encodedString);
+
 		/*
 		 * Intent intent = new
 		 * Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE); File file =
@@ -198,7 +205,7 @@ public class Upload extends Activity {
 		 * photoPickerIntent.setType("image/*");
 		 * startActivityForResult(photoPickerIntent, sel_pic);
 		 */
-		
+
 	}
 
 	@Override
@@ -209,52 +216,63 @@ public class Upload extends Activity {
 		switch (requestCode) {
 		case sel_pic:
 			if (resultCode == RESULT_OK) {
-				if (requestCode == 1/*PICKER*/) {
-				try {
-					final Uri imageUri = imageReturnedIntent.getData();
-					
-					//byte[] bytes;
-					//byte[] buffer = new byte[8192];
-					/*int bytesRead;
-					ByteArrayOutputStream output = new ByteArrayOutputStream();
+				if (requestCode == 1/* PICKER */) {
 					try {
-					    while ((bytesRead = imageStream.read(buffer)) != -1) {
-					    output.write(buffer, 0, bytesRead);
-					}
-					} catch (IOException e) {
-					e.printStackTrace();
-					}*/
-					//bytes = output.toByteArray();
-					//encodedString = Base64.encodeToString(bytes,Base64.NO_PADDING|Base64.NO_WRAP);
-					
-					/*imageStream = getContentResolver()
-							.openInputStream(imageUri);*/
-					
-					String[] medData = { MediaStore.Images.Media.DATA };
-			    	//query the data
-			    	Cursor picCursor = managedQuery(imageUri, medData, null, null, null);
-			    	if(picCursor!=null)
-			    	{
-			    	    //get the path string
-			    	    int index = picCursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-			    	    picCursor.moveToFirst();
-			    	    imgPath = picCursor.getString(index);
-			    	}
-			    	else
-			    	    imgPath = imageUri.getPath();
-			   /* Toast.makeText(getApplicationContext(), imgPath, Toast.LENGTH_LONG).show();*/
-				InputStream imageStream = getContentResolver()
-						.openInputStream(imageUri);
-				
-					final Bitmap selectedImage = BitmapFactory
-							.decodeStream(imageStream);
-					/*Toast.makeText(getApplicationContext(),encodedString,
-							Toast.LENGTH_LONG).show();*/
-					prof.setImageBitmap(selectedImage);
+						final Uri imageUri = imageReturnedIntent.getData();
 
-				} catch (Exception e) {
-					e.printStackTrace();
-				}}
-			
+						// byte[] bytes;
+						// byte[] buffer = new byte[8192];
+						/*
+						 * int bytesRead; ByteArrayOutputStream output = new
+						 * ByteArrayOutputStream(); try { while ((bytesRead =
+						 * imageStream.read(buffer)) != -1) {
+						 * output.write(buffer, 0, bytesRead); } } catch
+						 * (IOException e) { e.printStackTrace(); }
+						 */
+						// bytes = output.toByteArray();
+						// encodedString =
+						// Base64.encodeToString(bytes,Base64.NO_PADDING|Base64.NO_WRAP);
+
+						/*
+						 * imageStream = getContentResolver()
+						 * .openInputStream(imageUri);
+						 */
+
+						String[] medData = { MediaStore.Images.Media.DATA };
+						// query the data
+						Cursor picCursor = managedQuery(imageUri, medData,
+								null, null, null);
+						if (picCursor != null) {
+							// get the path string
+							int index = picCursor
+									.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+							picCursor.moveToFirst();
+							imgPath = picCursor.getString(index);
+						} else
+							imgPath = imageUri.getPath();
+						/*
+						 * Toast.makeText(getApplicationContext(), imgPath,
+						 * Toast.LENGTH_LONG).show();
+						 */
+						InputStream imageStream = getContentResolver()
+								.openInputStream(imageUri);
+
+						final Bitmap selectedImage = BitmapFactory
+								.decodeStream(imageStream);
+						/*
+						 * Toast.makeText(getApplicationContext(),encodedString,
+						 * Toast.LENGTH_LONG).show();
+						 */
+						prof.setImageBitmap(selectedImage);
+						((TextView) findViewById(R.id.textView1))
+								.setText(imgPath);
+
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+
+			}
 		}
-	}}}
+	}
+}

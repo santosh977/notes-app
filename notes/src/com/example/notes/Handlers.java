@@ -10,7 +10,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class Handlers extends Activity {
-	ListView l1, l2,l3,l4;
+	ListView l1, l2, l3, l4;
 	String[] presidents = { "Dwight D. Eisenhower", "John F. Kennedy",
 			"Lyndon B. Johnson", "Richard Nixon", "Gerald Ford",
 			"Jimmy Carter", "Ronald Reagan", "George H. W. Bush",
@@ -51,22 +51,21 @@ public class Handlers extends Activity {
 						Toast.LENGTH_SHORT).show();
 			}
 		});
-		
+
 		// ---List View---
-				l3 = (ListView) findViewById(R.id.ListView3);
-				l3.setAdapter(adapter);
-				l3.setOnItemClickListener(new OnItemClickListener() {
-					@Override
-					public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-							long arg3) {
-						int index = arg2;
-						Toast.makeText(getBaseContext(),
-								"You have selected item : " + presidents[index],
-								Toast.LENGTH_SHORT).show();
-					}
-				});
-				
-			
+		l3 = (ListView) findViewById(R.id.ListView3);
+		l3.setAdapter(adapter);
+		l3.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				int index = arg2;
+				Toast.makeText(getBaseContext(),
+						"You have selected item : " + presidents[index],
+						Toast.LENGTH_SHORT).show();
+			}
+		});
+
 	}
 
 }

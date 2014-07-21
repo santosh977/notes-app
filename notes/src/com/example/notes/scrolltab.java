@@ -27,27 +27,31 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
-class PicNote
-{
-	
-	PicNote(String image2,int id2)
-	{imgname=image2;id=id2;}
-	
-public String getImgname() {
+class PicNote {
+
+	PicNote(String image2, int id2) {
+		imgname = image2;
+		id = id2;
+	}
+
+	public String getImgname() {
 		return imgname;
 	}
+
 	public void setImgname(String imgname) {
 		this.imgname = imgname;
 	}
-String imgname;
-int id;
 
-public int getId() {
-	return id;
-}
-public void setId(int id) {
-	this.id = id;
-}
+	String imgname;
+	int id;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 }
 
 @SuppressWarnings("deprecation")
@@ -58,7 +62,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 	TextView timebox;
 	// int count=0;
 	ImageView img;
-	/*Button btn;*/
+	/* Button btn; */
 
 	ArrayList<String> Heading = new ArrayList<String>();
 	ArrayList<String> TextData = new ArrayList<String>();
@@ -66,6 +70,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 	ArrayList<Integer> arr2 = new ArrayList<Integer>();
 	ArrayList<PicNote> arr_pics = new ArrayList<PicNote>();
 	IconicAdapter iconic_notes;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -74,23 +79,21 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 		Heading.add(">> Add a Note <<");
 		TextData.add("Try tapping :)");
 		Time.add("Tap It !!");
-		/*NotesDatabaseHandler db = new NotesDatabaseHandler(
-				getApplicationContext());
-		List<NotesData> users = db.getAllContacts();
-		for (NotesData cn : users) {
-			arr.add(cn.getName());
-			arr1.add(cn.getNotes());
-		}*/
-		
+		/*
+		 * NotesDatabaseHandler db = new NotesDatabaseHandler(
+		 * getApplicationContext()); List<NotesData> users =
+		 * db.getAllContacts(); for (NotesData cn : users) {
+		 * arr.add(cn.getName()); arr1.add(cn.getNotes()); }
+		 */
+
 		contactList = new ArrayList<HashMap<String, String>>();
 		// Calling async task to get json
 		String urlquery = "http://wscubetech.org/app/appkit/download.php";
-		urlquery = new String(
-				urlquery);
+		urlquery = new String(urlquery);
 
 		GetContacts jsonResult = new GetContacts(urlquery);
 		jsonResult.execute();
-		
+
 		// arr.add(">>Delete<<");
 		arr2.add(R.drawable.add);
 		arr2.add(R.drawable.textnote);
@@ -118,164 +121,164 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 	}
 
 	// Hashmap for ListView
-		ArrayList<HashMap<String, String>> contactList;
+	ArrayList<HashMap<String, String>> contactList;
 
-		/**
-		 * Async task class to get json by making HTTP call
-		 * */
-		private class GetContacts extends AsyncTask<Void, Void, Void> {
-			// boolean finished;
-			String url;
-			//private ProgressDialog pDialog;
-			String jsonStr;
+	/**
+	 * Async task class to get json by making HTTP call
+	 * */
+	private class GetContacts extends AsyncTask<Void, Void, Void> {
+		// boolean finished;
+		String url;
+		// private ProgressDialog pDialog;
+		String jsonStr;
 
-			// JSON Node names
-			private static final String TAG_CONTACTS = "study_material";
-			// private static final String TAG_ID = "id";
-			private static final String TAG_NAME = "sm_file";
-			private static final String TAG_TIME = "sm_datetime";
-			/*
-			 *  private static
-			 * final String TAG_ADDRESS = "address"; private static final String
-			 * TAG_GENDER = "gender"; private static final String TAG_PHONE =
-			 * "phone"; private static final String TAG_PHONE_MOBILE = "mobile";
-			 * private static final String TAG_PHONE_HOME = "home"; private static
-			 * final String TAG_PHONE_OFFICE = "office";
-			 */
-			// contacts JSONArray
-			JSONArray contacts = null;
+		// JSON Node names
+		private static final String TAG_CONTACTS = "study_material";
+		// private static final String TAG_ID = "id";
+		private static final String TAG_NAME = "sm_file";
+		private static final String TAG_TIME = "sm_datetime";
+		/*
+		 * private static final String TAG_ADDRESS = "address"; private static
+		 * final String TAG_GENDER = "gender"; private static final String
+		 * TAG_PHONE = "phone"; private static final String TAG_PHONE_MOBILE =
+		 * "mobile"; private static final String TAG_PHONE_HOME = "home";
+		 * private static final String TAG_PHONE_OFFICE = "office";
+		 */
+		// contacts JSONArray
+		JSONArray contacts = null;
 
-			public GetContacts(String url_arg) {
-				url = url_arg;
-			}
+		public GetContacts(String url_arg) {
+			url = url_arg;
+		}
 
-			@Override
-			protected void onPreExecute() {
-				super.onPreExecute();
-				// finished = false;
-				// Showing progress dialog
-				//pDialog = new ProgressDialog(scrolltab.this);
-				//pDialog.setMessage("Please wait...");
-				// pDialog.setCancelable(false);
-				//pDialog.show();
-				// finally finished();
-			}
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			// finished = false;
+			// Showing progress dialog
+			// pDialog = new ProgressDialog(scrolltab.this);
+			// pDialog.setMessage("Please wait...");
+			// pDialog.setCancelable(false);
+			// pDialog.show();
+			// finally finished();
+		}
 
-			@Override
-			protected Void doInBackground(Void... arg0) {
-				// Creating service handler class instance
-				ServiceHandler sh = new ServiceHandler();
+		@Override
+		protected Void doInBackground(Void... arg0) {
+			// Creating service handler class instance
+			ServiceHandler sh = new ServiceHandler();
 
-				// Making a request to url and getting response
-				jsonStr = sh.makeServiceCall(url, ServiceHandler.GET);
+			// Making a request to url and getting response
+			jsonStr = sh.makeServiceCall(url, ServiceHandler.GET);
 
-				Log.d("Response: ", "> " + jsonStr);
+			Log.d("Response: ", "> " + jsonStr);
 
-				if (jsonStr != null) {
-					try {
-						JSONObject jsonObj = new JSONObject(jsonStr);
+			if (jsonStr != null) {
+				try {
+					JSONObject jsonObj = new JSONObject(jsonStr);
 
-						// contacts=new JSONArray(jsonStr);
+					// contacts=new JSONArray(jsonStr);
 
-						// Getting JSON Array node
-						contacts = jsonObj.getJSONArray(TAG_CONTACTS);
+					// Getting JSON Array node
+					contacts = jsonObj.getJSONArray(TAG_CONTACTS);
 
-						// looping through All Contacts
-						for (int i = 0; i < contacts.length(); i++) {
-							JSONObject c = contacts.getJSONObject(i);
-							String name = c.getString(TAG_NAME);
-							Time.add(c.getString(TAG_TIME));
-							/* String id = c.getString(TAG_ID); */
-							if(c.getString("sm_type").equals("raw"))
-							{
-								Heading.add("raw");
-								TextData.add(name);
-								
-								}
-							else if(c.getString("sm_type").equals("pic"))
-							{
-								Heading.add("Picture");
-								TextData.add(name);
-							//byte[] completeImage;
-							//completeImage= Base64.decode(name,Base64.DEFAULT); 
-							//Bitmap bitmap = BitmapFactory.decodeByteArray(completeImage , 0, completeImage.length);
-							arr_pics.add(new PicNote(name,i+1));
-							
-							}
-							// tmp hashmap for single contact
-							HashMap<String, String> contact = new HashMap<String, String>();
+					// looping through All Contacts
+					for (int i = 0; i < contacts.length(); i++) {
+						JSONObject c = contacts.getJSONObject(i);
+						String name = c.getString(TAG_NAME);
+						Time.add(c.getString(TAG_TIME));
+						/* String id = c.getString(TAG_ID); */
+						if (c.getString("sm_type").equals("raw")) {
+							Heading.add("raw");
+							TextData.add(name);
 
-							// adding each child node to HashMap key => value
-							// contact.put(TAG_ID, id);
-							contact.put(TAG_NAME, name);
+						} else if (c.getString("sm_type").equals("pic")) {
+							Heading.add("Picture");
+							TextData.add(name);
+							// byte[] completeImage;
+							// completeImage=
+							// Base64.decode(name,Base64.DEFAULT);
+							// Bitmap bitmap =
+							// BitmapFactory.decodeByteArray(completeImage , 0,
+							// completeImage.length);
+							arr_pics.add(new PicNote(name, i + 1));
 
-							// contact.put(TAG_EMAIL, email);
-							// contact.put(TAG_PHONE_MOBILE, mobile);
-
-							// adding contact to contact list
-							contactList.add(contact);
-							
-							// String email = c.getString(TAG_EMAIL);
-							// String address = c.getString(TAG_ADDRESS);
-							// String gender = c.getString(TAG_GENDER);
-
-							// Phone node is JSON Object
-							/*
-							 * JSONObject phone = c.getJSONObject(TAG_PHONE); String
-							 * mobile = phone.getString(TAG_PHONE_MOBILE); String
-							 * home = phone.getString(TAG_PHONE_HOME); String office
-							 * = phone.getString(TAG_PHONE_OFFICE);
-							 */
-							
-							
 						}
-					} catch (JSONException e) {
-						e.printStackTrace();
+						// tmp hashmap for single contact
+						HashMap<String, String> contact = new HashMap<String, String>();
+
+						// adding each child node to HashMap key => value
+						// contact.put(TAG_ID, id);
+						contact.put(TAG_NAME, name);
+
+						// contact.put(TAG_EMAIL, email);
+						// contact.put(TAG_PHONE_MOBILE, mobile);
+
+						// adding contact to contact list
+						contactList.add(contact);
+
+						// String email = c.getString(TAG_EMAIL);
+						// String address = c.getString(TAG_ADDRESS);
+						// String gender = c.getString(TAG_GENDER);
+
+						// Phone node is JSON Object
+						/*
+						 * JSONObject phone = c.getJSONObject(TAG_PHONE); String
+						 * mobile = phone.getString(TAG_PHONE_MOBILE); String
+						 * home = phone.getString(TAG_PHONE_HOME); String office
+						 * = phone.getString(TAG_PHONE_OFFICE);
+						 */
+
 					}
-				} else {
-					Log.e("ServiceHandler", "Couldn't get any data from the url");
+				} catch (JSONException e) {
+					e.printStackTrace();
 				}
-
-				return null;
+			} else {
+				Log.e("ServiceHandler", "Couldn't get any data from the url");
 			}
 
-			@Override
-			protected void onPostExecute(Void result) {
-				super.onPostExecute(result);
-				// finished = true;
-				// Dismiss the progress dialog
-				//if (pDialog.isShowing())
-				//	pDialog.dismiss();
-				/**
-				 * Updating parsed JSON data into ListView
-				 * */
-				
-				 /*Toast.makeText(scrolltab.this, "Results are back....",
-				 Toast.LENGTH_LONG).show();*/
-				 
-				ResultGet();
-				iconic_notes.notifyDataSetChanged();
-			}
-
+			return null;
 		}
 
-		public void ResultGet() {
-			//HashMap<String, String> contact = new HashMap<String, String>();
-			if (contactList.size() == 0) {
-				Toast.makeText(getApplicationContext(),
-						"Wrong Data or Server error.", Toast.LENGTH_LONG).show();
-				
-				return;
-			}
+		@Override
+		protected void onPostExecute(Void result) {
+			super.onPostExecute(result);
+			// finished = true;
+			// Dismiss the progress dialog
+			// if (pDialog.isShowing())
+			// pDialog.dismiss();
+			/**
+			 * Updating parsed JSON data into ListView
+			 * */
+
+			/*
+			 * Toast.makeText(scrolltab.this, "Results are back....",
+			 * Toast.LENGTH_LONG).show();
+			 */
+
+			ResultGet();
+			iconic_notes.notifyDataSetChanged();
 		}
-	
+
+	}
+
+	public void ResultGet() {
+		// HashMap<String, String> contact = new HashMap<String, String>();
+		if (contactList.size() == 0) {
+			Toast.makeText(getApplicationContext(),
+					"Wrong Data or Server error.", Toast.LENGTH_LONG).show();
+
+			return;
+		}
+	}
+
 	public View createTabContent(String tag) {
 
 		// switch(Integer.parseInt(tag.substring(4,tag.length())))
 		if (tag.equals("Notes")) {
 			ListView lv;
 			lv = (ListView) findViewById(R.id.listView1);
-			iconic_notes=new IconicAdapter(this);
+			iconic_notes = new IconicAdapter(this);
 			lv.setAdapter(iconic_notes);
 			return lv;
 		}/*
@@ -309,7 +312,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 			txt = (TextView) list.findViewById(R.id.textView2);
 			txtcount = (TextView) list.findViewById(R.id.textView3);
 			timebox = (TextView) list.findViewById(R.id.textView7);
-			//btn = (Button) list.findViewById(R.id.button1);
+			// btn = (Button) list.findViewById(R.id.button1);
 
 			// txtcount.setText(String.valueOf(count));
 			txtcount.setText(String.valueOf(position));
@@ -318,23 +321,35 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 			// count++;
 			if (position == 0) {
 				img.setImageDrawable(getResources().getDrawable(arr2.get(0)));
-				//btn.setText("Add");
+				// btn.setText("Add");
 				// btn.setVisibility(View.INVISIBLE);
 			} else {
 				int i;
-				boolean found_id=false;
-				for(i=0;i<arr_pics.size();i++)
-				{if(position==arr_pics.get(i).getId()){found_id=true;break;}}
-				if(!found_id)img.setImageDrawable(getResources().getDrawable(arr2.get(1)));
-				
-				else{
-					String fname=arr_pics.get(i).getImgname();
-					/*Toast.makeText(getApplicationContext(),fname,
-							Toast.LENGTH_LONG).show();*/
-					new Downld("http://wscubetech.org/app/updown/"+fname,fname,scrolltab.this);
-					Bitmap bitmap=BitmapFactory.decodeFile(Environment.getExternalStorageDirectory().getAbsolutePath()+"/NotesStation/"+fname);
-					img.setImageBitmap(bitmap);}
-				//btn.setText("Delete");
+				boolean found_id = false;
+				for (i = 0; i < arr_pics.size(); i++) {
+					if (position == arr_pics.get(i).getId()) {
+						found_id = true;
+						break;
+					}
+				}
+				if (!found_id)
+					img.setImageDrawable(getResources()
+							.getDrawable(arr2.get(1)));
+
+				else {
+					String fname = arr_pics.get(i).getImgname();
+					/*
+					 * Toast.makeText(getApplicationContext(),fname,
+					 * Toast.LENGTH_LONG).show();
+					 */
+					new Downld("http://wscubetech.org/app/updown/" + fname,
+							fname, scrolltab.this);
+					Bitmap bitmap = BitmapFactory.decodeFile(Environment
+							.getExternalStorageDirectory().getAbsolutePath()
+							+ "/NotesStation/" + fname);
+					img.setImageBitmap(bitmap);
+				}
+				// btn.setText("Delete");
 			}
 			// img.setImageResource(arr2.get(position));
 
@@ -342,44 +357,42 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 
 				@Override
 				public void onClick(View v) {
-					/*if (v.getId() == R.id.button1) {
-						Toast.makeText(getApplicationContext(), v.toString(),
+					/*
+					 * if (v.getId() == R.id.button1) {
+					 * Toast.makeText(getApplicationContext(), v.toString(),
+					 * Toast.LENGTH_LONG).show(); int position =
+					 * Integer.parseInt((((TextView) v
+					 * .findViewById(R.id.textView3)).getText()) .toString());
+					 * //position = position; if (position != 0) {
+					 * //NotesDatabaseHandler db = new NotesDatabaseHandler(
+					 * getApplicationContext()); //List<NotesData> users =
+					 * db.getAllContacts();
+					 * 
+					 * Toast.makeText(getApplicationContext(),users.get(1
+					 * ).getNotes(), Toast.LENGTH_LONG).show();
+					 * 
+					 * 
+					 * // db.deleteContact(users.get(position - 1));
+					 * //db.deleteContact(users.get(0)); startActivity(new
+					 * Intent(getApplicationContext(), scrolltab.class));
+					 * finish(); } } else {
+					 */
+					int position = Integer
+							.parseInt(((TextView) v
+									.findViewById(R.id.textView3)).getText()
+									.toString());
+					if (position == 0) {
+						startActivity(new Intent(getApplicationContext(),
+								NewNotes.class));
+						finish();
+					} else {
+						Toast.makeText(getApplicationContext(), "TODO",
 								Toast.LENGTH_LONG).show();
-						int position = Integer.parseInt((((TextView) v
-								.findViewById(R.id.textView3)).getText())
-								.toString());
-						//position = position;
-						if (position != 0) {
-							//NotesDatabaseHandler db = new NotesDatabaseHandler(
-									getApplicationContext());
-							//List<NotesData> users = db.getAllContacts();
-							
-							 * Toast.makeText(getApplicationContext(),users.get(1
-							 * ).getNotes(), Toast.LENGTH_LONG).show();
-							 
 
-							// db.deleteContact(users.get(position - 1));
-							//db.deleteContact(users.get(0));
-							startActivity(new Intent(getApplicationContext(),
-									scrolltab.class));
-							finish();
-						}
-					} else {*/
-						int position = Integer.parseInt(((TextView) v
-								.findViewById(R.id.textView3)).getText()
-								.toString());
-						if (position == 0) {
-							startActivity(new Intent(getApplicationContext(),
-									NewNotes.class));
-							finish();
-						} else {
-							Toast.makeText(getApplicationContext(), "TODO",
-									Toast.LENGTH_LONG).show();
-						
 					}
 				}
 			};
-			//btn.setOnClickListener(NotesListButtonClick);
+			// btn.setOnClickListener(NotesListButtonClick);
 			list.setOnClickListener(NotesListButtonClick);
 			return list;
 		}
