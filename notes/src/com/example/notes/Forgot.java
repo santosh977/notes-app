@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -93,7 +94,8 @@ public class Forgot extends Activity {
 		});	
 	}
 	public void sendEmail(View v) {
-
+if(!(((EditText)findViewById(R.id.dialogMail)).getText().toString()).equals(""))
+{
 	      String[] recipients = {(((EditText)findViewById(R.id.dialogMail)).getText().toString())};
 	      Intent email = new Intent(Intent.ACTION_SEND, Uri.parse("mailto:"));
 	      // prompts email clients only
@@ -111,6 +113,14 @@ public class Forgot extends Activity {
 	         Toast.makeText(Forgot.this, "No email client installed.",
 	        		 Toast.LENGTH_LONG).show();
 	      }
+}
+else if(!(((EditText)findViewById(R.id.dialogphoneno)).getText().toString()).equals("")){
+SmsManager sms = SmsManager.getDefault();
+	      sms.sendTextMessage((((EditText)findViewById(R.id.dialogphoneno)).getText().toString()), null,"Password", null, null);
+}
+else{
+	Toast.makeText(getApplicationContext(), "Empty Boxes...", Toast.LENGTH_LONG).show();
+}
 	   }
 	
 	public void SliderClick(View v) {

@@ -249,6 +249,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 @SuppressLint("NewApi")
 public class Loginpage extends Activity {
@@ -262,6 +263,32 @@ public class Loginpage extends Activity {
     ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
     ImagePagerAdapter adapter = new ImagePagerAdapter();
     viewPager.setAdapter(adapter);
+    viewPager.setClickable(true);
+    viewPager.setOnClickListener(new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			Toast.makeText(getApplicationContext(), "Mensai no wuurod", Toast.LENGTH_LONG)
+			.show();
+			switch (v.getId()) {
+			case R.id.notes:
+				startActivity(new Intent(getApplicationContext(), scrolltab.class));
+				break;
+			
+			case R.id.tnp1:
+				startActivity(new Intent(getApplicationContext(), Members.class));
+				break;
+			case R.id.clg12:
+				startActivity(new Intent(getApplicationContext(), Clges.class));
+				break;
+
+			default:
+
+				Toast.makeText(getApplicationContext(), "TODO", Toast.LENGTH_LONG)
+						.show();
+			}	
+		}
+	});
 
     StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
     StrictMode.setThreadPolicy(policy);
@@ -308,12 +335,13 @@ public class Loginpage extends Activity {
     private int[] mImages = new int[] {
     		 R.drawable.notes,
     		 R.drawable.tnp1,
-    		
-        R.drawable.newsfeed,
+    	R.drawable.newsfeed,
         R.drawable.clg12,
         R.drawable.bns,
         R.drawable.cht
     };
+    
+			
 
     @Override
     public int getCount() {
