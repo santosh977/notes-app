@@ -344,14 +344,19 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 					 */
 					String filePath=new String(Environment
 							.getExternalStorageDirectory().getAbsolutePath()
-							+ "/NotesStation/" + fname);
-					if(!(new File(filePath).exists())){
+							+ "/NotesStation/");
+					try{
+					if(!(new File(filePath+fname).exists())){
 					new Downld("http://wscubetech.org/app/updown/" + fname,
 							fname, scrolltab.this);}
-					Bitmap bitmap = BitmapFactory.decodeFile(Environment
-							.getExternalStorageDirectory().getAbsolutePath()
-							+ "/NotesStation/" + fname);
+					Bitmap bitmap = BitmapFactory.decodeFile(filePath + fname);
 					img.setImageBitmap(bitmap);
+					}
+					catch(Exception e)
+					{
+						Toast.makeText(getApplicationContext(),e.toString(),
+								Toast.LENGTH_LONG).show();
+					}
 				}
 				// btn.setText("Delete");
 			}

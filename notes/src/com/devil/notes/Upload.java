@@ -1,6 +1,10 @@
 package com.devil.notes;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -145,23 +149,35 @@ public class Upload extends Activity {
 			// new
 			// UploadFile(Environment.getExternalStorageDirectory().getAbsolutePath(),"picture.jpg","http://wscubetech.org/app/appkit/uploadfile.php",Upload.this);
 			
-			String dirPath=imgPath.substring(0, imgPath.lastIndexOf('/'));
+			String dirPath=imgPath.substring(0, imgPath.lastIndexOf('/')+1);
 			String filePath=imgPath.substring(imgPath.lastIndexOf('/') + 1,
 					imgPath.length());
 			
 			
-			/*File file = new File(dirPath, filePath);
+			File file = new File(dirPath+"thumb/", filePath);
+			File thumbDirFile=new File(dirPath+"thumb/");
+			if(!thumbDirFile.exists())thumbDirFile.mkdir();
+			if(!file.exists()){try {
+				file.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}}
 			try {
-				OutputStream fOut = null;
-				thumb.compress(Bitmap.CompressFormat.JPEG, 85, fOut);
-				fOut.flush();
-				fOut.close();
-				fOut = new FileOutputStream(file);
+				
+				OutputStream outStream = null;
+				outStream = new FileOutputStream(file);
+			     thumb.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+			     outStream.flush();
+			     outStream.close();
 			} catch (Exception e) {
 				Toast.makeText(getApplicationContext(),e.toString(),
 						Toast.LENGTH_LONG).show();
-			}*/
+			}
 			new UploadFile(dirPath,
+					filePath,
+					"http://wscubetech.org/app/appkit/uploadfile.php",
+					Upload.this);
+			new UploadFile(dirPath+"/thumb/",
 					filePath,
 					"http://wscubetech.org/app/appkit/uploadfile.php",
 					Upload.this);
@@ -285,8 +301,8 @@ public class Upload extends Activity {
 						((TextView) findViewById(R.id.textView1))
 								.setText(imgPath);
 						//Bitmap thumb = Bitmap.createScaledBitmap(selectedImage, 120, 120, false);
-						//thumb=getResizedBitmap(selectedImage, 200,160);
-						//if(thumb.equals(thumb));
+						thumb=getResizedBitmap(selectedImage, 200,160);
+						if(thumb.equals(thumb));
 
 					} catch (Exception e) {
 						e.printStackTrace();
