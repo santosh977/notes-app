@@ -1,0 +1,154 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#004686"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#20b2aa"
+        android:orientation="vertical" >
+
+        <Spinner
+            android:id="@+id/spinner7"
+            android:layout_width="@dimen/dim_260"
+            android:layout_height="@dimen/dim_35"
+            android:layout_marginLeft="@dimen/dim_58"
+            android:drawSelectorOnTop="true"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="@dimen/dim_260"
+            android:layout_height="@dimen/dim_35"
+            android:layout_marginLeft="@dimen/dim_58"
+            android:drawSelectorOnTop="true"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="@dimen/dim_260"
+            android:layout_height="@dimen/dim_35"
+            android:layout_marginLeft="@dimen/dim_58"
+            android:drawSelectorOnTop="true"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="@dimen/dim_260"
+            android:layout_height="@dimen/dim_35"
+            android:layout_marginLeft="@dimen/dim_58"
+            android:drawSelectorOnTop="true"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spinner4"
+            android:layout_width="@dimen/dim_260"
+            android:layout_height="@dimen/dim_35"
+            android:layout_marginLeft="@dimen/dim_58"
+            android:drawSelectorOnTop="true"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spinner5"
+            android:layout_width="@dimen/dim_260"
+            android:layout_height="@dimen/dim_35"
+            android:layout_marginLeft="@dimen/dim_58"
+            android:drawSelectorOnTop="true"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spinner6"
+            android:layout_width="@dimen/dim_260"
+            android:layout_height="@dimen/dim_35"
+            android:layout_marginLeft="@dimen/dim_58"
+            android:drawSelectorOnTop="true"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spinner8"
+            android:layout_width="@dimen/dim_260"
+            android:layout_height="@dimen/dim_35"
+            android:layout_marginLeft="@dimen/dim_58"
+            android:drawSelectorOnTop="true"
+            android:spinnerMode="dialog" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="@dimen/dim_271"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dim_50"
+            android:hint="Professor Name"
+            android:inputType="textPersonName" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="@dimen/dim_271"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dim_50"
+            android:hint="Heading"
+            android:inputType="textPersonName" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_60"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="@dimen/dim_43"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dim_15"
+                android:background="@drawable/sign"
+                android:onClick="Clik" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.44"
+                android:text="Select a image :"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="282dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dim_4"
+            android:layout_marginLeft="@dimen/dim_20"
+            android:layout_marginRight="@dimen/dim_20"
+            android:background="#20b2aa" >
+
+            <Button
+                android:id="@+id/button2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dim_150"
+                android:onClick="UploadFunc"
+                android:text="Upload" />
+
+            <Button
+                android:id="@+id/button3"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dim_80"
+                android:text="Raw" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/avatar_contact" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
