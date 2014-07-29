@@ -19,19 +19,21 @@ public class Downld {
 	int downloadedSize = 0;
 	int totalSize = 0;
 	// TextView cur_val;
-	public String dwnload_file_path, file_name;
+	public String dwnload_file_path, file_dir, file_name;
+	public boolean success;
 	Context c;
 
-	Downld(String Path, String FileName, Context context) {
+	Downld(String Path, String FileDir, String FileName, Context context) {
 		c = context;
 		dwnload_file_path = Path;
 		file_name = FileName;
+		file_dir = FileDir;
 		downloadFile();
 	}
 
 	void downloadFile() {
-
 		try {
+			success = true;
 			URL url = new URL(dwnload_file_path);
 			HttpURLConnection urlConnection = (HttpURLConnection) url
 					.openConnection();
@@ -42,9 +44,7 @@ public class Downld {
 			urlConnection.connect();
 
 			// set the path where we want to save the file
-			File SDCardRoot = new File(Environment
-					.getExternalStorageDirectory().getAbsolutePath()
-					+ "/NotesStation/");
+			File SDCardRoot = new File(file_dir);
 			// create a new file, to save the downloaded file
 			if (!SDCardRoot.exists())
 				SDCardRoot.mkdir();
@@ -71,7 +71,7 @@ public class Downld {
 			}
 			// close the output stream when complete //
 			fileOutput.close();
-
+			success = true;
 		} catch (final MalformedURLException e) {
 			showError("Error : MalformedURLException " + e);
 			e.printStackTrace();
@@ -84,7 +84,7 @@ public class Downld {
 	}
 
 	void showError(final String err) {
-
+		success = false;
 		Toast.makeText(c, err, Toast.LENGTH_LONG).show();
 
 	}

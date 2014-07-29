@@ -29,7 +29,7 @@ public class Upload extends Activity {
 	// String encodedString;
 
 	String imgPath;
-	Bitmap thumb,selectedImage;
+	Bitmap thumb, selectedImage;
 
 	private final int sel_pic = 1;
 	private ImageView prof;
@@ -148,37 +148,37 @@ public class Upload extends Activity {
 		if (imgPath != null) {
 			// new
 			// UploadFile(Environment.getExternalStorageDirectory().getAbsolutePath(),"picture.jpg","http://wscubetech.org/app/appkit/uploadfile.php",Upload.this);
-			
-			String dirPath=imgPath.substring(0, imgPath.lastIndexOf('/')+1);
-			String filePath=imgPath.substring(imgPath.lastIndexOf('/') + 1,
+
+			String dirPath = imgPath.substring(0, imgPath.lastIndexOf('/') + 1);
+			String filePath = imgPath.substring(imgPath.lastIndexOf('/') + 1,
 					imgPath.length());
-			
-			
-			File file = new File(dirPath+"thumb/", filePath);
-			File thumbDirFile=new File(dirPath+"thumb/");
-			if(!thumbDirFile.exists())thumbDirFile.mkdir();
-			if(!file.exists()){try {
-				file.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}}
+
+			File file = new File(dirPath + "thumb/", filePath);
+			File thumbDirFile = new File(dirPath + "thumb/");
+			if (!thumbDirFile.exists())
+				thumbDirFile.mkdir();
+			if (!file.exists()) {
+				try {
+					file.createNewFile();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 			try {
-				
+
 				OutputStream outStream = null;
 				outStream = new FileOutputStream(file);
-			     thumb.compress(Bitmap.CompressFormat.PNG, 100, outStream);
-			     outStream.flush();
-			     outStream.close();
+				thumb.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+				outStream.flush();
+				outStream.close();
 			} catch (Exception e) {
-				Toast.makeText(getApplicationContext(),e.toString(),
+				Toast.makeText(getApplicationContext(), e.toString(),
 						Toast.LENGTH_LONG).show();
 			}
-			new UploadFile(dirPath,
-					filePath,
+			new UploadFile(dirPath, filePath,
 					"http://wscubetech.org/app/appkit/uploadfile.php",
 					Upload.this);
-			new UploadFile(dirPath+"/thumb/",
-					filePath,
+			new UploadFile(dirPath, filePath + "-thumb",
 					"http://wscubetech.org/app/appkit/uploadfile.php",
 					Upload.this);
 			String url = new String(
@@ -291,8 +291,7 @@ public class Upload extends Activity {
 						InputStream imageStream = getContentResolver()
 								.openInputStream(imageUri);
 
-						selectedImage = BitmapFactory
-								.decodeStream(imageStream);
+						selectedImage = BitmapFactory.decodeStream(imageStream);
 						/*
 						 * Toast.makeText(getApplicationContext(),encodedString,
 						 * Toast.LENGTH_LONG).show();
@@ -300,9 +299,12 @@ public class Upload extends Activity {
 						prof.setImageBitmap(selectedImage);
 						((TextView) findViewById(R.id.textView1))
 								.setText(imgPath);
-						//Bitmap thumb = Bitmap.createScaledBitmap(selectedImage, 120, 120, false);
-						thumb=getResizedBitmap(selectedImage, 200,160);
-						if(thumb.equals(thumb));
+						// Bitmap thumb =
+						// Bitmap.createScaledBitmap(selectedImage, 120, 120,
+						// false);
+						thumb = getResizedBitmap(selectedImage, 200, 160);
+						if (thumb.equals(thumb))
+							;
 
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -312,19 +314,20 @@ public class Upload extends Activity {
 			}
 		}
 	}
-	
-	public Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth) {
-	    int width = bm.getWidth();
-	    int height = bm.getHeight();
-	    float scaleWidth = ((float) newWidth) / width;
-	    float scaleHeight = ((float) newHeight) / height;
-	    // CREATE A MATRIX FOR THE MANIPULATION
-	    Matrix matrix = new Matrix();
-	    // RESIZE THE BIT MAP
-	    matrix.postScale(scaleWidth, scaleHeight);
 
-	    // "RECREATE" THE NEW BITMAP
-	    Bitmap resizedBitmap = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, false);
-	    return resizedBitmap;
+	public Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth) {
+		int width = bm.getWidth();
+		int height = bm.getHeight();
+		float scaleWidth = ((float) newWidth) / width;
+		float scaleHeight = ((float) newHeight) / height;
+		// CREATE A MATRIX FOR THE MANIPULATION
+		Matrix matrix = new Matrix();
+		// RESIZE THE BIT MAP
+		matrix.postScale(scaleWidth, scaleHeight);
+
+		// "RECREATE" THE NEW BITMAP
+		Bitmap resizedBitmap = Bitmap.createBitmap(bm, 0, 0, width, height,
+				matrix, false);
+		return resizedBitmap;
 	}
 }

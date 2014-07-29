@@ -1050,35 +1050,30 @@ public final class R {
         public static final int blue_bg=0x7f020007;
         public static final int bns=0x7f020008;
         public static final int cell=0x7f020009;
-        public static final int chiang_mai=0x7f02000a;
-        public static final int cht=0x7f02000b;
-        public static final int clg12=0x7f02000c;
-        public static final int div=0x7f02000d;
-        public static final int download=0x7f02000e;
-        public static final int engraved_bg=0x7f02000f;
+        public static final int cht=0x7f02000a;
+        public static final int clg12=0x7f02000b;
+        public static final int div=0x7f02000c;
+        public static final int download=0x7f02000d;
+        public static final int engraved_bg=0x7f02000e;
+        public static final int error=0x7f02000f;
         public static final int gray_bg=0x7f020010;
-        public static final int himeji=0x7f020011;
-        public static final int home=0x7f020012;
-        public static final int ic_launcher=0x7f020013;
-        public static final int icon_menu=0x7f020014;
-        public static final int msg=0x7f020015;
-        public static final int newsfeed=0x7f020016;
-        public static final int notes=0x7f020017;
-        public static final int overscroll_left=0x7f020018;
-        public static final int overscroll_right=0x7f020019;
-        public static final int personal=0x7f02001a;
-        public static final int petronas_twin_tower=0x7f02001b;
-        public static final int pic1=0x7f02001c;
-        public static final int pic2=0x7f02001d;
-        public static final int pic3=0x7f02001e;
-        public static final int search=0x7f02001f;
-        public static final int setting=0x7f020020;
-        public static final int share=0x7f020021;
-        public static final int sign=0x7f020022;
-        public static final int study=0x7f020023;
-        public static final int textnote=0x7f020024;
-        public static final int tnp1=0x7f020025;
-        public static final int ulm=0x7f020026;
+        public static final int home=0x7f020011;
+        public static final int ic_launcher=0x7f020012;
+        public static final int icon_menu=0x7f020013;
+        public static final int msg=0x7f020014;
+        public static final int newsfeed=0x7f020015;
+        public static final int notes=0x7f020016;
+        public static final int personal=0x7f020017;
+        public static final int pic1=0x7f020018;
+        public static final int pic2=0x7f020019;
+        public static final int pic3=0x7f02001a;
+        public static final int search=0x7f02001b;
+        public static final int setting=0x7f02001c;
+        public static final int share=0x7f02001d;
+        public static final int sign=0x7f02001e;
+        public static final int study=0x7f02001f;
+        public static final int textnote=0x7f020020;
+        public static final int tnp1=0x7f020021;
     }
     public static final class id {
         public static final int BtnLogin=0x7f0a0047;
@@ -1252,12 +1247,22 @@ public final class R {
 
 
 
+
+
+
+
+
     
  API 11 theme customizations can go here. 
 
         Base application theme for API 14+. This theme completely replaces
         AppBaseTheme from BOTH res/values/styles.xml and
         res/values-v11/styles.xml on API 14+ devices.
+
+
+
+
+
 
 
 
@@ -1272,6 +1277,11 @@ public final class R {
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+
+
+
+
 
 
 

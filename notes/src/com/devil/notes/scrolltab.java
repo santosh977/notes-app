@@ -32,6 +32,7 @@ class PicNote {
 	PicNote(String image2, int id2) {
 		imgname = image2;
 		id = id2;
+		downloadstatus = 0;
 	}
 
 	public String getImgname() {
@@ -44,6 +45,11 @@ class PicNote {
 
 	String imgname;
 	int id;
+	int downloadstatus;
+
+	/*
+	 * 0=unknown 1=queued to download 2=error in downloading 3=downloaded
+	 */
 
 	public int getId() {
 		return id;
@@ -300,9 +306,12 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 
 	private class IconicAdapter extends ArrayAdapter<String> {
 
+		Downld thumbdn;
+		Context c;
+
 		public IconicAdapter(Context context) {
 			super(context, R.layout.list, R.id.textView1, Heading);
-
+			c = context;
 		}
 
 		public View getView(int position, View view, ViewGroup parent) {
@@ -332,6 +341,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 						break;
 					}
 				}
+
 				if (!found_id)
 					img.setImageDrawable(getResources()
 							.getDrawable(arr2.get(1)));
@@ -342,26 +352,59 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 					 * Toast.makeText(getApplicationContext(),fname,
 					 * Toast.LENGTH_LONG).show();
 					 */
-					String filePath=new String(Environment
+					String filePath = new String(Environment
 							.getExternalStorageDirectory().getAbsolutePath()
 							+ "/NotesStation/");
-					try{
-					if(!(new File(filePath+fname).exists())){
-					new Downld("http://wscubetech.org/app/updown/" + fname,
-							fname, scrolltab.this);}
-					Bitmap bitmap = BitmapFactory.decodeFile(filePath + fname);
+
+					Bitmap bitmap;
+					boolean directfound = false;
+					File file = null;
+					try {
+						file = new File(filePath + "thumb/" + fname);
+						if (file.exists() && file.length() != 0) {
+							directfound = true;
+							filePath += "thumb/";
+						} else {
+							thumbdn = new Downld(
+									"http://wscubetech.org/app/updown/" + fname,
+									filePath + "thumb/", fname, scrolltab.this);
+							if (thumbdn.success && file.length() != 0)
+								filePath += "thumb/";
+							else {
+								file = new File(filePath + fname);
+								if (file.exists() && file.length() != 0) {
+									directfound = true;
+								} else {
+									thumbdn = new Downld(
+											"http://wscubetech.org/app/updown/"
+													+ fname, filePath, fname,
+											scrolltab.this);
+								}
+							}
+						}
+						if ((thumbdn != null && thumbdn.success) || directfound) {
+							bitmap = BitmapFactory.decodeFile(filePath + fname);
+						} else {
+							bitmap = BitmapFactory.decodeResource(
+									c.getResources(), R.drawable.error);
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+						Toast.makeText(getApplicationContext(),
+								"Exception:" + e.toString(), Toast.LENGTH_LONG)
+								.show();
+						bitmap = BitmapFactory.decodeResource(c.getResources(),
+								R.drawable.error);
+					}
 					img.setImageBitmap(bitmap);
-					}
-					catch(Exception e)
-					{
-						Toast.makeText(getApplicationContext(),e.toString(),
-								Toast.LENGTH_LONG).show();
-					}
+					/*
+					 * Toast.makeText(getApplicationContext(), fname + ":" +
+					 * String.valueOf(file.length()), Toast.LENGTH_LONG).show();
+					 */
 				}
 				// btn.setText("Delete");
 			}
 			// img.setImageResource(arr2.get(position));
-
 			OnClickListener NotesListButtonClick = new OnClickListener() {
 
 				@Override
@@ -395,8 +438,33 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 								NewNotes.class));
 						finish();
 					} else {
-						Toast.makeText(getApplicationContext(), "TODO",
-								Toast.LENGTH_LONG).show();
+						if (v.getId() == R.id.imageView2) {
+							if (arr_pics.get(position).downloadstatus != 1) {
+								String fname = arr_pics.get(position)
+										.getImgname();
+								String filePath = new String(Environment
+										.getExternalStorageDirectory()
+										.getAbsolutePath()
+										+ "/NotesStation/");
+								File dfile = new File(filePath, fname);
+								if (dfile.exists()) {
+									if (dfile.length() != 0) {
+										arr_pics.get(position).downloadstatus = 3;
+										Toast.makeText(getApplicationContext(),
+												"Already Downloaded",
+												Toast.LENGTH_LONG).show();
+									}
+								} else
+									arr_pics.get(position).downloadstatus = 2;
+							}
+
+							else
+								arr_pics.get(position).downloadstatus = 1;
+
+						} else {
+							Toast.makeText(getApplicationContext(), "TODO",
+									Toast.LENGTH_LONG).show();
+						}
 
 					}
 				}

@@ -250,8 +250,8 @@ public class Loginpage extends Activity {
 		ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
 		ImagePagerAdapter adapter = new ImagePagerAdapter();
 		viewPager.setAdapter(adapter);
-		//adapter.getItemPosition(0);
-		
+		// adapter.getItemPosition(0);
+
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
 				.permitAll().build();
 		StrictMode.setThreadPolicy(policy);
@@ -317,14 +317,15 @@ public class Loginpage extends Activity {
 					R.dimen.padding_medium);
 			imageView.setPadding(padding, padding, padding, padding);
 			imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-			
+
 			imageView.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View v) {
-					//Toast.makeText(getApplicationContext(), "Mensai no wuurod",
-						//	Toast.LENGTH_LONG).show();
-					
+					// Toast.makeText(getApplicationContext(),
+					// "Mensai no wuurod",
+					// Toast.LENGTH_LONG).show();
+
 					switch (position) {
 					case 0:
 						startActivity(new Intent(getApplicationContext(),
@@ -341,7 +342,8 @@ public class Loginpage extends Activity {
 						break;
 
 					default:
-						Toast.makeText(getApplicationContext(),"TODO:"+String.valueOf(position),
+						Toast.makeText(getApplicationContext(),
+								"TODO:" + String.valueOf(position),
 								Toast.LENGTH_LONG).show();
 					}
 				}
@@ -349,7 +351,6 @@ public class Loginpage extends Activity {
 
 			imageView.setClickable(true);
 
-			
 			imageView.setImageResource(mImages[position]);
 			((ViewPager) container).addView(imageView, 0);
 			return imageView;
