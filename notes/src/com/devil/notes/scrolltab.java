@@ -1,5 +1,6 @@
 package com.devil.notes;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -15,7 +16,6 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -342,8 +342,12 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 					 * Toast.makeText(getApplicationContext(),fname,
 					 * Toast.LENGTH_LONG).show();
 					 */
+					String filePath=new String(Environment
+							.getExternalStorageDirectory().getAbsolutePath()
+							+ "/NotesStation/" + fname);
+					if(!(new File(filePath).exists())){
 					new Downld("http://wscubetech.org/app/updown/" + fname,
-							fname, scrolltab.this);
+							fname, scrolltab.this);}
 					Bitmap bitmap = BitmapFactory.decodeFile(Environment
 							.getExternalStorageDirectory().getAbsolutePath()
 							+ "/NotesStation/" + fname);

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -24,6 +25,7 @@ public class Upload extends Activity {
 	// String encodedString;
 
 	String imgPath;
+	Bitmap thumb,selectedImage;
 
 	private final int sel_pic = 1;
 	private ImageView prof;
@@ -142,15 +144,31 @@ public class Upload extends Activity {
 		if (imgPath != null) {
 			// new
 			// UploadFile(Environment.getExternalStorageDirectory().getAbsolutePath(),"picture.jpg","http://wscubetech.org/app/appkit/uploadfile.php",Upload.this);
-			new UploadFile(imgPath.substring(0, imgPath.lastIndexOf('/')),
-					imgPath.substring(imgPath.lastIndexOf('/') + 1,
-							imgPath.length()),
+			
+			String dirPath=imgPath.substring(0, imgPath.lastIndexOf('/'));
+			String filePath=imgPath.substring(imgPath.lastIndexOf('/') + 1,
+					imgPath.length());
+			
+			
+			/*File file = new File(dirPath, filePath);
+			try {
+				OutputStream fOut = null;
+				thumb.compress(Bitmap.CompressFormat.JPEG, 85, fOut);
+				fOut.flush();
+				fOut.close();
+				fOut = new FileOutputStream(file);
+			} catch (Exception e) {
+				Toast.makeText(getApplicationContext(),e.toString(),
+						Toast.LENGTH_LONG).show();
+			}*/
+			new UploadFile(dirPath,
+					filePath,
 					"http://wscubetech.org/app/appkit/uploadfile.php",
 					Upload.this);
 			String url = new String(
 					"http://wscubetech.org/app/appkit/upload.php"
 							+ "?sm_type=pic&sm_category=notes&sm_file="
-							+ imgPath.substring(imgPath.lastIndexOf('/') + 1));
+							+ filePath);
 			QuickJSON json = new QuickJSON(url);
 			json.TABLE_NAME = "study_material";
 			json.TAG1 = "sm_file";
@@ -257,7 +275,7 @@ public class Upload extends Activity {
 						InputStream imageStream = getContentResolver()
 								.openInputStream(imageUri);
 
-						final Bitmap selectedImage = BitmapFactory
+						selectedImage = BitmapFactory
 								.decodeStream(imageStream);
 						/*
 						 * Toast.makeText(getApplicationContext(),encodedString,
@@ -266,6 +284,9 @@ public class Upload extends Activity {
 						prof.setImageBitmap(selectedImage);
 						((TextView) findViewById(R.id.textView1))
 								.setText(imgPath);
+						//Bitmap thumb = Bitmap.createScaledBitmap(selectedImage, 120, 120, false);
+						//thumb=getResizedBitmap(selectedImage, 200,160);
+						//if(thumb.equals(thumb));
 
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -274,5 +295,20 @@ public class Upload extends Activity {
 
 			}
 		}
+	}
+	
+	public Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth) {
+	    int width = bm.getWidth();
+	    int height = bm.getHeight();
+	    float scaleWidth = ((float) newWidth) / width;
+	    float scaleHeight = ((float) newHeight) / height;
+	    // CREATE A MATRIX FOR THE MANIPULATION
+	    Matrix matrix = new Matrix();
+	    // RESIZE THE BIT MAP
+	    matrix.postScale(scaleWidth, scaleHeight);
+
+	    // "RECREATE" THE NEW BITMAP
+	    Bitmap resizedBitmap = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, false);
+	    return resizedBitmap;
 	}
 }
