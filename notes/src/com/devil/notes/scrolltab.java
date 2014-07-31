@@ -366,7 +366,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 							filePath += "thumb/";
 						} else {
 							thumbdn = new Downld(
-									"http://wscubetech.org/app/updown/" + fname,
+									"http://wscubetech.org/app/updown/" + fname+"-thumb",
 									filePath + "thumb/", fname, scrolltab.this);
 							if (thumbdn.success && file.length() != 0)
 								filePath += "thumb/";

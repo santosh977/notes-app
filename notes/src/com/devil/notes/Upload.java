@@ -153,17 +153,17 @@ public class Upload extends Activity {
 			String filePath = imgPath.substring(imgPath.lastIndexOf('/') + 1,
 					imgPath.length());
 
-			File file = new File(dirPath + "thumb/", filePath);
+			File file = new File(dirPath + "thumb/", filePath+"-thumb");
 			File thumbDirFile = new File(dirPath + "thumb/");
 			if (!thumbDirFile.exists())
 				thumbDirFile.mkdir();
-			if (!file.exists()) {
+			/*if (!file.exists()) {
 				try {
 					file.createNewFile();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-			}
+			}*/
 			try {
 
 				OutputStream outStream = null;
@@ -175,6 +175,7 @@ public class Upload extends Activity {
 				Toast.makeText(getApplicationContext(), e.toString(),
 						Toast.LENGTH_LONG).show();
 			}
+			
 			new UploadFile(dirPath, filePath,
 					"http://wscubetech.org/app/appkit/uploadfile.php",
 					Upload.this);
