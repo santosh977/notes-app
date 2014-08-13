@@ -297,7 +297,7 @@ public class Loginpage extends Activity {
 	private class ImagePagerAdapter extends PagerAdapter {
 		private int[] mImages = new int[] { R.drawable.notes, R.drawable.tnp1,
 				R.drawable.newsfeed, R.drawable.clg12, R.drawable.bns,
-				R.drawable.cht };
+				R.drawable.cht,	R.drawable.blk1};
 
 		@Override
 		public int getCount() {

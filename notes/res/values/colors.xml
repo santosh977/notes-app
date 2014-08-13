@@ -3,6 +3,7 @@
     <color name="top_item">#a6c</color>
     <color name="sticky_item">#f44</color>
     <color name="sticky_item_text">#fff</color>
+  
     <color name="overscroll">#33b5e5</color>
 
 </resources>

@@ -3,7 +3,8 @@
     android:layout_height="match_parent"
     android:layout_weight="0.70"
     android:background="#004686"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+ >
 
     <!--
     <ImageSwitcher
@@ -20,41 +21,50 @@
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/dim_300"
-        android:layout_weight="0.70" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl1"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/dim_40" />
 
     <RelativeLayout
+        android:id="@+id/rl1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/dim_20" >
+        android:layout_marginLeft="@dimen/dim_10"
+           android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginBottom="@dimen/dim_15" >
 
         <Button
             android:id="@+id/BtnLogin"
-            android:layout_width="@dimen/dim_100"
-            android:layout_height="@dimen/dim_35"
+            android:layout_width="@dimen/dim_130"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@+id/button1"
-            android:background="#FF0000"
+            android:textSize="@dimen/dim_27"
             android:text="Login"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white" 
+         
+            
+            android:background="@drawable/rbutton"
+   />         
 
         <Button
             android:id="@+id/BtnSignup"
-            android:layout_width="@dimen/dim_100"
-            android:layout_height="@dimen/dim_35"
+            android:layout_width="@dimen/dim_130"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_toRightOf="@+id/button1"
-            android:background="#FF0000"
+
+            android:background="@drawable/rbutton"
             android:text="Signup"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+              android:textSize="@dimen/dim_27" />
 
         <Button
             android:id="@+id/button1"
             android:layout_width="@dimen/dim_100"
             android:layout_height="@dimen/dim_35"
-            android:layout_below="@+id/view_pager"
+       
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/dim_14"
             android:text="Notes" />
@@ -64,7 +74,7 @@
             android:layout_width="@dimen/dim_100"
             android:layout_height="@dimen/dim_35"
             android:layout_below="@+id/button1"
-            android:layout_toLeftOf="@+id/BtnSignup"
+      
             android:onClick="onClick"
             android:text="Slider" />
     </RelativeLayout>

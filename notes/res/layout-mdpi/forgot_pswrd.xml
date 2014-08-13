@@ -434,15 +434,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/dim_25" >
-
-            <Button
-                android:id="@+id/submit"
-                android:layout_width="@dimen/dim_150"
-                android:layout_height="@dimen/dim_30"
-                android:background="#FFBF00"
-                android:gravity="center"
-                android:onClick="sendEmail"
-                android:text="Submit" />
             <!--
         <RelativeLayout
             android:id="@+id/rel6"
@@ -463,6 +454,20 @@
             -->
 
         </RelativeLayout>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_40"
+            android:background="@drawable/rbutton"
+            android:layout_marginLeft="@dimen/dim_70"
+                       android:layout_marginRight="@dimen/dim_70"
+            android:gravity="center"
+            android:onClick="sendEmail"
+            android:text="Submit"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dim_22" />
+
 /RelativeLayout>
     </LinearLayout>
 
