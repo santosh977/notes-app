@@ -1,6 +1,8 @@
 package com.devil.notes;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -207,7 +209,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 							// Bitmap bitmap =
 							// BitmapFactory.decodeByteArray(completeImage , 0,
 							// completeImage.length);
-							arr_pics.add(new PicNote(name, i + 1));
+							arr_pics.add(new PicNote(name, i -1));
 
 						}
 						// tmp hashmap for single contact
@@ -374,6 +376,18 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 								file = new File(filePath + fname);
 								if (file.exists() && file.length() != 0) {
 									directfound = true;
+									/*try {
+										OutputStream outStream = null;
+										File th_file = new File(filePath + fname+"-thumb");
+										outStream = new FileOutputStream(th_file);
+										bitmap = BitmapFactory.decodeFile(filePath + fname);
+										bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+										outStream.flush();
+										outStream.close();
+									} catch (Exception e) {
+										Toast.makeText(getApplicationContext(), e.toString(),
+												Toast.LENGTH_LONG).show();
+									}*/									
 								} else {
 									thumbdn = new Downld(
 											"http://wscubetech.org/app/updown/"

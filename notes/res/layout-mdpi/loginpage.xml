@@ -31,52 +31,40 @@
         android:id="@+id/rl1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="@dimen/dim_10"
-           android:layout_marginRight="@dimen/dim_10"
-        android:layout_marginBottom="@dimen/dim_15" >
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
 
         <Button
             android:id="@+id/BtnLogin"
             android:layout_width="@dimen/dim_130"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:textSize="@dimen/dim_27"
-            android:text="Login"
-            android:textColor="@android:color/white" 
-         
-            
             android:background="@drawable/rbutton"
-   />         
+            android:text="Login"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dim_27" />
 
         <Button
             android:id="@+id/BtnSignup"
             android:layout_width="@dimen/dim_130"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-
             android:background="@drawable/rbutton"
             android:text="Signup"
             android:textColor="@android:color/white"
-              android:textSize="@dimen/dim_27" />
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="@dimen/dim_100"
-            android:layout_height="@dimen/dim_35"
-       
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/dim_14"
-            android:text="Notes" />
+            android:textSize="@dimen/dim_27" />
 
         <Button
             android:id="@+id/btnn2"
             android:layout_width="@dimen/dim_100"
             android:layout_height="@dimen/dim_35"
-            android:layout_below="@+id/button1"
-      
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:onClick="onClick"
             android:text="Slider" />
+
     </RelativeLayout>
 
 </RelativeLayout>

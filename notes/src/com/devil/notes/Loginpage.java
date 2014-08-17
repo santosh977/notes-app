@@ -282,16 +282,7 @@ public class Loginpage extends Activity {
 
 			}
 		});
-		((Button) findViewById(R.id.button1))
-				.setOnClickListener(new OnClickListener() {
-
-					@Override
-					public void onClick(View arg0) {
-
-						startActivity(new Intent(Loginpage.this,
-								scrolltab.class));
-					}
-				});
+		
 	}
 
 	private class ImagePagerAdapter extends PagerAdapter {

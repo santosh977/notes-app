@@ -16,6 +16,7 @@ import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -30,7 +31,7 @@ public class Upload extends Activity {
 
 	String imgPath;
 	Bitmap thumb, selectedImage;
-
+	
 	private final int sel_pic = 1;
 	private ImageView prof;
 	Intent imageSelectintenetIntent;
@@ -165,7 +166,6 @@ public class Upload extends Activity {
 				}
 			}*/
 			try {
-
 				OutputStream outStream = null;
 				outStream = new FileOutputStream(file);
 				thumb.compress(Bitmap.CompressFormat.PNG, 100, outStream);
@@ -175,13 +175,24 @@ public class Upload extends Activity {
 				Toast.makeText(getApplicationContext(), e.toString(),
 						Toast.LENGTH_LONG).show();
 			}
-			
-			new UploadFile(dirPath, filePath,
+			UploadFile picup;
+			picup=new UploadFile(dirPath, filePath,
 					"http://wscubetech.org/app/appkit/uploadfile.php",
 					Upload.this);
-			new UploadFile(dirPath, filePath + "-thumb",
+			picup.startUpload();
+			while(picup.servercode==0){
+				//Log.d("servercode:",String.valueOf(picup.servercode));
+				}
+			Toast.makeText(getApplicationContext(), "MainPicture Uploaded.",
+					Toast.LENGTH_LONG).show();
+			Log.d("main", "Finished");
+			picup=new UploadFile(dirPath, filePath + "-thumb",
 					"http://wscubetech.org/app/appkit/uploadfile.php",
 					Upload.this);
+			picup.startUpload();
+			Log.d("thumb", "Finished");
+			Toast.makeText(getApplicationContext(), "Thumbnail Uploaded.",
+					Toast.LENGTH_LONG).show();
 			String url = new String(
 					"http://wscubetech.org/app/appkit/upload.php"
 							+ "?sm_type=pic&sm_category=notes&sm_file="
@@ -189,7 +200,7 @@ public class Upload extends Activity {
 			QuickJSON json = new QuickJSON(url);
 			json.TABLE_NAME = "study_material";
 			json.TAG1 = "sm_file";
-			json.execute();
+			//json.execute();
 			startActivity(new Intent(getApplicationContext(), scrolltab.class));
 			finish();
 		} else {
