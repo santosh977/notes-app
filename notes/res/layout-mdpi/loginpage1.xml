@@ -16,11 +16,12 @@
                 
             android:layout_marginLeft="@dimen/dim_30"
               android:layout_marginRight="@dimen/dim_30"
+              android:maxLength="26"
     
             android:background="@android:color/transparent"
             android:hint="abc@xyz.com"
             android:inputType="textEmailAddress"
-            android:layout_marginTop="@dimen/dim_200"
+            android:layout_marginTop="@dimen/dim_160"
             android:textSize="@dimen/dim_30" />
 
         <RelativeLayout
@@ -41,11 +42,11 @@
             android:id="@+id/Editpass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-           android:layout_marginTop="@dimen/dim_25"
+           android:layout_marginTop="@dimen/dim_55"
                android:layout_marginLeft="@dimen/dim_30"
               android:layout_marginRight="@dimen/dim_30"
           android:layout_below="@+id/rel2"
-     
+     android:maxLength="15"
       
             android:background="@android:color/transparent"
             android:hint="Password"

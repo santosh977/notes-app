@@ -9,7 +9,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import android.content.Context;
-import android.os.Environment;
 import android.widget.Toast;
 
 public class Downld {

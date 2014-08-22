@@ -31,8 +31,10 @@
         android:id="@+id/rl1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="@dimen/dim_10"
+       >
 
         <Button
             android:id="@+id/BtnLogin"
@@ -43,7 +45,8 @@
             android:background="@drawable/rbutton"
             android:text="Login"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/dim_27" />
+            android:textSize="@dimen/dim_27" 
+    />
 
         <Button
             android:id="@+id/BtnSignup"
@@ -64,7 +67,6 @@
             android:layout_centerHorizontal="true"
             android:onClick="onClick"
             android:text="Slider" />
-
     </RelativeLayout>
 
 </RelativeLayout>

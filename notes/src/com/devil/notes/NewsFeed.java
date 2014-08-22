@@ -1,22 +1,39 @@
 package com.devil.notes;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.os.Bundle;
-import android.view.Menu;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.CheckedTextView;
+import android.widget.ListView;
+import android.widget.Toast;
 
-public class NewsFeed extends Activity {
+public class NewsFeed extends ListActivity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_news_feed);
-	}
+    String[] news = {"njoy our app after few days!  ;)","cming soon", "sry....u r late", "it is bad news", "amcat exam date", "gate exam date", "ssc exam date",
+    		"best notes of the day", "wht id good!!!! job or higher study", "about kerl compiler"
+    };
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.news_feed, menu);
-		return true;
-	}
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_news_feed);
 
+        ListView lstView = getListView();
+        //lstView.setChoiceMode(ListView.CHOICE_MODE_NONE);
+        //lstView.setChoiceMode(ListView.CHOICE_MODE_SINGLE); 
+        lstView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        lstView.setTextFilterEnabled(true);
+        
+        setListAdapter(new ArrayAdapter<String>(this, 
+            android.R.layout.simple_list_item_checked,news));
+    }
+
+    public void onListItemClick(ListView parent, View v, 
+    int position, long id) {
+        CheckedTextView item = (CheckedTextView) v;
+        Toast.makeText(this, news[position] + " checked : " + !item.isChecked(), 
+            Toast.LENGTH_SHORT).show();
+    }
+    
 }
