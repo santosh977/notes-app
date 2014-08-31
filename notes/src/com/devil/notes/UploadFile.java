@@ -32,7 +32,7 @@ public class UploadFile {
 		uploadFileName = filename;
 		uploadFilePath = filepath;
 		upLoadServerUri = scriptpath;
-		servercode=0;
+		servercode = 0;
 		// uploadButton = (Button)findViewById(R.id.uploadButton);
 		// messageText = (TextView)findViewById(R.id.messageText);
 
@@ -44,9 +44,12 @@ public class UploadFile {
 
 		// dialog = ProgressDialog.show(UploadFile.this, "",
 		// "Uploading file...", true);
-		}
-public void startUpload()
-{servercode=uploadFile(uploadFilePath + "" + uploadFileName);}
+	}
+
+	public void startUpload() {
+		servercode = uploadFile(uploadFilePath + "" + uploadFileName);
+	}
+
 	public int uploadFile(String sourceFileUri) {
 
 		String fileName = sourceFileUri;
@@ -126,8 +129,8 @@ public void startUpload()
 
 				Log.i("uploadFile", "HTTP Response is : "
 						+ serverResponseMessage + ": " + serverResponseCode);
-				
-				Log.d("Finished","UploadFile");
+
+				Log.d("Finished", "UploadFile");
 
 				if (serverResponseCode == 200) {
 					Toast.makeText(context, "File Upload Complete.",

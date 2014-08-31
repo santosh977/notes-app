@@ -7,7 +7,7 @@ import android.widget.Spinner;
 
 public class Search extends Activity {
 	// int i;
-	Spinner s1, s2, s3, s4, s5, s6, s7, s8;
+	Spinner s1, s2, s3, s4, s5, s6, s7, s8,s9;
 	String[] country = { "India", "Australia",
 
 	};
@@ -32,6 +32,9 @@ public class Search extends Activity {
 
 	};
 	String[] semester = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+
+	};
+	String[] category = { "Notes", "Assignment", "quizzes", "",
 
 	};
 
@@ -86,6 +89,11 @@ public class Search extends Activity {
 				android.R.layout.simple_spinner_item, country);
 		s8.setAdapter(adapter8);
 		s8.setPrompt("Select a Country");
+		s9 = (Spinner) findViewById(R.id.spinner9);
+		ArrayAdapter<String> adapter9 = new ArrayAdapter<String>(this,
+				android.R.layout.simple_spinner_item, category);
+		s9.setAdapter(adapter9);
+		s9.setPrompt("Select a Category");
 
 	}
 }

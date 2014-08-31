@@ -10,30 +10,31 @@ import android.widget.Toast;
 
 public class NewsFeed extends ListActivity {
 
-    String[] news = {"njoy our app after few days!  ;)","cming soon", "sry....u r late", "it is bad news", "amcat exam date", "gate exam date", "ssc exam date",
-    		"best notes of the day", "wht id good!!!! job or higher study", "about kerl compiler"
-    };
+	String[] news = { "heading", "proffeser name", "sry....u r late",
+			"it is bad news", "amcat exam date", "gate exam date",
+			"ssc exam date", "best notes of the day",
+			"wht id good!!!! job or higher study", "about kerl compiler" };
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news_feed);
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_news_feed);
 
-        ListView lstView = getListView();
-        //lstView.setChoiceMode(ListView.CHOICE_MODE_NONE);
-        //lstView.setChoiceMode(ListView.CHOICE_MODE_SINGLE); 
-        lstView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        lstView.setTextFilterEnabled(true);
-        
-        setListAdapter(new ArrayAdapter<String>(this, 
-            android.R.layout.simple_list_item_checked,news));
-    }
+		ListView lstView = getListView();
+		// lstView.setChoiceMode(ListView.CHOICE_MODE_NONE);
+		// lstView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+		lstView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+		lstView.setTextFilterEnabled(true);
 
-    public void onListItemClick(ListView parent, View v, 
-    int position, long id) {
-        CheckedTextView item = (CheckedTextView) v;
-        Toast.makeText(this, news[position] + " checked : " + !item.isChecked(), 
-            Toast.LENGTH_SHORT).show();
-    }
-    
+		setListAdapter(new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_checked, news));
+	}
+
+	public void onListItemClick(ListView parent, View v, int position, long id) {
+		CheckedTextView item = (CheckedTextView) v;
+		Toast.makeText(this,
+				news[position] + " checked : " + !item.isChecked(),
+				Toast.LENGTH_SHORT).show();
+	}
+
 }

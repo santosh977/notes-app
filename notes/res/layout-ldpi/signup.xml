@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="0.70"
+    android:background="#004686" >
+
+    <!--
+           <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/button1" >
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button1"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" >
+android:layout_alignBottom="@+id/scrollView1"
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_0"
+            android:layout_marginLeft="@dimen/dim_20"
+            android:layout_marginRight="@dimen/dim_10"
+            android:layout_marginTop="@dimen/dim_8"
+            android:layout_weight="0.08"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:padding="0dp"
+            android:textSize="@dimen/dim_10" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_0"
+            android:layout_marginLeft="@dimen/dim_20"
+            android:layout_marginRight="@dimen/dim_10"
+            android:layout_marginTop="@dimen/dim_3"
+            android:layout_weight="0.08"
+            android:hint="abc@xyz.com"
+            android:inputType="textEmailAddress"
+            android:maxLength="26"
+            android:padding="0dp"
+            android:textSize="@dimen/dim_10" />
+
+        <Spinner
+            android:id="@+id/spinner8"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_0"
+            android:layout_marginLeft="@dimen/dim_20"
+            android:layout_marginRight="@dimen/dim_10"
+            android:layout_marginTop="@dimen/dim_3"
+            android:layout_weight="0.08"
+            android:drawSelectorOnTop="true"
+            android:padding="0dp"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_0"
+            android:layout_marginLeft="@dimen/dim_20"
+            android:layout_marginRight="@dimen/dim_10"
+            android:layout_marginTop="@dimen/dim_3"
+            android:layout_weight="0.08"
+            android:drawSelectorOnTop="true"
+            android:padding="0dp"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_0"
+            android:layout_marginLeft="@dimen/dim_20"
+            android:layout_marginRight="@dimen/dim_10"
+            android:layout_marginTop="@dimen/dim_3"
+            android:layout_weight="0.08"
+            android:drawSelectorOnTop="true"
+            android:padding="0dp"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_0"
+            android:layout_marginLeft="@dimen/dim_20"
+            android:layout_marginRight="@dimen/dim_10"
+            android:layout_marginTop="@dimen/dim_3"
+            android:layout_weight="0.08"
+            android:drawSelectorOnTop="true"
+            android:padding="0dp"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spinner4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_0"
+            android:layout_marginLeft="@dimen/dim_20"
+            android:layout_marginRight="@dimen/dim_10"
+            android:layout_marginTop="@dimen/dim_3"
+            android:layout_weight="0.08"
+            android:drawSelectorOnTop="true"
+            android:padding="0dp"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spinner5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_0"
+            android:layout_marginLeft="@dimen/dim_20"
+            android:layout_marginRight="@dimen/dim_10"
+            android:layout_marginTop="@dimen/dim_3"
+            android:layout_weight="0.08"
+            android:drawSelectorOnTop="true"
+            android:padding="0dp"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spinner6"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_0"
+            android:layout_marginLeft="@dimen/dim_20"
+            android:layout_marginRight="@dimen/dim_10"
+            android:layout_marginTop="@dimen/dim_3"
+            android:layout_weight="0.08"
+            android:drawSelectorOnTop="true"
+            android:padding="0dp"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/spinner7"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_0"
+            android:layout_marginLeft="@dimen/dim_20"
+            android:layout_marginRight="@dimen/dim_10"
+            android:layout_marginTop="@dimen/dim_3"
+            android:layout_weight="0.08"
+            android:drawSelectorOnTop="true"
+            android:padding="0dp"
+            android:spinnerMode="dialog" />
+
+        <EditText
+            android:id="@+id/editText9"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_0"
+            android:layout_marginLeft="@dimen/dim_20"
+            android:layout_marginRight="@dimen/dim_10"
+            android:layout_marginTop="@dimen/dim_7"
+            android:layout_weight="0.08"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:padding="0dp"
+            android:textSize="@dimen/dim_10" />
+
+        <EditText
+            android:id="@+id/editText10"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_0"
+            android:layout_marginLeft="@dimen/dim_20"
+            android:layout_marginRight="@dimen/dim_10"
+            android:layout_marginTop="@dimen/dim_7"
+            android:layout_weight="0.08"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:padding="0dp"
+            android:textSize="@dimen/dim_10" />
+    </LinearLayout>
+    <!-- </ScrollView> -->
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="@dimen/dim_120"
+        android:layout_height="@dimen/dim_40"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rbutton"
+        android:gravity="center"
+        android:onClick="Function2"
+        android:text="Submit"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/dim_25" />
+
+</RelativeLayout>

@@ -207,7 +207,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 							// Bitmap bitmap =
 							// BitmapFactory.decodeByteArray(completeImage , 0,
 							// completeImage.length);
-							arr_pics.add(new PicNote(name, i -1));
+							arr_pics.add(new PicNote(name, i - 1));
 
 						}
 						// tmp hashmap for single contact
@@ -366,26 +366,29 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 							filePath += "thumb/";
 						} else {
 							thumbdn = new Downld(
-									"http://wscubetech.org/app/updown/" + fname+"-thumb",
-									filePath + "thumb/", fname, scrolltab.this);
+									"http://wscubetech.org/app/updown/" + fname
+											+ "-thumb", filePath + "thumb/",
+									fname, scrolltab.this);
 							if (thumbdn.success && file.length() != 0)
 								filePath += "thumb/";
 							else {
 								file = new File(filePath + fname);
 								if (file.exists() && file.length() != 0) {
 									directfound = true;
-									/*try {
-										OutputStream outStream = null;
-										File th_file = new File(filePath + fname+"-thumb");
-										outStream = new FileOutputStream(th_file);
-										bitmap = BitmapFactory.decodeFile(filePath + fname);
-										bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
-										outStream.flush();
-										outStream.close();
-									} catch (Exception e) {
-										Toast.makeText(getApplicationContext(), e.toString(),
-												Toast.LENGTH_LONG).show();
-									}*/									
+									/*
+									 * try { OutputStream outStream = null; File
+									 * th_file = new File(filePath +
+									 * fname+"-thumb"); outStream = new
+									 * FileOutputStream(th_file); bitmap =
+									 * BitmapFactory.decodeFile(filePath +
+									 * fname);
+									 * bitmap.compress(Bitmap.CompressFormat
+									 * .PNG, 100, outStream); outStream.flush();
+									 * outStream.close(); } catch (Exception e)
+									 * { Toast.makeText(getApplicationContext(),
+									 * e.toString(), Toast.LENGTH_LONG).show();
+									 * }
+									 */
 								} else {
 									thumbdn = new Downld(
 											"http://wscubetech.org/app/updown/"
@@ -473,6 +476,10 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 							else
 								arr_pics.get(position).downloadstatus = 1;
 
+						} else if (v.getId() == R.id.imageView3) {
+							startActivity(new Intent(getApplicationContext(),
+									Notesdetail.class));
+
 						} else {
 							Toast.makeText(getApplicationContext(), "TODO",
 									Toast.LENGTH_LONG).show();
@@ -481,6 +488,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 					}
 				}
 			};
+
 			// btn.setOnClickListener(NotesListButtonClick);
 			list.setOnClickListener(NotesListButtonClick);
 			return list;

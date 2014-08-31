@@ -68,7 +68,8 @@
         </activity>
         <activity
             android:name="com.devil.notes.NewsFeed"
-            android:label="@string/title_activity_news_feed" >
+            android:label="@string/title_activity_news_feed"
+              android:theme="@android:style/Theme.Dialog" >
         </activity>
         <activity
             android:name="com.devil.notes.Chatroom"
@@ -77,6 +78,11 @@
         <activity
             android:name="com.devil.notes.Usernotes"
             android:label="@string/title_activity_usernotes" >
+        </activity>
+        <activity
+            android:name="com.devil.notes.Notesdetail"
+            android:label="@string/title_activity_notesdetail"
+              android:theme="@android:style/Theme.Dialog" >
         </activity>
     </application>
 

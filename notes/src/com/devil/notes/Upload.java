@@ -30,7 +30,7 @@ public class Upload extends Activity {
 
 	String imgPath;
 	Bitmap thumb, selectedImage;
-	
+
 	private final int sel_pic = 1;
 	private ImageView prof;
 	Intent imageSelectintenetIntent;
@@ -153,17 +153,14 @@ public class Upload extends Activity {
 			String filePath = imgPath.substring(imgPath.lastIndexOf('/') + 1,
 					imgPath.length());
 
-			File file = new File(dirPath + "thumb/", filePath+"-thumb");
+			File file = new File(dirPath + "thumb/", filePath + "-thumb");
 			File thumbDirFile = new File(dirPath + "thumb/");
 			if (!thumbDirFile.exists())
 				thumbDirFile.mkdir();
-			/*if (!file.exists()) {
-				try {
-					file.createNewFile();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}*/
+			/*
+			 * if (!file.exists()) { try { file.createNewFile(); } catch
+			 * (IOException e) { e.printStackTrace(); } }
+			 */
 			try {
 				OutputStream outStream = null;
 				outStream = new FileOutputStream(file);
@@ -175,17 +172,17 @@ public class Upload extends Activity {
 						Toast.LENGTH_LONG).show();
 			}
 			UploadFile picup;
-			picup=new UploadFile(dirPath, filePath,
+			picup = new UploadFile(dirPath, filePath,
 					"http://wscubetech.org/app/appkit/uploadfile.php",
 					Upload.this);
 			picup.startUpload();
-			while(picup.servercode==0){
-				//Log.d("servercode:",String.valueOf(picup.servercode));
-				}
+			while (picup.servercode == 0) {
+				// Log.d("servercode:",String.valueOf(picup.servercode));
+			}
 			Toast.makeText(getApplicationContext(), "MainPicture Uploaded.",
 					Toast.LENGTH_LONG).show();
 			Log.d("main", "Finished");
-			picup=new UploadFile(dirPath, filePath + "-thumb",
+			picup = new UploadFile(dirPath, filePath + "-thumb",
 					"http://wscubetech.org/app/appkit/uploadfile.php",
 					Upload.this);
 			picup.startUpload();
@@ -199,7 +196,7 @@ public class Upload extends Activity {
 			QuickJSON json = new QuickJSON(url);
 			json.TABLE_NAME = "study_material";
 			json.TAG1 = "sm_file";
-			//json.execute();
+			// json.execute();
 			startActivity(new Intent(getApplicationContext(), scrolltab.class));
 			finish();
 		} else {

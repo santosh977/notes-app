@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#004686" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/rel2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_1"
+            android:layout_alignBottom="@+id/EditMail"
+            android:layout_marginLeft="@dimen/dim_30"
+            android:layout_marginRight="@dimen/dim_30"
+            android:background="@android:color/white" >
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/Editpass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel2"
+            android:layout_marginLeft="@dimen/dim_30"
+            android:layout_marginRight="@dimen/dim_30"
+            android:layout_marginTop="@dimen/dim_15"
+            android:background="@android:color/transparent"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dim_30" />
+
+        <RelativeLayout
+            android:id="@+id/rel4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_1"
+            android:layout_alignBottom="@+id/Editpass"
+            android:layout_marginLeft="@dimen/dim_30"
+            android:layout_marginRight="@dimen/dim_30"
+            android:background="@android:color/white" >
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:gravity="center_horizontal"
+            android:onClick="Function9"
+            android:text="Sign Up for notes"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dim_25" />
+
+        <Button
+            android:id="@+id/BtnLogin"
+            android:layout_width="@dimen/dim_110"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Editpass"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="39dp"
+            android:background="@drawable/rbutton"
+            android:gravity="center"
+            android:onClick="Function8"
+            android:text="Login"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dim_30" />
+
+        <CheckBox
+            android:id="@+id/chkAutosave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/BtnLogin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="Remember Me"
+            android:textColor="@android:color/secondary_text_dark"
+            android:textSize="@dimen/dim_20" />
+
+        <TextView
+            android:id="@+id/Forgetpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/chkAutosave"
+            android:layout_below="@+id/chkAutosave"
+            android:layout_marginTop="23dp"
+            android:clickable="true"
+            android:onClick="Function10"
+            android:text="Forget Password ?"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dim_20" />
+
+        <EditText
+            android:id="@+id/EditMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/Editpass"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/rel2"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dim_15"
+            android:background="@android:color/transparent"
+            android:hint="abc@xyz.com"
+            android:inputType="textEmailAddress"
+            android:maxLength="26"
+            android:textSize="@dimen/dim_30" >
+
+            <requestFocus />
+        </EditText>
+    </RelativeLayout>
+
+</RelativeLayout>

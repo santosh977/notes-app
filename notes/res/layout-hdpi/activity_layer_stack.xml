@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@drawable/blue_bg" >
+
+    <!-- Menu Panel -->
+
+    <RelativeLayout
+        android:id="@+id/menuPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/gray_bg"
+        android:gravity="right"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/menu_title_1"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_50"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:background="#353535"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dim_15"
+            android:text="@string/menu_title"
+            android:textColor="@android:color/white" >
+        </TextView>
+
+        <View
+            android:id="@+id/menu_item_divider_1"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_1"
+            android:layout_below="@+id/menu_title_1"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:background="#b5b5b5" />
+
+        <LinearLayout
+            android:id="@+id/profile_cell"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_60"
+            android:layout_below="@+id/menu_item_divider_1"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="@dimen/dim_27"
+                android:layout_height="@dimen/dim_27"
+                android:layout_marginLeft="@dimen/dim_15"
+                android:layout_marginTop="@dimen/dim_5"
+                android:background="@drawable/avatar_contact"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dim_7"
+                android:layout_marginLeft="@dimen/dim_13"
+                android:gravity="center_vertical"
+                android:text="Name"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/menu_item_1"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_50"
+            android:layout_below="@+id/menu_item_divider_1"
+            android:layout_marginLeft="@dimen/dim_15"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="SliderClick"
+            android:text="@string/item_1" >
+        </TextView>
+
+        <View
+            android:id="@+id/menu_item_divider_1"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_1"
+            android:layout_below="@+id/menu_title_1"
+            android:layout_marginLeft="@dimen/dim_5"
+            android:layout_marginRight="@dimen/dim_5"
+            android:background="#b5b5b5" />
+
+        <TextView
+            android:id="@+id/menu_item_2"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_50"
+            android:layout_below="@+id/menu_item_divider_2"
+            android:layout_marginLeft="@dimen/dim_15"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="SliderClick"
+            android:text="@string/item_2" >
+        </TextView>
+
+        <View
+            android:id="@+id/menu_item_divider_2"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_1"
+            android:layout_below="@+id/menu_item_1"
+            android:layout_marginLeft="@dimen/dim_5"
+            android:layout_marginRight="@dimen/dim_5"
+            android:background="#b5b5b5" />
+        <!--
+            <TextView
+                android:id="@+id/menu_item_3"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/dim_50"
+                android:layout_below="@+id/menu_item_divider_3"
+                android:layout_marginLeft="@dimen/dim_15"
+                android:gravity="center_vertical"
+                android:text="@string/item_3"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_3"
+		        android:layout_width="fill_parent"
+		        android:layout_height="@dimen/dim_0.5"
+		        android:layout_marginLeft="@dimen/dim_5"
+		        android:layout_marginRight="@dimen/dim_5"
+		        android:layout_below="@+id/menu_item_2"
+		        android:background="#b5b5b5" />
+        -->
+
+        <TextView
+            android:id="@+id/menu_item_4"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_50"
+            android:layout_below="@+id/menu_item_divider_4"
+            android:layout_marginLeft="@dimen/dim_15"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="SliderClick"
+            android:text="@string/item_4" >
+        </TextView>
+
+        <View
+            android:id="@+id/menu_item_divider_4"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_1"
+            android:layout_below="@+id/menu_item_2"
+            android:layout_marginLeft="@dimen/dim_5"
+            android:layout_marginRight="@dimen/dim_5"
+            android:background="#b5b5b5" />
+
+        <TextView
+            android:id="@+id/menu_item_5"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_50"
+            android:layout_below="@+id/menu_item_divider_5"
+            android:layout_marginLeft="@dimen/dim_15"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="SliderClick"
+            android:text="@string/item_5" >
+        </TextView>
+
+        <View
+            android:id="@+id/menu_item_divider_5"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_1"
+            android:layout_below="@+id/menu_item_4"
+            android:layout_marginLeft="@dimen/dim_5"
+            android:layout_marginRight="@dimen/dim_5"
+            android:background="#b5b5b5" />
+
+        <TextView
+            android:id="@+id/menu_item_6"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_50"
+            android:layout_below="@+id/menu_item_divider_6"
+            android:layout_marginLeft="@dimen/dim_15"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="SliderClick"
+            android:text="@string/item_6" >
+        </TextView>
+
+        <View
+            android:id="@+id/menu_item_divider_6"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_1"
+            android:layout_below="@+id/menu_item_5"
+            android:layout_marginLeft="@dimen/dim_5"
+            android:layout_marginRight="@dimen/dim_5"
+            android:background="#b5b5b5" />
+
+        <TextView
+            android:id="@+id/menu_item_7"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_50"
+            android:layout_below="@+id/menu_item_divider_7"
+            android:layout_marginLeft="@dimen/dim_15"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="SliderClick"
+            android:text="@string/item_7" >
+        </TextView>
+
+        <View
+            android:id="@+id/menu_item_divider_7"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_1"
+            android:layout_below="@+id/menu_item_6"
+            android:layout_marginLeft="@dimen/dim_5"
+            android:layout_marginRight="@dimen/dim_5"
+            android:background="#b5b5b5" />
+
+        <TextView
+            android:id="@+id/menu_item_8"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_50"
+            android:layout_below="@+id/menu_item_divider_8"
+            android:layout_marginLeft="@dimen/dim_15"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="SliderClick"
+            android:text="@string/item_8" >
+        </TextView>
+
+        <View
+            android:id="@+id/menu_item_divider_8"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_1"
+            android:layout_below="@+id/menu_item_7"
+            android:layout_marginLeft="@dimen/dim_5"
+            android:layout_marginRight="@dimen/dim_5"
+            android:background="#b5b5b5" />
+
+        <TextView
+            android:id="@+id/menu_item_9"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_50"
+            android:layout_below="@+id/menu_item_divider_9"
+            android:layout_marginLeft="@dimen/dim_15"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="SliderClick"
+            android:text="@string/item_9" >
+        </TextView>
+
+        <View
+            android:id="@+id/menu_item_divider_9"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_1"
+            android:layout_below="@+id/menu_item_8"
+            android:layout_marginLeft="@dimen/dim_5"
+            android:layout_marginRight="@dimen/dim_5"
+            android:background="#b5b5b5" />
+
+        <TextView
+            android:id="@+id/menu_item_10"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_50"
+            android:layout_below="@+id/menu_item_divider_10"
+            android:layout_marginLeft="@dimen/dim_15"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="SliderClick"
+            android:text="@string/item_10" >
+        </TextView>
+
+        <View
+            android:id="@+id/menu_item_divider_10"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_1"
+            android:layout_below="@+id/menu_item_9"
+            android:layout_marginLeft="@dimen/dim_5"
+            android:layout_marginRight="@dimen/dim_5"
+            android:background="#b5b5b5" />
+
+        <TextView
+            android:id="@+id/menu_item_13"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_50"
+            android:layout_below="@+id/menu_item_divider_13"
+            android:layout_marginLeft="@dimen/dim_15"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="SliderClick"
+            android:text="@string/item_13" />
+
+        <View
+            android:id="@+id/menu_item_divider_13"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_1"
+            android:layout_below="@+id/menu_item_11"
+            android:layout_marginLeft="@dimen/dim_5"
+            android:layout_marginRight="@dimen/dim_5"
+            android:background="#b5b5b5" />
+
+        <TextView
+            android:id="@+id/menu_item_11"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_50"
+            android:layout_below="@+id/menu_item_divider_11"
+            android:layout_marginLeft="@dimen/dim_15"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="SliderClick"
+            android:text="@string/item_11" >
+        </TextView>
+
+        <View
+            android:id="@+id/menu_item_divider_11"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_1"
+            android:layout_below="@+id/menu_item_10"
+            android:layout_marginLeft="@dimen/dim_5"
+            android:layout_marginRight="@dimen/dim_5"
+            android:background="#b5b5b5" />
+        <!--
+            <TextView
+                android:id="@+id/menu_item_13"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/dim_50"
+                android:layout_below="@+id/menu_item_divider_13"
+                android:layout_marginLeft="@dimen/dim_15"
+                android:gravity="center_vertical"
+                android:text="@string/item_13"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+           
+            <View
+		        android:id="@+id/menu_item_divider_13"
+		        android:layout_width="fill_parent"
+		        android:layout_height="@dimen/dim_1"
+		        android:layout_marginLeft="@dimen/dim_5"
+		        android:layout_marginRight="@dimen/dim_5"
+		        android:layout_below="@+id/menu_item_11"
+		        android:background="#b5b5b5" />
+        -->
+        <!--
+            <TextView
+                android:id="@+id/menu_item_7"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_7"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_7"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_7"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_6"
+		        android:background="#b5b5b5" />           
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/menu_item_10"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_10"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_10"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_10"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_9"
+		        android:background="#b5b5b5" />           
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/menu_item_11"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/menu_item_divider_11"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/item_11"
+                android:clickable="true"
+                android:onClick="SliderClick">
+            </TextView>
+            <View
+		        android:id="@+id/menu_item_divider_11"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0.5dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_below="@+id/menu_item_10"
+		        android:background="#b5b5b5" />
+        -->
+    </RelativeLayout>
+
+    <!-- Sliding Panel -->
+
+    <LinearLayout
+        android:id="@+id/slidingPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_50"
+            android:background="@drawable/blue_bg" >
+
+            <View
+                android:id="@+id/header_vertical_divider_1"
+                android:layout_width="@dimen/dim_2"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/dim_15"
+                android:layout_toRightOf="@+id/menuViewButton"
+                android:background="@drawable/engraved_bg" />
+
+            <ImageView
+                android:id="@+id/menuViewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dim_15"
+                android:clickable="true"
+                android:contentDescription="@string/description"
+                android:src="@drawable/icon_menu"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:clickable="true"
+                android:src="@drawable/search" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/dividerHeaderBottom"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_1"
+            android:background="#414141" />
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <!--
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+            -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim_170"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/notes"
+                    android:onClick="imageSelect" />
+
+                <ImageButton
+                    android:id="@+id/asquz"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim_170"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/asquz"
+                    android:onClick="imageSelect" />
+
+                <ImageButton
+                    android:id="@+id/tnp1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim_170"
+                    android:background="@drawable/tnp1"
+                    android:onClick="imageSelect" />
+
+                <ImageButton
+                    android:id="@+id/bns"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim_170"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/bns"
+                    android:onClick="imageSelect" />
+
+                <ImageButton
+                    android:id="@+id/newsfeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim_170"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/newsfeed"
+                    android:onClick="imageSelect" />
+
+                <ImageButton
+                    android:id="@+id/clg12"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim_170"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/clg12"
+                    android:onClick="imageSelect" />
+
+                <ImageButton
+                    android:id="@+id/cht"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dim_170"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/cht"
+                    android:onClick="imageSelect" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</FrameLayout>

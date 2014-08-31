@@ -282,13 +282,13 @@ public class Loginpage extends Activity {
 
 			}
 		});
-		
+
 	}
 
 	private class ImagePagerAdapter extends PagerAdapter {
 		private int[] mImages = new int[] { R.drawable.notes, R.drawable.tnp1,
 				R.drawable.newsfeed, R.drawable.clg12, R.drawable.bns,
-				R.drawable.cht,	R.drawable.blk1};
+				R.drawable.cht, R.drawable.blk1 };
 
 		@Override
 		public int getCount() {
@@ -327,11 +327,19 @@ public class Loginpage extends Activity {
 						startActivity(new Intent(getApplicationContext(),
 								Members.class));
 						break;
+
+					case 2:
+						startActivity(new Intent(getApplicationContext(),
+								NewsFeed.class));
+						break;
 					case 3:
 						startActivity(new Intent(getApplicationContext(),
 								Clges.class));
 						break;
-
+					/*
+					 * case 4: startActivity(new Intent(getApplicationContext(),
+					 * NewsFeed.class)); break;
+					 */
 					default:
 						Toast.makeText(getApplicationContext(),
 								"TODO:" + String.valueOf(position),

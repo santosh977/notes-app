@@ -69,7 +69,7 @@ public class Submitnotes extends Activity {
 		alert.setNegativeButton("CANCEL", new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				
+
 				dialog.dismiss();
 			}
 		});
