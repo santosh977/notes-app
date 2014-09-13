@@ -1,6 +1,8 @@
 package com.devil.notes;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -11,6 +13,7 @@ import org.json.JSONObject;
 import android.app.TabActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -46,7 +49,7 @@ class PicNote {
 	String imgname;
 	int id;
 	int downloadstatus;
-
+	
 	/*
 	 * 0=unknown 1=queued to download 2=error in downloading 3=downloaded
 	 */
@@ -178,7 +181,20 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 			jsonStr = sh.makeServiceCall(url, ServiceHandler.GET);
 
 			Log.d("Response: ", "> " + jsonStr);
-
+			
+			SharedPreferences prefs;
+			String prefName = "notes";
+			String prefData = "DataList";
+			prefs = getSharedPreferences(prefName, MODE_PRIVATE);
+			SharedPreferences.Editor editor = prefs.edit();
+			if(jsonStr==null){
+				if(prefs.contains(prefData))
+				jsonStr=prefs.getString(prefData,"");
+			}
+			else{
+			editor.putString(prefData, jsonStr);
+			editor.commit();}
+			
 			if (jsonStr != null) {
 				try {
 					JSONObject jsonObj = new JSONObject(jsonStr);
@@ -192,15 +208,16 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 					for (int i = 0; i < contacts.length(); i++) {
 						JSONObject c = contacts.getJSONObject(i);
 						String name = c.getString(TAG_NAME);
-						Time.add(c.getString(TAG_TIME));
+						
 						/* String id = c.getString(TAG_ID); */
 						if (c.getString("sm_type").equals("raw")) {
 							Heading.add("raw");
 							TextData.add(name);
-
+							Time.add(c.getString(TAG_TIME));
 						} else if (c.getString("sm_type").equals("pic")) {
 							Heading.add("Picture");
 							TextData.add(name);
+							Time.add(c.getString(TAG_TIME));
 							// byte[] completeImage;
 							// completeImage=
 							// Base64.decode(name,Base64.DEFAULT);
@@ -375,20 +392,25 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 								file = new File(filePath + fname);
 								if (file.exists() && file.length() != 0) {
 									directfound = true;
-									/*
-									 * try { OutputStream outStream = null; File
-									 * th_file = new File(filePath +
-									 * fname+"-thumb"); outStream = new
-									 * FileOutputStream(th_file); bitmap =
-									 * BitmapFactory.decodeFile(filePath +
-									 * fname);
-									 * bitmap.compress(Bitmap.CompressFormat
-									 * .PNG, 100, outStream); outStream.flush();
-									 * outStream.close(); } catch (Exception e)
-									 * { Toast.makeText(getApplicationContext(),
-									 * e.toString(), Toast.LENGTH_LONG).show();
-									 * }
-									 */
+
+									try {
+//										OutputStream outStream = null;
+//										File th_file = new File(filePath
+//												+ fname + "-thumb");
+//										outStream = new FileOutputStream(
+//												th_file);
+										bitmap = BitmapFactory
+												.decodeFile(filePath + fname);
+//										bitmap.compress(
+//												Bitmap.CompressFormat.PNG, 100,
+//												outStream);
+//										outStream.flush();
+//										outStream.close();
+									} catch (Exception e) {
+										Toast.makeText(getApplicationContext(),
+												e.toString(), Toast.LENGTH_LONG)
+												.show();
+									}
 								} else {
 									thumbdn = new Downld(
 											"http://wscubetech.org/app/updown/"

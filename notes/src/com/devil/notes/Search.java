@@ -7,7 +7,7 @@ import android.widget.Spinner;
 
 public class Search extends Activity {
 	// int i;
-	Spinner s1, s2, s3, s4, s5, s6, s7, s8,s9;
+	Spinner s1, s2, s3, s4, s5, s6, s7, s8, s9;
 	String[] country = { "India", "Australia",
 
 	};

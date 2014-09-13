@@ -153,7 +153,8 @@ public class Upload extends Activity {
 			String filePath = imgPath.substring(imgPath.lastIndexOf('/') + 1,
 					imgPath.length());
 
-			File file = new File(dirPath + "thumb/", filePath + "-thumb");
+			// File file = new File(dirPath + "thumb/", filePath + "-thumb");
+			File file = new File(dirPath, filePath + "-thumb");
 			File thumbDirFile = new File(dirPath + "thumb/");
 			if (!thumbDirFile.exists())
 				thumbDirFile.mkdir();
@@ -196,7 +197,7 @@ public class Upload extends Activity {
 			QuickJSON json = new QuickJSON(url);
 			json.TABLE_NAME = "study_material";
 			json.TAG1 = "sm_file";
-			// json.execute();
+			json.execute();
 			startActivity(new Intent(getApplicationContext(), scrolltab.class));
 			finish();
 		} else {
