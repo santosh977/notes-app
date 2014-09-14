@@ -29,8 +29,8 @@ public class CustomGrid extends Activity {
 		setContentView(R.layout.customgrid);
 
 		// set grid view item
-		Bitmap homeIcon = BitmapFactory.decodeResource(this.getResources(),
-				R.drawable.home);
+		// Bitmap homeIcon = BitmapFactory.decodeResource(this.getResources(),
+		// R.drawable.home);
 		Bitmap userIcon = BitmapFactory.decodeResource(this.getResources(),
 				R.drawable.personal);
 

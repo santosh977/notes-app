@@ -1,8 +1,6 @@
 package com.devil.notes;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -49,7 +47,7 @@ class PicNote {
 	String imgname;
 	int id;
 	int downloadstatus;
-	
+
 	/*
 	 * 0=unknown 1=queued to download 2=error in downloading 3=downloaded
 	 */
@@ -145,6 +143,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 		private static final String TAG_CONTACTS = "study_material";
 		// private static final String TAG_ID = "id";
 		private static final String TAG_NAME = "sm_file";
+		private static final String TAG_TYPE = "sm_type";
 		private static final String TAG_TIME = "sm_datetime";
 		/*
 		 * private static final String TAG_ADDRESS = "address"; private static
@@ -181,20 +180,20 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 			jsonStr = sh.makeServiceCall(url, ServiceHandler.GET);
 
 			Log.d("Response: ", "> " + jsonStr);
-			
+
 			SharedPreferences prefs;
 			String prefName = "notes";
 			String prefData = "DataList";
 			prefs = getSharedPreferences(prefName, MODE_PRIVATE);
 			SharedPreferences.Editor editor = prefs.edit();
-			if(jsonStr==null){
-				if(prefs.contains(prefData))
-				jsonStr=prefs.getString(prefData,"");
+			if (jsonStr == null) {
+				if (prefs.contains(prefData))
+					jsonStr = prefs.getString(prefData, "");
+			} else {
+				editor.putString(prefData, jsonStr);
+				editor.commit();
 			}
-			else{
-			editor.putString(prefData, jsonStr);
-			editor.commit();}
-			
+
 			if (jsonStr != null) {
 				try {
 					JSONObject jsonObj = new JSONObject(jsonStr);
@@ -208,24 +207,23 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 					for (int i = 0; i < contacts.length(); i++) {
 						JSONObject c = contacts.getJSONObject(i);
 						String name = c.getString(TAG_NAME);
-						
+
 						/* String id = c.getString(TAG_ID); */
-						if (c.getString("sm_type").equals("raw")) {
-							Heading.add("raw");
-							TextData.add(name);
-							Time.add(c.getString(TAG_TIME));
-						} else if (c.getString("sm_type").equals("pic")) {
+						TextData.add(name);
+						Time.add(c.getString(TAG_TIME));
+						if (c.getString(TAG_TYPE).equals("raw")) {
+							Heading.add(c.getString(TAG_TYPE));
+						} else if (c.getString(TAG_TYPE).equals("pic")) {
 							Heading.add("Picture");
-							TextData.add(name);
-							Time.add(c.getString(TAG_TIME));
 							// byte[] completeImage;
 							// completeImage=
 							// Base64.decode(name,Base64.DEFAULT);
 							// Bitmap bitmap =
 							// BitmapFactory.decodeByteArray(completeImage , 0,
 							// completeImage.length);
-							arr_pics.add(new PicNote(name, i - 1));
-
+							arr_pics.add(new PicNote(name, i + 1));
+						} else {
+							Heading.add(c.getString(TAG_TYPE));
 						}
 						// tmp hashmap for single contact
 						HashMap<String, String> contact = new HashMap<String, String>();
@@ -347,6 +345,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 			// count++;
 			if (position == 0) {
 				img.setImageDrawable(getResources().getDrawable(arr2.get(0)));
+
 				// btn.setText("Add");
 				// btn.setVisibility(View.INVISIBLE);
 			} else {
@@ -359,11 +358,10 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 					}
 				}
 
-				if (!found_id)
+				if (!found_id) {
 					img.setImageDrawable(getResources()
 							.getDrawable(arr2.get(1)));
-
-				else {
+				} else {
 					String fname = arr_pics.get(i).getImgname();
 					/*
 					 * Toast.makeText(getApplicationContext(),fname,
@@ -377,45 +375,48 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 					boolean directfound = false;
 					File file = null;
 					try {
-						file = new File(filePath + "thumb/" + fname);
+						file = new File(filePath + fname + ".thumb");
 						if (file.exists() && file.length() != 0) {
 							directfound = true;
-							filePath += "thumb/";
+							fname = fname + ".thumb";
 						} else {
 							thumbdn = new Downld(
 									"http://wscubetech.org/app/updown/" + fname
-											+ "-thumb", filePath + "thumb/",
-									fname, scrolltab.this);
-							if (thumbdn.success && file.length() != 0)
-								filePath += "thumb/";
-							else {
+											+ ".thumb", filePath, fname
+											+ ".thumb", scrolltab.this);
+
+							if (thumbdn.success && file.length() != 0) {
+							} else {
 								file = new File(filePath + fname);
 								if (file.exists() && file.length() != 0) {
 									directfound = true;
+								} else {
 
 									try {
-//										OutputStream outStream = null;
-//										File th_file = new File(filePath
-//												+ fname + "-thumb");
-//										outStream = new FileOutputStream(
-//												th_file);
-										bitmap = BitmapFactory
-												.decodeFile(filePath + fname);
-//										bitmap.compress(
-//												Bitmap.CompressFormat.PNG, 100,
-//												outStream);
-//										outStream.flush();
-//										outStream.close();
+										thumbdn = new Downld(
+												"http://wscubetech.org/app/updown/"
+														+ fname, filePath,
+												fname, scrolltab.this);
+										// OutputStream outStream = null;
+										// File th_file = new File(filePath
+										// + fname + "-thumb");
+										// outStream = new FileOutputStream(
+										// th_file);
+										// bitmap = BitmapFactory
+										// .decodeFile(filePath + fname);
+										// bitmap.compress(
+										// Bitmap.CompressFormat.PNG, 100,
+										// outStream);
+										// outStream.flush();
+										// outStream.close();
 									} catch (Exception e) {
-										Toast.makeText(getApplicationContext(),
-												e.toString(), Toast.LENGTH_LONG)
-												.show();
+										/*
+										 * Toast.makeText(getApplicationContext()
+										 * , e.toString(), Toast.LENGTH_LONG)
+										 * .show();
+										 */
+										Log.d(e.getMessage(), e.toString());
 									}
-								} else {
-									thumbdn = new Downld(
-											"http://wscubetech.org/app/updown/"
-													+ fname, filePath, fname,
-											scrolltab.this);
 								}
 							}
 						}
@@ -427,12 +428,15 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 						}
 					} catch (Exception e) {
 						e.printStackTrace();
-						Toast.makeText(getApplicationContext(),
-								"Exception:" + e.toString(), Toast.LENGTH_LONG)
-								.show();
+						/*
+						 * Toast.makeText(getApplicationContext(), "Exception:"
+						 * + e.toString(), Toast.LENGTH_LONG) .show();
+						 */
+						Log.d(e.getMessage(), e.toString());
 						bitmap = BitmapFactory.decodeResource(c.getResources(),
 								R.drawable.error);
 					}
+					Log.d(filePath, fname);
 					img.setImageBitmap(bitmap);
 					/*
 					 * Toast.makeText(getApplicationContext(), fname + ":" +

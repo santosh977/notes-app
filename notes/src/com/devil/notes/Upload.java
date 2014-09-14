@@ -154,8 +154,8 @@ public class Upload extends Activity {
 					imgPath.length());
 
 			// File file = new File(dirPath + "thumb/", filePath + "-thumb");
-			File file = new File(dirPath, filePath + "-thumb");
-			File thumbDirFile = new File(dirPath + "thumb/");
+			File file = new File(dirPath, filePath + ".thumb");
+			File thumbDirFile = new File(dirPath);
 			if (!thumbDirFile.exists())
 				thumbDirFile.mkdir();
 			/*
@@ -183,7 +183,7 @@ public class Upload extends Activity {
 			Toast.makeText(getApplicationContext(), "MainPicture Uploaded.",
 					Toast.LENGTH_LONG).show();
 			Log.d("main", "Finished");
-			picup = new UploadFile(dirPath, filePath + "-thumb",
+			picup = new UploadFile(dirPath, filePath + ".thumb",
 					"http://wscubetech.org/app/appkit/uploadfile.php",
 					Upload.this);
 			picup.startUpload();

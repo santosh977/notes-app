@@ -23,8 +23,8 @@ public class Clges extends Activity {
 		setContentView(R.layout.activity_clges);
 
 		// set grid view item
-		Bitmap homeIcon = BitmapFactory.decodeResource(this.getResources(),
-				R.drawable.home);
+		// Bitmap homeIcon = BitmapFactory.decodeResource(this.getResources(),
+		// R.drawable.home);
 		Bitmap userIcon = BitmapFactory.decodeResource(this.getResources(),
 				R.drawable.personal);
 
