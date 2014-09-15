@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:arc="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.capricorn.ArcMenu
+            android:id="@+id/arc_menu"
+            android:layout_width="170dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="213dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="0dp"
+      
+            android:layout_gravity="bottom|left" 
+            arc:fromDegrees="@dimen/menuFromDegrees"
+            arc:toDegrees="@dimen/menuToDegrees" 
+      
+            android:layout_alignParentTop="true">
+
+        </com.capricorn.ArcMenu>
+             <!--  arc:childSize="@dimen/menuChildSize" -->
+    </LinearLayout>
+
+</ScrollView>

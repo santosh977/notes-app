@@ -1,0 +1,169 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#004686"
+    tools:context=".Profdiv" >
+    
+    <QuickContactBadge android:id="@+id/quickContactBadge1"
+         android:layout_width="fill_parent" 
+         android:layout_height="150dp" 
+         android:layout_alignParentTop="true" 
+         android:layout_centerHorizontal="true" /> 
+  <ImageView android:id="@+id/imageView1" 
+      android:layout_width="fill_parent"
+android:layout_height="@dimen/dim_500"
+ android:layout_alignBottom="@+id/quickContactBadge1" 
+ android:layout_centerHorizontal="true"
+  android:layout_marginBottom="@dimen/dim_19" 
+  android:src="@drawable/avatar_contact" /> 
+    
+
+    <!-- <QuickContactBadge
+        android:id="@+id/quickContactBadge1"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dim_150"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" 
+        android:layout_marginLeft="@dimen/dim_165"
+        android:layout_marginRight="@dimen/dim_165"
+        android:layout_marginTop="@dimen/dim_30"
+       />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="@dimen/dim_0"
+               android:layout_weight="0.45"
+        android:layout_height="@dimen/dim_500"
+        android:layout_alignBottom="@+id/quickContactBadge1"
+    
+        android:layout_marginTop="@dimen/dim_30"
+       
+     
+        android:src="@drawable/avatar_contact" />
+ -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dim_5"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dim_20"
+        android:src="@drawable/div" />
+ <LinearLayout  
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+      
+        android:background="#004686"
+        android:layout_above="@+id/button1"
+         android:layout_below="@+id/imageView2"
+        android:orientation="vertical" >
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_0"
+                   android:layout_weight="0.12"
+       
+        
+        android:layout_below="@+id/imageView2"
+        android:layout_marginLeft="@dimen/dim_40"
+           android:layout_marginRight="@dimen/dim_40"
+        android:ems="10"
+        android:hint="name"
+        android:textSize="@dimen/dim_13" 
+        android:layout_marginTop="@dimen/dim_15"/>
+    android:layout_alignLeft="@+id/editText1"
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_0"
+                   android:layout_weight="0.12"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_below="@+id/editText3"
+        android:ems="10"
+        android:hint="email"
+        android:textSize="@dimen/dim_13" 
+          android:layout_marginLeft="@dimen/dim_40"
+           android:layout_marginRight="@dimen/dim_40"
+            android:layout_marginTop="@dimen/dim_15">
+
+        <requestFocus />
+    </EditText>
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_0"
+                  android:layout_weight="0.12"
+        android:layout_below="@+id/editText1"
+        android:drawSelectorOnTop="true"
+        android:spinnerMode="dialog" 
+          android:layout_marginLeft="@dimen/dim_40"
+           android:layout_marginRight="@dimen/dim_40"
+            android:layout_marginTop="@dimen/dim_15"/>
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_0"
+              android:layout_weight="0.12"
+        android:layout_below="@+id/spinner1"
+        android:drawSelectorOnTop="true"
+        android:spinnerMode="dialog" 
+          android:layout_marginLeft="@dimen/dim_40"
+           android:layout_marginRight="@dimen/dim_40"
+            android:layout_marginTop="@dimen/dim_15"/>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_0"
+           android:layout_weight="0.12"
+        android:layout_below="@+id/spinner3"
+        android:drawSelectorOnTop="true"
+        android:spinnerMode="dialog" 
+          android:layout_marginLeft="@dimen/dim_40"
+           android:layout_marginRight="@dimen/dim_40"
+            android:layout_marginTop="@dimen/dim_15"/>
+
+   
+
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_0"
+           android:layout_weight="0.12"
+        android:layout_below="@+id/spinner2"
+        android:spinnerMode="dialog"  
+         android:layout_marginLeft="@dimen/dim_40"
+           android:layout_marginRight="@dimen/dim_40"
+            android:layout_marginTop="@dimen/dim_15"/>
+</LinearLayout>
+     <Button
+         android:id="@+id/button2"
+         android:layout_width="@dimen/dim_130"
+         android:layout_height="wrap_content"
+         android:layout_alignRight="@+id/linear1"
+         android:layout_below="@+id/quickContactBadge1"
+         android:layout_marginTop="23dp"
+         android:background="@drawable/rbutton"
+         android:text="Edit profile"
+         android:textColor="@android:color/white"
+         android:textSize="@dimen/dim_20" />
+
+     <Button
+         android:id="@+id/button1"
+         android:layout_width="@dimen/dim_200"
+         android:layout_height="@dimen/dim_40"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+         android:layout_marginBottom="25dp"
+         android:background="@drawable/rbutton"
+         android:text="SUBMITTED NOTES"
+         android:textColor="@android:color/white"
+         android:textSize="@dimen/dim_17" />
+
+</RelativeLayout>

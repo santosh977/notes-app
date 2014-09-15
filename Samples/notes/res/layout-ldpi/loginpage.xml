@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="0.70"
+    android:background="#004686"
+    android:orientation="vertical"
+ >
+
+    <!--
+    <ImageSwitcher
+        android:id="@+id/is"
+        android:layout_width="@dimen/dim_270"
+        android:layout_height="@dimen/dim_370"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/btnfr"
+        android:layout_toRightOf="@+id/btnbk"
+        android:paddingLeft="@dimen/dim_50"
+        android:paddingRight="@dimen/dim_50" >
+    </ImageSwitcher>
+    -->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl1"
+       
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/dim_70" />
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true" >
+
+        <Button
+            android:id="@+id/BtnLogin"
+            android:layout_width="@dimen/dim_90"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/rbutton"
+            android:text="Login"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dim_27" 
+    />
+
+        <Button
+            android:id="@+id/BtnSignup"
+            android:layout_width="@dimen/dim_90"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/rbutton"
+            android:text="Signup"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dim_27" />
+
+        <Button
+            android:id="@+id/btnn2"
+            android:layout_width="@dimen/dim_100"
+            android:layout_height="@dimen/dim_35"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="onClick"
+            android:text="Slider" />
+    </RelativeLayout>
+
+</RelativeLayout>
