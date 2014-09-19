@@ -28,6 +28,8 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.capricorn.ArcMenu;
+
 class PicNote {
 
 	PicNote(String image2, int id2) {
@@ -77,6 +79,11 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 	ArrayList<Integer> arr2 = new ArrayList<Integer>();
 	ArrayList<PicNote> arr_pics = new ArrayList<PicNote>();
 	IconicAdapter iconic_notes;
+	
+	private static final int[] ITEM_DRAWABLES = { R.drawable.composer_camera, R.drawable.composer_music,
+		R.drawable.composer_place, R.drawable.composer_sleep, R.drawable.composer_thought, R.drawable.composer_with };
+
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -125,6 +132,15 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 		TabName = new String("Projects");
 		tabHost.addTab(tabHost.newTabSpec(TabName).setIndicator(TabName)
 				.setContent(this));
+		
+          
+
+		ArcMenu arcMenu = (ArcMenu) findViewById(R.id.arc_menu);
+        initArcMenu(arcMenu, ITEM_DRAWABLES);
+        
+        
+  
+
 	}
 
 	// Hashmap for ListView
@@ -520,4 +536,22 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 			return list;
 		}
 	}
-}
+	final int itemCount = ITEM_DRAWABLES.length;
+	 private void initArcMenu(ArcMenu menu, int[] itemDrawables) {
+	        final int itemCount = itemDrawables.length;
+	        for (int i = 0; i < itemCount; i++) {
+	            ImageView item = new ImageView(this);
+	            item.setImageResource(itemDrawables[i]);
+
+	            final int position = i;
+	            menu.addItem(item, new OnClickListener() {
+
+	                @Override
+	                public void onClick(View v) {
+	                    Toast.makeText(scrolltab.this, "position:" + position, Toast.LENGTH_SHORT).show();
+	                }
+	            });
+	        }
+	    }
+		
+	}

@@ -3,6 +3,11 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    
+       <item name="menuFromDegrees" format="float" type="dimen">135.0</item>
+    <item name="menuToDegrees" format="float" type="dimen">225.0</item>
+    <dimen name="menuChildSize">20dp</dimen>
+  
     <dimen name="sticky_height">120dp</dimen>
     <dimen name="top_height">150dp</dimen>
     <dimen name="page_margin">16dp</dimen>

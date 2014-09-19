@@ -43,9 +43,12 @@
         <activity android:name="com.devil.notes.Item" />
         <activity android:name="com.devil.notes.Handlers" />
         <activity android:name="com.devil.notes.scrolltab" />
+         <activity android:name="com.devil.notes.Action" />
         <activity
             android:name="com.devil.notes.LayerStack"
-            android:theme="@android:style/Theme.NoTitleBar" />
+        />
+        
+             android:theme="@android:style/Theme.NoTitleBar"
         <activity
             android:name="com.devil.notes.Purpose"
             android:label="@string/about_text"
@@ -53,7 +56,7 @@
         <!-- android:name="com.example.notes.NotesActivity -->
         <activity
             android:name="com.devil.notes.Forgot"
-            android:theme="@android:style/Theme.NoTitleBar" />
+            />
         <activity
             android:name="com.devil.notes.NotesActivity"
             android:label="@string/title_activity_notes" >

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:arc="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:background="#004686" >
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="@dimen/dim_100"
-        android:layout_height="@dimen/dim_80"
+        android:layout_width="@dimen/dim_80"
+        android:layout_height="@dimen/dim_70"
         android:layout_alignParentTop="true"
-        android:src="@drawable/avatar_contact" />
+        android:src="@drawable/avatar_contact"
+         android:background="@drawable/roundedrect"  />
 
     <TextView
         android:id="@+id/textView3"
@@ -30,14 +32,28 @@
           android:clickable="true"
         android:src="@drawable/setting" />
 
-    <ImageView
+   <!--  <ImageView
         android:id="@+id/imageView2"
         android:layout_width="@dimen/dim_50"
         android:layout_height="@dimen/dim_40"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/imageView3"
         android:clickable="true"
-        android:src="@drawable/download" />
+        android:src="@drawable/download" /> -->
+
+       <com.capricorn.ArcMenu
+           android:id="@+id/arc_menu"
+           android:layout_width="170dp"
+           android:layout_height="120dp"
+           android:layout_alignParentTop="true"
+           android:layout_gravity="bottom|left"
+           android:layout_marginLeft="213dp"
+           android:layout_marginTop="0dp"
+           arc:fromDegrees="@dimen/menuFromDegrees"
+           arc:toDegrees="@dimen/menuToDegrees" >
+    
+  </com.capricorn.ArcMenu>
+    
 
     <TextView
         android:id="@+id/textView7"

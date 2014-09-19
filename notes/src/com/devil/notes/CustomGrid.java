@@ -2,11 +2,11 @@ package com.devil.notes;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -18,7 +18,7 @@ import android.widget.GridView;
  * 
  */
 
-public class CustomGrid extends Activity {
+public class CustomGrid extends Action {
 	GridView gridView;
 	ArrayList<Item> gridArray = new ArrayList<Item>();
 	CustomGridViewAdapter customGridAdapter;
@@ -60,5 +60,7 @@ public class CustomGrid extends Activity {
 		});
 		gridView.setAdapter(customGridAdapter);
 	}
-
+	 public boolean onOptionsItemSelected(MenuItem item)
+	    {   return super.onOptionsItemSelected(item);  
+	    }    
 }

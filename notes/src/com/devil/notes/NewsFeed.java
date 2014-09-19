@@ -13,7 +13,7 @@ public class NewsFeed extends ListActivity {
 	String[] news = { "heading", "proffeser name", "sry....u r late",
 			"it is bad news", "amcat exam date", "gate exam date",
 			"ssc exam date", "best notes of the day",
-			"wht id good!!!! job or higher study", "about kerl compiler" };
+			"wht is good!!!! job or higher study", "about kerl compiler" };
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

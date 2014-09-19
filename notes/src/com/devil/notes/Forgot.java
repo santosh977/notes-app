@@ -1,11 +1,11 @@
 package com.devil.notes;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.util.DisplayMetrics;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
@@ -17,7 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-public class Forgot extends Activity {
+public class Forgot extends Action {
 
 	private LinearLayout slidingPanel;
 	private boolean isExpanded;
@@ -158,5 +158,7 @@ public class Forgot extends Activity {
 			break;
 		}
 	}
-
+	 public boolean onOptionsItemSelected(MenuItem item)
+	    {   return super.onOptionsItemSelected(item);  
+	    }    
 }

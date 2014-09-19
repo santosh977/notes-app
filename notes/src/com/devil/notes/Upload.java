@@ -6,7 +6,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -16,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -25,7 +25,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Upload extends Activity {
+public class Upload extends Action{
 	// String encodedString;
 
 	String imgPath;
@@ -339,4 +339,7 @@ public class Upload extends Activity {
 				matrix, false);
 		return resizedBitmap;
 	}
+	public boolean onOptionsItemSelected(MenuItem item)
+    {   return super.onOptionsItemSelected(item);  
+    }   
 }

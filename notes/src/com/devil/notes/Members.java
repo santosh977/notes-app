@@ -1,12 +1,12 @@
 package com.devil.notes;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
-public class Members extends Activity {
+public class Members extends Action {
 	TextView tv;
 	String names;
 
@@ -28,5 +28,8 @@ public class Members extends Activity {
 		getMenuInflater().inflate(R.menu.members, menu);
 		return true;
 	}
+	 public boolean onOptionsItemSelected(MenuItem item)
+	    {   return super.onOptionsItemSelected(item);  
+	    }    
 
 }
