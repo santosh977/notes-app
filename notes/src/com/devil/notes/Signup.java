@@ -3,16 +3,16 @@ package com.devil.notes;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class Signup extends Action{
+public class Signup extends Activity {
 	// int i;
 	Spinner s1, s2, s3, s4, s5, s6, s7, s8;
 	String[] country = { "India", "Australia",
@@ -203,7 +203,4 @@ public class Signup extends Action{
 		}
 		return false;
 	}
-	public boolean onOptionsItemSelected(MenuItem item)
-    {   return super.onOptionsItemSelected(item);  
-    }   
 }

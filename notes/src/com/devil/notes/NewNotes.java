@@ -1,14 +1,14 @@
 package com.devil.notes;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class NewNotes extends Action {
+public class NewNotes extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,5 @@ public class NewNotes extends Action {
 		startActivity(new Intent(getApplicationContext(), scrolltab.class));
 		finish();
 	}
-	 public boolean onOptionsItemSelected(MenuItem item)
-	    {   return super.onOptionsItemSelected(item);  
-	    }    
+
 }

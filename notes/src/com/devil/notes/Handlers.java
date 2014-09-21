@@ -1,7 +1,7 @@
 package com.devil.notes;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class Handlers extends Action {
+public class Handlers extends Activity {
 	ListView l1, l2, l3, l4;
 	String[] presidents = { "Dwight D. Eisenhower", "John F. Kennedy",
 			"Lyndon B. Johnson", "Richard Nixon", "Gerald Ford",
@@ -67,7 +67,5 @@ public class Handlers extends Action {
 		});
 
 	}
-	 public boolean onOptionsItemSelected(MenuItem item)
-	    {   return super.onOptionsItemSelected(item);  
-	    }    
+
 }

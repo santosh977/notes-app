@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class Submitnotes extends Action{
+public class Submitnotes extends Activity {
 	ListView lv;
 	ArrayAdapter<String> adapter;
 	List<String> arr;
@@ -76,7 +76,4 @@ public class Submitnotes extends Action{
 
 		alert.show();
 	}
-	public boolean onOptionsItemSelected(MenuItem item)
-    {   return super.onOptionsItemSelected(item);  
-    }   
 }

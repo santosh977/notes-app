@@ -1,16 +1,14 @@
 package com.devil.notes;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.MenuItem;
 
-public class Usernotes extends Action {
+public class Usernotes extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_usernotes);
 	}
-	public boolean onOptionsItemSelected(MenuItem item)
-    {   return super.onOptionsItemSelected(item);  
-    }   
+
 }

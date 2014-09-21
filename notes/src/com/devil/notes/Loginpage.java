@@ -223,13 +223,13 @@ public class Loginpage extends Activity {
 package com.devil.notes;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -238,7 +238,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 @SuppressLint("NewApi")
-public class Loginpage extends Action {
+public class Loginpage extends Activity {
 
 	Button b, b1, btnn2;
 
@@ -360,18 +360,4 @@ public class Loginpage extends Action {
 			((ViewPager) container).removeView((ImageView) object);
 		}
 	}
-	/* @Override
-	    public boolean onCreateOptionsMenu(Menu menu) {
-	        getMenuInflater().inflate(R.menu.main, menu);
-	        return true;
-	    }
-	 @Override
-	 public void onCreateContextMenu(ContextMenu menu, View view, 
-			    ContextMenuInfo menuInfo) 
-			    {
-			        getMenuInflater().inflate(R.menu.main, menu);
-			    }*/
-	 public boolean onOptionsItemSelected(MenuItem item)
-	    {   return super.onOptionsItemSelected(item);  
-	    }    
 }
