@@ -62,7 +62,7 @@ class PicNote {
 }
 
 @SuppressWarnings("deprecation")
-public class scrolltab extends TabActivity implements TabHost.TabContentFactory {
+public class scrolltab extends TabActivity implements TabHost.TabContentFactory  {
 
 	TextView txt;
 	TextView txtcount;

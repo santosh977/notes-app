@@ -1,11 +1,11 @@
 package com.devil.notes;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class Search extends Activity {
+public class Search extends Action {
 	// int i;
 	Spinner s1, s2, s3, s4, s5, s6, s7, s8, s9;
 	String[] country = { "India", "Australia",
@@ -96,4 +96,8 @@ public class Search extends Activity {
 		s9.setPrompt("Select a Category");
 
 	}
+	public boolean onOptionsItemSelected(MenuItem item)
+    {   return super.onOptionsItemSelected(item);  
+    }  
+
 }

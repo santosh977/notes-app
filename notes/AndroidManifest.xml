@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  
     package="com.devil.notes"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0"
+ >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -45,7 +47,7 @@
         <activity android:name="com.devil.notes.scrolltab" />
         <activity
             android:name="com.devil.notes.LayerStack"
-            android:theme="@android:style/Theme.NoTitleBar" />
+           />
         <activity
             android:name="com.devil.notes.Purpose"
             android:label="@string/about_text"
@@ -53,7 +55,8 @@
         <!-- android:name="com.example.notes.NotesActivity -->
         <activity
             android:name="com.devil.notes.Forgot"
-            android:theme="@android:style/Theme.NoTitleBar" />
+           />
+          android:theme="@android:style/Theme.NoTitleBar"
         <activity
             android:name="com.devil.notes.NotesActivity"
             android:label="@string/title_activity_notes" >

@@ -5,7 +5,20 @@
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppTheme" parent="android:Theme.Holo.Light" />
+   
+   
+    <!-- <style name="MyTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
 
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#06d4f4</item>
+    </style> -->
+
+    
+    
+    
+    
     <style name="Item">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">300dp</item>
@@ -28,8 +41,5 @@
     </style>
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    </style>
-
+   
 </resources>

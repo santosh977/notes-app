@@ -1,9 +1,9 @@
 package com.devil.notes;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.view.MenuItem;
 
-public class Purpose extends Activity {
+public class Purpose extends Action {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -11,5 +11,7 @@ public class Purpose extends Activity {
 		setContentView(R.layout.activity_purpose);
 
 	}
-
+	public boolean onOptionsItemSelected(MenuItem item)
+    {   return super.onOptionsItemSelected(item);  
+    }  
 }

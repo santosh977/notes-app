@@ -9,19 +9,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Loginpage1 extends Activity {
+public class Loginpage1 extends Action {
 	// View rootView;
 	// String editMailString = "";
 	// String editpassString = "";
@@ -265,4 +265,7 @@ public class Loginpage1 extends Activity {
 		}
 		return false;
 	}
+	public boolean onOptionsItemSelected(MenuItem item)
+    {   return super.onOptionsItemSelected(item);  
+    }  
 }

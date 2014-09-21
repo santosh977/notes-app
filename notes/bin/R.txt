@@ -1103,6 +1103,7 @@ int id listView1 0x7f0a002e
 int id ll1 0x7f0a0061
 int id ll12 0x7f0a0063
 int id membership_layout 0x7f0a0038
+int id menu1 0x7f0a0066
 int id menuPanel 0x7f0a0004
 int id menuViewButton 0x7f0a0020
 int id menu_item_1 0x7f0a0008
