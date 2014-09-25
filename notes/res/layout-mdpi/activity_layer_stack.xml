@@ -3,9 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="1"
-    android:background="@drawable/blue_bg" >
+    android:background="@drawable/blue_bg"
+     >
 
-    <!-- Menu Panel -->
+   <!--  
 
     <RelativeLayout
         android:id="@+id/menuPanel"
@@ -103,7 +104,7 @@
             android:layout_marginLeft="@dimen/dim_5"
             android:layout_marginRight="@dimen/dim_5"
             android:background="#b5b5b5" />
-        <!--
+        
             <TextView
                 android:id="@+id/menu_item_3"
                 android:layout_width="fill_parent"
@@ -123,7 +124,7 @@
 		        android:layout_marginRight="@dimen/dim_5"
 		        android:layout_below="@+id/menu_item_2"
 		        android:background="#b5b5b5" />
-        -->
+       
 
         <TextView
             android:id="@+id/menu_item_4"
@@ -312,7 +313,7 @@
             android:layout_marginLeft="@dimen/dim_5"
             android:layout_marginRight="@dimen/dim_5"
             android:background="#b5b5b5" />
-        <!--
+        
             <TextView
                 android:id="@+id/menu_item_13"
                 android:layout_width="fill_parent"
@@ -333,8 +334,8 @@
 		        android:layout_marginRight="@dimen/dim_5"
 		        android:layout_below="@+id/menu_item_11"
 		        android:background="#b5b5b5" />
-        -->
-        <!--
+       
+        
             <TextView
                 android:id="@+id/menu_item_7"
                 android:layout_width="fill_parent"
@@ -394,10 +395,10 @@
 		        android:layout_marginRight="5dp"
 		        android:layout_below="@+id/menu_item_10"
 		        android:background="#b5b5b5" />
-        -->
+       
     </RelativeLayout>
 
-    <!-- Sliding Panel -->
+    Sliding Panel
 
     <LinearLayout
         android:id="@+id/slidingPanel"
@@ -448,7 +449,29 @@
             android:id="@+id/dividerHeaderBottom"
             android:layout_width="fill_parent"
             android:layout_height="@dimen/dim_1"
-            android:background="#414141" />
+            android:background="#414141" /> -->
+            
+            <android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- The main content view -->
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <!-- The navigation drawer -->
+    <ListView android:id="@+id/left_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="40dp"
+        android:entries="@array/planets"
+        android:background="#FF8800"/>
+</android.support.v4.widget.DrawerLayout>
 
         <ScrollView
             android:id="@+id/scrollView1"
@@ -522,7 +545,7 @@
                     android:background="@drawable/cht"
                     android:onClick="imageSelect" />
             </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
+         </ScrollView>
+    <!-- </LinearLayout>  -->
 
 </FrameLayout>

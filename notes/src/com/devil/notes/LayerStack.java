@@ -10,9 +10,6 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -41,10 +38,10 @@ public class LayerStack extends Action {
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_layer_stack);
+		setContentView(R.layout.activity_layer_stack);}
 
 		// Initialize
-		metrics = new DisplayMetrics();
+		/*metrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
 		panelWidth = (int) ((metrics.widthPixels) * 0.75);
 
@@ -64,7 +61,7 @@ public class LayerStack extends Action {
 		slidingPanelParameters = (FrameLayout.LayoutParams) slidingPanel
 				.getLayoutParams();
 		slidingPanelParameters.width = metrics.widthPixels;
-		slidingPanel.setLayoutParams(slidingPanelParameters);
+		slidingPanel.setLayoutParams(slidingPanelParameters);*/
 
 		/*
 		 * listView = (ListView) findViewById(R.id.list); listViewParameters =
@@ -74,7 +71,7 @@ public class LayerStack extends Action {
 		 */
 
 		// Slide the Panel
-		menuViewButton = (ImageView) findViewById(R.id.menuViewButton);
+/*		menuViewButton = (ImageView) findViewById(R.id.menuViewButton);
 		menuViewButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				if (!isExpanded) {
@@ -95,16 +92,16 @@ public class LayerStack extends Action {
 
 				}
 			}
-		});
-		imageView1 = (ImageView) findViewById(R.id.imageView1);
+		});*/
+		/*imageView1 = (ImageView) findViewById(R.id.imageView1);
 		imageView1.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				startActivity(new Intent(getApplicationContext(), Search.class));
 
 			}
 		});
-
-	}
+*/
+	
 
 	public void imageSelect(View v) {
 		switch (v.getId()) {
@@ -120,17 +117,20 @@ public class LayerStack extends Action {
 		case R.id.clg12:
 			startActivity(new Intent(getApplicationContext(), Clges.class));
 			break;
-		/*
-		 * case R.id.cht: startActivity(new Intent(getApplicationContext(),
-		 * Chatroom.class)); break;
-		 */
+		case R.id.bns:
+			startActivity(new Intent(getApplicationContext(), MainActivity1.class));
+			break;
+	  /* case R.id.cht: startActivity(new Intent(getApplicationContext(),Chatroom.class));
+	   break;*/
+		 
 		case R.id.newsfeed:
 			startActivity(new Intent(getApplicationContext(), NewsFeed.class));
 			break;
-		/*
-		 * case R.id.notes: startActivity(new
-		 * Intent(getApplicationContext(),Note.class)); break;
-		 */
+		
+		/*  case R.id.notes: 
+			  startActivity(new
+		  Intent(getApplicationContext(),Note.class)); break;*/
+		 
 
 		default:
 
@@ -139,7 +139,7 @@ public class LayerStack extends Action {
 		}
 	}
 
-	public void SliderClick(View v) {
+	/*public void SliderClick(View v) {
 		switch (v.getId()) {
 		case R.id.menu_item_2:
 			startActivity(new Intent(getApplicationContext(), LayerStack.class));
@@ -173,7 +173,7 @@ public class LayerStack extends Action {
 					.show();
 			break;
 		}
-	}
+	}*/
 	public boolean onOptionsItemSelected(MenuItem item)
     {   return super.onOptionsItemSelected(item);  
     }  

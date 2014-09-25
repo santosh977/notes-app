@@ -5,6 +5,7 @@
     android:background="#004686"
     android:orientation="vertical"
  >
+<!-- <include layout="@layout/activity_base" /> -->
 
     <!--
     <ImageSwitcher

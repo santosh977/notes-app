@@ -39,10 +39,10 @@ public class Loginpage1 extends Action {
 		checkBox.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				if (((CheckBox) v).isChecked())
-					Toast.makeText(getBaseContext(), "CheckBox is checked",
+					Toast.makeText(getBaseContext(), "now it's my duty",
 							Toast.LENGTH_LONG).show();
 				else
-					Toast.makeText(getBaseContext(), "CheckBox is unchecked",
+					Toast.makeText(getBaseContext(), "now your",
 							Toast.LENGTH_LONG).show();
 			}
 		});

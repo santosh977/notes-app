@@ -24,7 +24,13 @@
     <string name="item_9">Setting</string>
     <string name="item_10">College</string>
     <string name="item_7">NewsFeed</string>
-    <string name="about_text">We Write, We Stike, We Bite .  :D    Just Kidding</string>
+    <string name="about_text">     -> Easing into the education.
+ 
+                   ->Making another way to share our knowledge. 
+ 
+                   ->Study and share like ants teach to each other.
+ 
+ </string>
     <string name="item_12">Name</string>
     <string name="item_13">Logout</string>
     <string name="title_activity_chatroom">Chatroom</string>
@@ -32,4 +38,25 @@
     <string name="title_activity_uploadss">Uploadss</string>
     <string name="title_activity_notesdetail">Notesdetail</string>
 
+    <string-array name="planets">
+        <item>Home    </item>
+        <item>collage    </item>
+        <item>Purpose    </item>
+        <item>subbmit notes    </item>
+        <item>users    </item>
+        <item>Newsfeeds    </item>
+        <item>Team    </item>
+        <item>suggestion    </item>
+        <item>Logout    </item>
+        <item>Setting    </item>
+        
+    </string-array>
+
+    <string name="title_activity_base">Base</string>
+    
+     <string name="drawer_open">Open Navigation Drawer</string>
+    <string name="drawer_close">Close Navigation Drawer</string>
+  <string name="title_activity_main_activity1">Notes</string>
+      <!-- <string name="title_activity_main_activity2">MainActivity2</string> -->
+ <string name="title_activity_purpose">Purpose</string>
 </resources>

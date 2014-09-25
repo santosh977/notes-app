@@ -151,7 +151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.44"
-                android:text="Select a image :"
+                android:text="Select image :"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
 
@@ -167,27 +167,33 @@
             <Button
                 android:id="@+id/button2"
                 style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dim_90"
                 android:layout_height="wrap_content"
                      android:layout_toRightOf="@+id/button3"
-                     android:layout_marginLeft="@dimen/dim_20"
-       
+                     android:layout_marginLeft="@dimen/dim_17"
+        android:background="@drawable/rbutton"
                 android:onClick="UploadFunc"
-                android:text="Upload" />
+                android:text="Upload" 
+                android:textColor="@android:color/white"
+            android:textSize="@dimen/dim_21" />
 
             <Button
                 android:id="@+id/button3"
                 style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dim_75"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/imageView1"
                 
+                  android:textColor="@android:color/white"
+            android:textSize="@dimen/dim_21"
+            android:layout_marginLeft="@dimen/dim_40"
+                  android:background="@drawable/rbutton"
                 android:text="Raw" />
 
             <ImageView
                 android:id="@+id/imageView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/dim_70"
+                android:layout_height="@dimen/dim_70"
                 android:src="@drawable/avatar_contact" />
         </RelativeLayout>
     </LinearLayout>

@@ -9,13 +9,13 @@
         android:id="@+id/editText1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dim_0"
-        android:layout_weight="0.08"
-          android:layout_marginTop="@dimen/dim_22"
-       android:textSize="@dimen/dim_22"
         android:layout_marginLeft="@dimen/dim_20"
-         android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginTop="@dimen/dim_22"
+        android:layout_weight="0.08"
         android:hint="Name"
-        android:inputType="textPersonName" >
+        android:inputType="textPersonName"
+        android:textSize="@dimen/dim_22" >
 
         <requestFocus />
     </EditText>
@@ -23,179 +23,157 @@
     <EditText
         android:id="@+id/editText2"
         android:layout_width="match_parent"
-       android:layout_height="@dimen/dim_0"
-               android:layout_weight="0.08"
-       
-       android:textSize="@dimen/dim_22"
-       android:layout_marginTop="@dimen/dim_13"
-
+        android:layout_height="@dimen/dim_0"
         android:layout_marginLeft="@dimen/dim_20"
-                 android:layout_marginRight="@dimen/dim_10"
-        android:maxLength="26"
+        android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginTop="@dimen/dim_13"
+        android:layout_weight="0.08"
         android:hint="abc@xyz.com"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:maxLength="26"
+        android:textSize="@dimen/dim_22" />
 
     <Spinner
         android:id="@+id/spinner8"
         android:layout_width="match_parent"
-      android:layout_height="@dimen/dim_0"
-              android:layout_weight="0.08"
-      
-        android:padding="0dp"
-          android:textSize="@dimen/dim_40"
-           
-       android:layout_marginTop="@dimen/dim_13"
-         android:layout_marginRight="@dimen/dim_10"
+        android:layout_height="@dimen/dim_0"
         android:layout_marginLeft="@dimen/dim_28"
+        android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginTop="@dimen/dim_13"
+        android:layout_weight="0.08"
         android:drawSelectorOnTop="true"
-        android:spinnerMode="dialog" />
+        android:padding="0dp"
+        android:spinnerMode="dialog"
+        android:textSize="@dimen/dim_40" />
 
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="match_parent"
-android:layout_height="@dimen/dim_0"
-        android:layout_weight="0.08"
-
-       android:textSize="@dimen/dim_40"
-     android:padding="0dp"
-   
-android:layout_marginTop="@dimen/dim_13"
-         android:layout_marginRight="@dimen/dim_10"
+        android:layout_height="@dimen/dim_0"
         android:layout_marginLeft="@dimen/dim_28"
+        android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginTop="@dimen/dim_13"
+        android:layout_weight="0.08"
         android:drawSelectorOnTop="true"
-        android:spinnerMode="dialog" />
+        android:padding="0dp"
+        android:spinnerMode="dialog"
+        android:textSize="@dimen/dim_40" />
 
     <Spinner
         android:id="@+id/spinner2"
         android:layout_width="match_parent"
-android:layout_height="@dimen/dim_0"
-        android:layout_weight="0.08"
-
-       android:textSize="@dimen/dim_40"
-
-       android:padding="0dp"
-  
-
+        android:layout_height="@dimen/dim_0"
         android:layout_marginLeft="@dimen/dim_28"
-         android:layout_marginRight="@dimen/dim_10"
-android:layout_marginTop="@dimen/dim_13"
+        android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginTop="@dimen/dim_13"
+        android:layout_weight="0.08"
         android:drawSelectorOnTop="true"
-        android:spinnerMode="dialog" />
+        android:padding="0dp"
+        android:spinnerMode="dialog"
+        android:textSize="@dimen/dim_40" />
 
     <Spinner
         android:id="@+id/spinner3"
         android:layout_width="match_parent"
-android:layout_height="@dimen/dim_0"
-        android:layout_weight="0.08"
-
-        android:padding="0dp"
-          android:textSize="@dimen/dim_40"
-           
-android:layout_marginTop="@dimen/dim_13"
-         android:layout_marginRight="@dimen/dim_10"
+        android:layout_height="@dimen/dim_0"
         android:layout_marginLeft="@dimen/dim_28"
+        android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginTop="@dimen/dim_13"
+        android:layout_weight="0.08"
         android:drawSelectorOnTop="true"
-        android:spinnerMode="dialog" />
+        android:padding="0dp"
+        android:spinnerMode="dialog"
+        android:textSize="@dimen/dim_40" />
 
     <Spinner
         android:id="@+id/spinner4"
         android:layout_width="match_parent"
-android:layout_height="@dimen/dim_0"
-        android:layout_weight="0.08"
-
-        android:padding="0dp"
-          android:textSize="@dimen/dim_40"
-           
-android:layout_marginTop="@dimen/dim_13"
-         android:layout_marginRight="@dimen/dim_10"
+        android:layout_height="@dimen/dim_0"
         android:layout_marginLeft="@dimen/dim_28"
+        android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginTop="@dimen/dim_13"
+        android:layout_weight="0.08"
         android:drawSelectorOnTop="true"
-        android:spinnerMode="dialog" />
+        android:padding="0dp"
+        android:spinnerMode="dialog"
+        android:textSize="@dimen/dim_40" />
 
     <Spinner
         android:id="@+id/spinner5"
         android:layout_width="match_parent"
-android:layout_height="@dimen/dim_0"
-        android:layout_weight="0.08"
-
-        android:padding="0dp"
-          android:textSize="@dimen/dim_40"
-           
-android:layout_marginTop="@dimen/dim_13"
-         android:layout_marginRight="@dimen/dim_10"
+        android:layout_height="@dimen/dim_0"
         android:layout_marginLeft="@dimen/dim_28"
+        android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginTop="@dimen/dim_13"
+        android:layout_weight="0.08"
         android:drawSelectorOnTop="true"
-        android:spinnerMode="dialog" />
+        android:padding="0dp"
+        android:spinnerMode="dialog"
+        android:textSize="@dimen/dim_40" />
 
     <Spinner
         android:id="@+id/spinner6"
         android:layout_width="match_parent"
-android:layout_height="@dimen/dim_0"
-        android:layout_weight="0.08"
-
-        android:padding="0dp"
-          android:textSize="@dimen/dim_40"
-           
-android:layout_marginTop="@dimen/dim_13"
-         android:layout_marginRight="@dimen/dim_10"
+        android:layout_height="@dimen/dim_0"
         android:layout_marginLeft="@dimen/dim_28"
+        android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginTop="@dimen/dim_13"
+        android:layout_weight="0.08"
         android:drawSelectorOnTop="true"
-        android:spinnerMode="dialog" />
+        android:padding="0dp"
+        android:spinnerMode="dialog"
+        android:textSize="@dimen/dim_40" />
 
     <Spinner
         android:id="@+id/spinner7"
         android:layout_width="match_parent"
-android:layout_height="@dimen/dim_0"
-        android:layout_weight="0.08"
-
-        android:padding="0dp"
-          android:textSize="@dimen/dim_40"
-           
-android:layout_marginTop="@dimen/dim_13"
-         android:layout_marginRight="@dimen/dim_10"
+        android:layout_height="@dimen/dim_0"
         android:layout_marginLeft="@dimen/dim_28"
+        android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginTop="@dimen/dim_13"
+        android:layout_weight="0.08"
         android:drawSelectorOnTop="true"
-        android:spinnerMode="dialog" />
+        android:padding="0dp"
+        android:spinnerMode="dialog"
+        android:textSize="@dimen/dim_40" />
 
     <EditText
         android:id="@+id/editText9"
         android:layout_width="match_parent"
-android:layout_height="@dimen/dim_0"
-        android:layout_weight="0.08"
-
-       android:textSize="@dimen/dim_22"
-       android:layout_marginTop="@dimen/dim_13"
+        android:layout_height="@dimen/dim_0"
         android:layout_marginLeft="@dimen/dim_20"
-                 android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginTop="@dimen/dim_13"
+        android:layout_weight="0.08"
         android:hint="Password"
+        android:inputType="textPassword"
         android:maxLength="15"
-        android:inputType="textPassword" />
+        android:textSize="@dimen/dim_22" />
 
     <EditText
         android:id="@+id/editText10"
         android:layout_width="match_parent"
-android:layout_height="@dimen/dim_0"
-        android:layout_weight="0.08"
-
-       android:textSize="@dimen/dim_22"
-       android:layout_marginTop="@dimen/dim_13"
-                android:layout_marginRight="@dimen/dim_10"
+        android:layout_height="@dimen/dim_0"
         android:layout_marginLeft="@dimen/dim_20"
+        android:layout_marginRight="@dimen/dim_10"
+        android:layout_marginTop="@dimen/dim_13"
+        android:layout_weight="0.08"
         android:hint="Confirm Password"
-              android:maxLength="15"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:textSize="@dimen/dim_22" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="@dimen/dim_120"
         android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:layout_marginTop="@dimen/dim_40"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dim_40"
         android:background="@drawable/rbutton"
         android:onClick="Function2"
         android:text="Submit"
         android:textColor="@android:color/white"
-                android:layout_alignParentBottom="true"
         android:textSize="@dimen/dim_25" />
 
 </LinearLayout>

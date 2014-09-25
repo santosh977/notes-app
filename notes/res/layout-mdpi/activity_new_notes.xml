@@ -5,35 +5,47 @@
     android:background="#004686"
     tools:context=".NewNotes" >
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:text="NewText" >
-
-        <requestFocus />
-    </EditText>
-
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/dim_100"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:onClick="upload"
-        android:text="Upload" />
+        android:text="Upload"
+        android:layout_marginLeft="@dimen/dim_30"
+                  android:background="@drawable/rbutton"
+                      android:textColor="@android:color/white"
+                      android:layout_marginTop="@dimen/dim_20" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+         android:hint="                                                                  NewText"
+         android:gravity="center"
+           android:background="@drawable/board"
+       
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:fontFamily="serif" 
+        android:textStyle="italic"
+       />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/dim_100"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_centerHorizontal="true"
-        android:text="File Attach" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/rbutton"
+        android:text="Attach"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/dim_21" 
+        android:layout_marginTop="@dimen/dim_20"
+          android:layout_marginRight="@dimen/dim_30"/>
 
 </RelativeLayout>

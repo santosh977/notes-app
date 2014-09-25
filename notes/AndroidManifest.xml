@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  
     package="com.devil.notes"
     android:versionCode="1"
-    android:versionName="1.0"
- >
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -45,18 +43,14 @@
         <activity android:name="com.devil.notes.Item" />
         <activity android:name="com.devil.notes.Handlers" />
         <activity android:name="com.devil.notes.scrolltab" />
-        <activity
-            android:name="com.devil.notes.LayerStack"
-           />
+        <activity android:name="com.devil.notes.LayerStack" />
         <activity
             android:name="com.devil.notes.Purpose"
-            android:label="@string/about_text"
+             android:label="@string/title_activity_purpose"
             android:theme="@android:style/Theme.Dialog" />
         <!-- android:name="com.example.notes.NotesActivity -->
-        <activity
-            android:name="com.devil.notes.Forgot"
-           />
-          android:theme="@android:style/Theme.NoTitleBar"
+        <activity android:name="com.devil.notes.Forgot" />
+          android:theme="@android:style/Theme.NoTitleBar"
         <activity
             android:name="com.devil.notes.NotesActivity"
             android:label="@string/title_activity_notes" >
@@ -72,7 +66,7 @@
         <activity
             android:name="com.devil.notes.NewsFeed"
             android:label="@string/title_activity_news_feed"
-              android:theme="@android:style/Theme.Dialog" >
+            android:theme="@android:style/Theme.Dialog" >
         </activity>
         <activity
             android:name="com.devil.notes.Chatroom"
@@ -85,7 +79,15 @@
         <activity
             android:name="com.devil.notes.Notesdetail"
             android:label="@string/title_activity_notesdetail"
-              android:theme="@android:style/Theme.Dialog" >
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="com.devil.notes.Base"
+            android:label="@string/title_activity_base" >
+        </activity>
+        <activity
+            android:name="com.devil.notes.MainActivity1"
+            android:label="@string/title_activity_main_activity1" >
         </activity>
     </application>
 

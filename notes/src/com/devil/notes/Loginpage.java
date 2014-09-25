@@ -362,5 +362,11 @@ public class Loginpage extends Action {
 	}
 	public boolean onOptionsItemSelected(MenuItem item)
     {   return super.onOptionsItemSelected(item);  
-    }  
+    }
+	/*
+	@Override
+	protected int getLayoutResourceID() {
+	 
+	    return R.layout.loginpage;
+	}*/
 }

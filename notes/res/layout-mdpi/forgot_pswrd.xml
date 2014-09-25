@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     android:layout_weight="1"
     android:background="@drawable/blue_bg" >
-
-    <!-- Menu Panel -->
+<!-- 
+    Menu Panel
 
     <RelativeLayout
         android:id="@+id/menuPanel"
@@ -292,7 +292,7 @@
             android:layout_marginLeft="@dimen/dim_5"
             android:layout_marginRight="@dimen/dim_5"
             android:background="#b5b5b5" />
-    </RelativeLayout>
+    </RelativeLayout> -->
     <!-- Sliding Panel -->
 
     <LinearLayout
@@ -305,7 +305,7 @@
 
         <!-- android:background="@android:color/white" -->
 
-        <RelativeLayout
+     <!--    <RelativeLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dim_50"
@@ -331,7 +331,7 @@
                 android:contentDescription="@string/description"
                 android:src="@drawable/icon_menu"
                 android:visibility="visible" />
-        </RelativeLayout>
+        </RelativeLayout> -->
 
         <View
             android:id="@+id/dividerHeaderBottom"
