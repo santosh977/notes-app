@@ -265,7 +265,8 @@ public class Loginpage1 extends Action {
 		}
 		return false;
 	}
-	public boolean onOptionsItemSelected(MenuItem item)
-    {   return super.onOptionsItemSelected(item);  
-    }  
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return super.onOptionsItemSelected(item);
+	}
 }

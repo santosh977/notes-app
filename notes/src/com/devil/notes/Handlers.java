@@ -67,7 +67,8 @@ public class Handlers extends Action {
 		});
 
 	}
-	public boolean onOptionsItemSelected(MenuItem item)
-    {   return super.onOptionsItemSelected(item);  
-    }  
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return super.onOptionsItemSelected(item);
+	}
 }

@@ -16,8 +16,8 @@ public class Members extends Action {
 		setContentView(R.layout.members);
 
 		startActivity(new Intent(Members.this, Purpose.class));
-		names = "\n Nikhar" + "\n Gunjan" + "\n Divya" + "\n Sapna"
-				+ "\n Santosh" + "\n Divyavrat";
+		names = "\n Members -" + "\n Nikhar" + "\n Gunjan" + "\n Divya"
+				+ "\n Sapna" + "\n Santosh" + "\n Divyavrat";
 		tv = (TextView) findViewById(R.id.textView1);
 		tv.setText(names);
 	}
@@ -28,8 +28,9 @@ public class Members extends Action {
 		getMenuInflater().inflate(R.menu.members, menu);
 		return true;
 	}
+
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item)
-    {   return super.onOptionsItemSelected(item);  
-    }  
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return super.onOptionsItemSelected(item);
+	}
 }

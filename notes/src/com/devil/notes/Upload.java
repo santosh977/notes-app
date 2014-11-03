@@ -339,7 +339,8 @@ public class Upload extends Action {
 				matrix, false);
 		return resizedBitmap;
 	}
-	public boolean onOptionsItemSelected(MenuItem item)
-    {   return super.onOptionsItemSelected(item);  
-    }  
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return super.onOptionsItemSelected(item);
+	}
 }

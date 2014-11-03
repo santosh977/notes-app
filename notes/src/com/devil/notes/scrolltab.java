@@ -62,7 +62,7 @@ class PicNote {
 }
 
 @SuppressWarnings("deprecation")
-public class scrolltab extends TabActivity implements TabHost.TabContentFactory  {
+public class scrolltab extends TabActivity implements TabHost.TabContentFactory {
 
 	TextView txt;
 	TextView txtcount;
@@ -505,6 +505,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 						} else if (v.getId() == R.id.imageView3) {
 							startActivity(new Intent(getApplicationContext(),
 									Notesdetail.class));
+							finish();
 
 						} else {
 							Toast.makeText(getApplicationContext(), "TODO",

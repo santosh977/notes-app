@@ -48,7 +48,8 @@ public class NewNotes extends Action {
 		startActivity(new Intent(getApplicationContext(), scrolltab.class));
 		finish();
 	}
-	public boolean onOptionsItemSelected(MenuItem item)
-    {   return super.onOptionsItemSelected(item);  
-    }  
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return super.onOptionsItemSelected(item);
+	}
 }

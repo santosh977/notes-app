@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.0.1
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jul 17, 2014 at 05:02 PM
--- Server version: 5.1.37
--- PHP Version: 5.3.0
+-- Host: 127.0.0.1
+-- Generation Time: Aug 06, 2014 at 01:15 PM
+-- Server version: 5.6.14
+-- PHP Version: 5.5.6
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -47,18 +48,20 @@ INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_password`) VALUES
 
 CREATE TABLE IF NOT EXISTS `feedbacks` (
   `f_id` int(11) NOT NULL AUTO_INCREMENT,
+  `f_name` varchar(100) NOT NULL,
   `f_mail` varchar(100) NOT NULL,
   `f_message` varchar(100) NOT NULL,
   `f_status` tinyint(4) NOT NULL,
   PRIMARY KEY (`f_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `feedbacks`
 --
 
-INSERT INTO `feedbacks` (`f_id`, `f_mail`, `f_message`, `f_status`) VALUES
-(1, 'ruby_737@yahoo.co.in', '	nice website	  		  ', 1);
+INSERT INTO `feedbacks` (`f_id`, `f_name`, `f_mail`, `f_message`, `f_status`) VALUES
+(1, 'deepali', 'ruby_737@yahoo.co.in', '	nice website	  		  ', 1),
+(2, 'iip', 'info@iipacademy.com', 'gud one', 0);
 
 -- --------------------------------------------------------
 
@@ -83,6 +86,29 @@ INSERT INTO `study_branches` (`branch_id`, `branch_name`, `branch_course_id`, `b
 (2, 'electronics', 1, 1),
 (3, 'finance', 3, 1),
 (4, 'hr', 3, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `study_category`
+--
+
+CREATE TABLE IF NOT EXISTS `study_category` (
+  `category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(255) NOT NULL,
+  `category_status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `study_category`
+--
+
+INSERT INTO `study_category` (`category_id`, `category_name`, `category_status`) VALUES
+(3, 'notes', 1),
+(5, 'assignments', 1),
+(6, 'questionpaper', 1),
+(7, 'quiz', 1);
 
 -- --------------------------------------------------------
 
@@ -120,17 +146,22 @@ CREATE TABLE IF NOT EXISTS `study_college` (
   `college_city_id` int(11) NOT NULL,
   `college_state_id` int(11) NOT NULL,
   `college_country_id` int(11) NOT NULL,
+  `college_course` varchar(255) NOT NULL,
+  `college_logo` varchar(255) NOT NULL,
   `college_status` tinyint(1) NOT NULL,
   PRIMARY KEY (`college_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 --
 -- Dumping data for table `study_college`
 --
 
-INSERT INTO `study_college` (`college_id`, `college_name`, `college_city_id`, `college_state_id`, `college_country_id`, `college_status`) VALUES
-(1, 'lachoo', 1, 1, 1, 0),
-(3, 'gyan vihar', 1, 1, 2, 0);
+INSERT INTO `study_college` (`college_id`, `college_name`, `college_city_id`, `college_state_id`, `college_country_id`, `college_course`, `college_logo`, `college_status`) VALUES
+(26, 'slbs', 1, 0, 1, '1,3', '899logo3.jpg', 0),
+(27, 'Lachoo', 1, 0, 1, '1,2,3', '196logo1.jpg', 0),
+(28, 'lucky', 1, 0, 1, '2,3', '497logo2.jpg', 0),
+(29, 'savitri phule', 1, 0, 1, '1', '244logo4.jpg', 0),
+(30, 'Gyan vihar', 2, 0, 1, '1', '607logo6.png', 0);
 
 -- --------------------------------------------------------
 
@@ -146,11 +177,6 @@ CREATE TABLE IF NOT EXISTS `study_college_courses` (
   PRIMARY KEY (`scc_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `study_college_courses`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -164,11 +190,6 @@ CREATE TABLE IF NOT EXISTS `study_comments` (
   `comment_rating` int(11) NOT NULL,
   PRIMARY KEY (`comment_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `study_comments`
---
-
 
 -- --------------------------------------------------------
 
@@ -208,7 +229,7 @@ CREATE TABLE IF NOT EXISTS `study_courses` (
 --
 
 INSERT INTO `study_courses` (`course_id`, `course_name`, `course_status`) VALUES
-(1, 'engineering', 1),
+(1, 'Engineering', 1),
 (2, 'medical', 1),
 (3, 'Mba', 1);
 
@@ -225,11 +246,6 @@ CREATE TABLE IF NOT EXISTS `study_error` (
   `se_link` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `study_error`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -244,11 +260,6 @@ CREATE TABLE IF NOT EXISTS `study_likes` (
   PRIMARY KEY (`like_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `study_likes`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -260,6 +271,11 @@ CREATE TABLE IF NOT EXISTS `study_material` (
   `sm_userid` int(11) NOT NULL,
   `sm_type` varchar(100) NOT NULL,
   `sm_file` varchar(100) NOT NULL,
+  `sm_countryid` int(11) NOT NULL,
+  `sm_stateid` int(11) NOT NULL,
+  `sm_cityid` int(11) NOT NULL,
+  `sm_collegeid` int(11) NOT NULL,
+  `sm_filetopic` varchar(255) NOT NULL,
   `sm_category` varchar(100) NOT NULL,
   `sm_course_id` int(11) NOT NULL,
   `sm_branch_id` int(11) NOT NULL,
@@ -269,15 +285,17 @@ CREATE TABLE IF NOT EXISTS `study_material` (
   `sm_status` tinyint(4) NOT NULL,
   `sm_datetime` datetime NOT NULL,
   PRIMARY KEY (`sm_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `study_material`
 --
 
-INSERT INTO `study_material` (`sm_id`, `sm_userid`, `sm_type`, `sm_file`, `sm_category`, `sm_course_id`, `sm_branch_id`, `sm_year_id`, `sm_semester_id`, `sm_subject_id`, `sm_status`, `sm_datetime`) VALUES
-(1, 0, 'pdf', '', '', 1, 2, 3, 1, 0, 0, '0000-00-00 00:00:00'),
-(12, 0, 'jpg', '6701051rock.jpg', 'notes', 0, 0, 0, 0, 0, 0, '2014-07-17 16:30:05');
+INSERT INTO `study_material` (`sm_id`, `sm_userid`, `sm_type`, `sm_file`, `sm_countryid`, `sm_stateid`, `sm_cityid`, `sm_collegeid`, `sm_filetopic`, `sm_category`, `sm_course_id`, `sm_branch_id`, `sm_year_id`, `sm_semester_id`, `sm_subject_id`, `sm_status`, `sm_datetime`) VALUES
+(3, 8, 'pdf', 'CakePHPCookbook.pdf', 0, 0, 0, 26, 'cakephp', 'notes', 1, 1, 2, 1, 1, 0, '0000-00-00 00:00:00'),
+(4, 8, 'pdf', 'lec1.pdf', 0, 0, 0, 27, 'enginnering lecture', 'assignment', 1, 3, 1, 1, 1, 0, '0000-00-00 00:00:00'),
+(5, 9, '', '220948Insurance.pptx', 1, 0, 1, 0, 'test', 'assignment', 1, 1, 1, 1, 1, 0, '0000-00-00 00:00:00'),
+(6, 9, '', '875001deepali asimo presentation.docx', 1, 0, 1, 0, 'test1', 'assignment', 1, 1, 1, 1, 1, 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -315,7 +333,7 @@ CREATE TABLE IF NOT EXISTS `study_state` (
   `state_name` varchar(100) NOT NULL,
   `state_status` int(11) NOT NULL,
   PRIMARY KEY (`state_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `study_state`
@@ -323,7 +341,8 @@ CREATE TABLE IF NOT EXISTS `study_state` (
 
 INSERT INTO `study_state` (`state_id`, `state_country_id`, `state_name`, `state_status`) VALUES
 (1, 1, 'rajasthan', 1),
-(2, 1, 'uttar pradesh', 1);
+(2, 1, 'uttar pradesh', 1),
+(3, 1, 'goa', 1);
 
 -- --------------------------------------------------------
 
@@ -368,12 +387,17 @@ CREATE TABLE IF NOT EXISTS `study_team_members` (
   `team_status` tinyint(4) NOT NULL,
   `team_member_link` varchar(100) NOT NULL,
   PRIMARY KEY (`team_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `study_team_members`
 --
 
+INSERT INTO `study_team_members` (`team_id`, `team_type`, `team_country`, `team_state`, `team_city`, `team_college_id`, `team_member_name`, `team_member_photo`, `team_status`, `team_member_link`) VALUES
+(1, 0, 1, 1, 1, 18, 'abc', '552classic_women20.jpg', 1, ''),
+(2, 0, 1, 2, 3, 21, 'deep1', '857sweet-baby-girl-cutebabiesphoto.blogspot.com.jpg (8).jpg', 1, ''),
+(3, 0, 1, 1, 2, 20, 'new', '230baby-girl2.jpg', 1, ''),
+(4, 0, 1, 1, 1, 19, 'deepali', '928Lace-Dresses-8.jpg', 1, '');
 
 -- --------------------------------------------------------
 
@@ -388,11 +412,6 @@ CREATE TABLE IF NOT EXISTS `study_team_type` (
   PRIMARY KEY (`team_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `study_team_type`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -404,7 +423,7 @@ CREATE TABLE IF NOT EXISTS `study_users` (
   `user_name` varchar(100) NOT NULL,
   `user_email_id` varchar(100) NOT NULL,
   `user_password` varchar(100) NOT NULL,
-  `user_pic` varchar(200) NOT NULL,
+  `user_profile_pic` varchar(200) NOT NULL,
   `user_country` text NOT NULL,
   `user_semester` text NOT NULL,
   `user_state` varchar(100) NOT NULL,
@@ -417,12 +436,17 @@ CREATE TABLE IF NOT EXISTS `study_users` (
   `user_address` text NOT NULL,
   `user_pin` int(11) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `study_users`
 --
 
+INSERT INTO `study_users` (`user_id`, `user_name`, `user_email_id`, `user_password`, `user_profile_pic`, `user_country`, `user_semester`, `user_state`, `user_city`, `user_college`, `user_mobile_no`, `user_course`, `user_branch`, `user_year`, `user_address`, `user_pin`) VALUES
+(6, 'ruby', 'ruby.yadav@aol.com', 'hello', '147645562842_403889059674458_803138584_n.jpg', '1', '', '2', '2', 'lachoo', '323232', 'engineering', 'finance', 2001, '', 0),
+(7, 'ritu yadav', 'ritu@gmail.com', '123', '892609IMG-20130805-WA0001.jpg', '1', '', '1', '1', '6', '323232', '1', '2', 2002, '', 0),
+(8, 'deepali', 'deepalihemrajani590@gmail.com', 'hello', '920624IMAG1475.jpg', '1', '', '1', '1', '1', '323232', '1', '5', 2002, '', 0),
+(13, 'ruby   ', 'ruby123@yahoo.com', '123', '487397Lace-Dresses-8.jpg', '', '3', '', '', '26', '9256453232323', '3', '3', 2003, '', 0);
 
 -- --------------------------------------------------------
 

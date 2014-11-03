@@ -96,8 +96,9 @@ public class Search extends Action {
 		s9.setPrompt("Select a Category");
 
 	}
-	public boolean onOptionsItemSelected(MenuItem item)
-    {   return super.onOptionsItemSelected(item);  
-    }  
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return super.onOptionsItemSelected(item);
+	}
 
 }

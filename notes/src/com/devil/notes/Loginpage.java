@@ -360,13 +360,13 @@ public class Loginpage extends Action {
 			((ViewPager) container).removeView((ImageView) object);
 		}
 	}
-	public boolean onOptionsItemSelected(MenuItem item)
-    {   return super.onOptionsItemSelected(item);  
-    }
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return super.onOptionsItemSelected(item);
+	}
 	/*
-	@Override
-	protected int getLayoutResourceID() {
-	 
-	    return R.layout.loginpage;
-	}*/
+	 * @Override protected int getLayoutResourceID() {
+	 * 
+	 * return R.layout.loginpage; }
+	 */
 }

@@ -10,7 +10,8 @@ public class Usernotes extends Action {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_usernotes);
 	}
-	public boolean onOptionsItemSelected(MenuItem item)
-    {   return super.onOptionsItemSelected(item);  
-    }  
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return super.onOptionsItemSelected(item);
+	}
 }

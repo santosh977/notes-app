@@ -60,7 +60,8 @@ public class CustomGrid extends Action {
 		});
 		gridView.setAdapter(customGridAdapter);
 	}
-	public boolean onOptionsItemSelected(MenuItem item)
-    {   return super.onOptionsItemSelected(item);  
-    }  
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return super.onOptionsItemSelected(item);
+	}
 }
