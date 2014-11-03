@@ -24,18 +24,13 @@
     <string name="item_9">Setting</string>
     <string name="item_10">College</string>
     <string name="item_7">NewsFeed</string>
-    <string name="about_text">     -> Easing into the education.
- 
-                   ->Making another way to share our knowledge. 
- 
-                   ->Study and share like ants teach to each other.
- 
- </string>
+    <string name="about_text">-&gt; Easing into the education\n\t -&gt;Making another way to share our knowledge.\n\t-&gt;Study and share like ants teach to each other.
+</string>
     <string name="item_12">Name</string>
     <string name="item_13">Logout</string>
     <string name="title_activity_chatroom">Chatroom</string>
     <string name="title_activity_usernotes">Usernotes</string>
-    <string name="title_activity_uploadss">Uploadss</string>
+    <string name="title_activity_uploadss">Uploads</string>
     <string name="title_activity_notesdetail">Notesdetail</string>
 
     <string-array name="planets">
