@@ -2,17 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-  
-    tools:context=".Notesdetail" >
+    android:background="#004686"
+    tools:context=".NewsFeed" >
 
-    <ListView
-        android:id="@+id/listView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-       
-        >
-    </ListView>
+   <ListView
+        android:id="@+id/android:list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+   
 
 </RelativeLayout>

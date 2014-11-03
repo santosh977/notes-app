@@ -508,8 +508,9 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 							finish();
 
 						} else {
-							Toast.makeText(getApplicationContext(), "TODO",
-									Toast.LENGTH_LONG).show();
+							Toast.makeText(getApplicationContext(),
+									"TODO" + v.toString(), Toast.LENGTH_LONG)
+									.show();
 						}
 
 					}

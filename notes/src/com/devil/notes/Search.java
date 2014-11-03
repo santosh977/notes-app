@@ -89,11 +89,12 @@ public class Search extends Action {
 				android.R.layout.simple_spinner_item, country);
 		s8.setAdapter(adapter8);
 		s8.setPrompt("Select a Country");
-		s9 = (Spinner) findViewById(R.id.spinner9);
-		ArrayAdapter<String> adapter9 = new ArrayAdapter<String>(this,
-				android.R.layout.simple_spinner_item, category);
-		s9.setAdapter(adapter9);
-		s9.setPrompt("Select a Category");
+		/*
+		 * s9 = (Spinner) findViewById(R.id.spinner9); ArrayAdapter<String>
+		 * adapter9 = new ArrayAdapter<String>(this,
+		 * android.R.layout.simple_spinner_item, category);
+		 * s9.setAdapter(adapter9); s9.setPrompt("Select a Category");
+		 */
 
 	}
 
