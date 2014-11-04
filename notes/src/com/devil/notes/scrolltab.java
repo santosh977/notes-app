@@ -8,6 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.annotation.SuppressLint;
 import android.app.TabActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -18,8 +19,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnHoverListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -61,6 +64,7 @@ class PicNote {
 	}
 }
 
+@SuppressLint("NewApi")
 @SuppressWarnings("deprecation")
 public class scrolltab extends TabActivity implements TabHost.TabContentFactory {
 
@@ -69,6 +73,8 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 	TextView timebox;
 	// int count=0;
 	ImageView img;
+	ImageView img2;
+	ImageView img3;
 	/* Button btn; */
 
 	ArrayList<String> Heading = new ArrayList<String>();
@@ -329,10 +335,12 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 			c = context;
 		}
 
-		public View getView(int position, View view, ViewGroup parent) {
+		public View getView(final int position, View view, ViewGroup parent) {
 			View list = super.getView(position, view, parent);
 
 			img = (ImageView) list.findViewById(R.id.imageView1);
+			img2 = (ImageView) list.findViewById(R.id.imageView2);
+			img3 = (ImageView) list.findViewById(R.id.imageView3);
 			txt = (TextView) list.findViewById(R.id.textView2);
 			txtcount = (TextView) list.findViewById(R.id.textView3);
 			timebox = (TextView) list.findViewById(R.id.textView7);
@@ -470,77 +478,105 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 					 * Intent(getApplicationContext(), scrolltab.class));
 					 * finish(); } } else {
 					 */
-					int position = Integer
-							.parseInt(((TextView) v
+
+					int item_position = 0;
+
+					/* Implementation for Download feature */
+					/*
+					 * Download status - 1=Not Downloaded 2=Download started
+					 * 3=Note Downloaded properly
+					 */
+
+					if (v.findViewById(R.id.textView3) != null) {
+						try {
+							item_position = Integer.parseInt(((TextView) v
 									.findViewById(R.id.textView3)).getText()
 									.toString());
-					if (position == 0) {
-						startActivity(new Intent(getApplicationContext(),
-								NewNotes.class));
-						finish();
-					} else {
-						/* Implementation for Download feature */
-						/*
-						 * Download status - 1=Not Downloaded 2=Download started
-						 * 3=Note Downloaded properly
-						 */
-
-						// FIXME
-						Toast.makeText(
-								getApplicationContext(),
-								"V:" + v.toString() + "\n\nID:"
-										+ String.valueOf(v.getId())
-										+ "\n\nVID:"
-										+ String.valueOf(R.id.imageView2),
-								Toast.LENGTH_LONG).show();
-
-						if (v.getId() == R.id.imageView2) {
-							if (arr_pics.get(position).downloadstatus != 1) {
-								String fname = arr_pics.get(position)
-										.getImgname();
-								String filePath = new String(Environment
-										.getExternalStorageDirectory()
-										.getAbsolutePath()
-										+ "/NotesStation/");
-								File dfile = new File(filePath, fname);
-								if (dfile.exists()) {
-									if (dfile.length() != 0) {
-										arr_pics.get(position).downloadstatus = 3;
-										Toast.makeText(getApplicationContext(),
-												"Already Downloaded",
-												Toast.LENGTH_LONG).show();
-									}
-								} else
-									/* if note is not available */
-									new Downld(
-											"http://wscubetech.org/app/updown/"
-													+ fname, filePath, fname,
-											scrolltab.this);
-								/* Now Started Download. */
-								arr_pics.get(position).downloadstatus = 2;
+							if (item_position == 0) {
+								startActivity(new Intent(
+										getApplicationContext(), NewNotes.class));
+								finish();
 							}
-
-							else
-								arr_pics.get(position).downloadstatus = 1;
-
+						} catch (Exception e) {
 						}
-						/* Implementation for Open feature */
-						else if (v.getId() == R.id.imageView3) {
-							startActivity(new Intent(getApplicationContext(),
-									Notesdetail.class));
-							finish();
+					}
 
-						} else {
-							Toast.makeText(getApplicationContext(), "TODO",
-									Toast.LENGTH_LONG).show();
+					// FIXME
+					Toast.makeText(
+							getApplicationContext(),
+							"V:" + v.toString() + "\n\nID:"
+									+ String.valueOf(v.getId()) + "\n\nVID:"
+									+ String.valueOf(R.id.imageView2)
+									+ "\n\nV2D:"
+									+ String.valueOf(R.id.imageView3),
+							Toast.LENGTH_LONG).show();
+
+					if (v.getId() == R.id.imageView2) {
+						if (arr_pics.get(item_position).downloadstatus != 1) {
+							String fname = arr_pics.get(item_position)
+									.getImgname();
+							String filePath = new String(Environment
+									.getExternalStorageDirectory()
+									.getAbsolutePath()
+									+ "/NotesStation/");
+							File dfile = new File(filePath, fname);
+							if (dfile.exists()) {
+								if (dfile.length() != 0) {
+									arr_pics.get(item_position).downloadstatus = 3;
+									Toast.makeText(getApplicationContext(),
+											"Already Downloaded",
+											Toast.LENGTH_LONG).show();
+								}
+							} else
+								/* if note is not available */
+								new Downld("http://wscubetech.org/app/updown/"
+										+ fname, filePath, fname,
+										scrolltab.this);
+							/* Now Started Download. */
+							arr_pics.get(item_position).downloadstatus = 2;
 						}
+
+						else
+							arr_pics.get(item_position).downloadstatus = 1;
 
 					}
+					/* Implementation for Open feature */
+					else if (v.getId() == R.id.imageView3) {
+						startActivity(new Intent(getApplicationContext(),
+								Notesdetail.class));
+						finish();
+
+					} else {
+						Toast.makeText(getApplicationContext(), "TODO",
+								Toast.LENGTH_LONG).show();
+					}
+
 				}
+
 			};
 
 			// btn.setOnClickListener(NotesListButtonClick);
+			list.setOnHoverListener(new OnHoverListener() {
+
+				@Override
+				public boolean onHover(View v, MotionEvent arg1) {
+
+					return false;
+				}
+			});
+			// img3.setOnClickListener(NotesListButtonClick);
 			list.setOnClickListener(NotesListButtonClick);
+
+			OnClickListener NotesImageButtonClick = new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO
+					Toast.makeText(getApplicationContext(), "Download :TODO",
+							Toast.LENGTH_LONG).show();
+				}
+			};
+			img2.setOnClickListener(NotesImageButtonClick);
 			return list;
 		}
 	}

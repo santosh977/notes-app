@@ -336,6 +336,10 @@ public class Loginpage extends Action {
 						startActivity(new Intent(getApplicationContext(),
 								Clges.class));
 						break;
+					case 5:
+						startActivity(new Intent(getApplicationContext(),
+								Chatroom.class));
+						break;
 					/*
 					 * case 4: startActivity(new Intent(getApplicationContext(),
 					 * NewsFeed.class)); break;

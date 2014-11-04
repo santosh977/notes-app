@@ -11,10 +11,7 @@ import android.widget.Toast;
 
 public class Handlers extends Action {
 	ListView l1, l2, l3, l4;
-	String[] presidents = { "Dwight D. Eisenhower", "John F. Kennedy",
-			"Lyndon B. Johnson", "Richard Nixon", "Gerald Ford",
-			"Jimmy Carter", "Ronald Reagan", "George H. W. Bush",
-			"Bill Clinton", "George W. Bush", "Barack Obama" };
+	String[] lists = { "IIT", "MIT", "Harvard", "Oxford", "BITS", "RTU", "JNVU" };
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -22,7 +19,7 @@ public class Handlers extends Action {
 		setContentView(R.layout.activity_handlers);
 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_1, presidents);
+				android.R.layout.simple_list_item_1, lists);
 
 		// ---List View---
 		l1 = (ListView) findViewById(R.id.ListView1);
@@ -33,7 +30,7 @@ public class Handlers extends Action {
 					long arg3) {
 				int index = arg2;
 				Toast.makeText(getBaseContext(),
-						"You have selected item : " + presidents[index],
+						"You have selected item : " + lists[index],
 						Toast.LENGTH_SHORT).show();
 			}
 		});
@@ -47,7 +44,7 @@ public class Handlers extends Action {
 					long arg3) {
 				int index = arg2;
 				Toast.makeText(getBaseContext(),
-						"You have selected item : " + presidents[index],
+						"You have selected item : " + lists[index],
 						Toast.LENGTH_SHORT).show();
 			}
 		});
@@ -61,7 +58,7 @@ public class Handlers extends Action {
 					long arg3) {
 				int index = arg2;
 				Toast.makeText(getBaseContext(),
-						"You have selected item : " + presidents[index],
+						"You have selected item : " + lists[index],
 						Toast.LENGTH_SHORT).show();
 			}
 		});

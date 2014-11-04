@@ -28,18 +28,18 @@ public class Clges extends Action {
 		Bitmap userIcon = BitmapFactory.decodeResource(this.getResources(),
 				R.drawable.personal);
 
-		gridArray.add(new Item("colg_name", userIcon));
-		gridArray.add(new Item("colg_name", userIcon));
-		gridArray.add(new Item("colg_name", userIcon));
-		gridArray.add(new Item("colg_name", userIcon));
-		gridArray.add(new Item("colg_name", userIcon));
-		gridArray.add(new Item("colg_name", userIcon));
-		gridArray.add(new Item("colg_name", userIcon));
-		gridArray.add(new Item("colg_name", userIcon));
-		gridArray.add(new Item("colg_name", userIcon));
-		gridArray.add(new Item("colg_name", userIcon));
-		gridArray.add(new Item("colg_name", userIcon));
-		gridArray.add(new Item("colg_name", userIcon));
+		gridArray.add(new Item("College", userIcon));
+		gridArray.add(new Item("College", userIcon));
+		gridArray.add(new Item("College", userIcon));
+		gridArray.add(new Item("College", userIcon));
+		gridArray.add(new Item("College", userIcon));
+		gridArray.add(new Item("College", userIcon));
+		gridArray.add(new Item("College", userIcon));
+		gridArray.add(new Item("College", userIcon));
+		gridArray.add(new Item("College", userIcon));
+		gridArray.add(new Item("College", userIcon));
+		gridArray.add(new Item("College", userIcon));
+		gridArray.add(new Item("College", userIcon));
 
 		gridView = (GridView) findViewById(R.id.gridView1);
 		customGridAdapter = new CustomGridViewAdapter(this, R.layout.row_grid,

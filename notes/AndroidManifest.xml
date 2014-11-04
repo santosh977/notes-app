@@ -69,10 +69,6 @@
             android:theme="@android:style/Theme.Dialog" >
         </activity>
         <activity
-            android:name="com.devil.notes.Chatroom"
-            android:label="@string/title_activity_chatroom" >
-        </activity>
-        <activity
             android:name="com.devil.notes.Usernotes"
             android:label="@string/title_activity_usernotes" >
         </activity>
@@ -88,6 +84,12 @@
         <activity
             android:name="com.devil.notes.MainActivity1"
             android:label="@string/title_activity_main_activity1" >
+        </activity>
+   <activity android:name=".Chatroom"
+            android:label="@string/title_activity_chatroom"
+            android:parentActivityName="com.devil.notes.Loginpage">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.devil.notes.Loginpage" />
         </activity>
     </application>
 

@@ -122,6 +122,10 @@ public class LayerStack extends Action {
 			startActivity(new Intent(getApplicationContext(), NewsFeed.class));
 			break;
 
+		case R.id.cht:
+			startActivity(new Intent(getApplicationContext(), Chatroom.class));
+			break;
+
 		/*
 		 * case R.id.notes: startActivity(new
 		 * Intent(getApplicationContext(),Note.class)); break;

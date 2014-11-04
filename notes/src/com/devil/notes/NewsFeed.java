@@ -10,10 +10,9 @@ import android.widget.Toast;
 
 public class NewsFeed extends ListActivity {
 
-	String[] news = { "heading", "proffeser name", "sry....u r late",
-			"it is bad news", "amcat exam date", "gate exam date",
-			"ssc exam date", "best notes of the day",
-			"wht id good!!!! job or higher study", "about kerl compiler" };
+	String[] news = { "New lists are added.",
+			"Date and Time added in Database", "New Areas of research",
+			"Creation of Life", "Black Hole Theory" };
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -32,8 +31,7 @@ public class NewsFeed extends ListActivity {
 
 	public void onListItemClick(ListView parent, View v, int position, long id) {
 		CheckedTextView item = (CheckedTextView) v;
-		Toast.makeText(this,
-				news[position] + " checked : " + !item.isChecked(),
+		Toast.makeText(this, news[position] + " checked : " + item.isChecked(),
 				Toast.LENGTH_SHORT).show();
 	}
 
