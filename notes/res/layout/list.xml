@@ -37,6 +37,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/imageView3"
         android:clickable="true"
+
         android:src="@drawable/download" />
 
     <TextView

@@ -479,7 +479,20 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 								NewNotes.class));
 						finish();
 					} else {
+						/*Implementation for Download feature*/
+						/*Download status -
+						 * 1=Not Downloaded
+						 * 2=Download started
+						 * 3=Note Downloaded properly
+						 * */
+						
+						
+						
 						if (v.getId() == R.id.imageView2) {
+							Toast.makeText(getApplicationContext(),
+									"let's start Download"+v.toString(),
+											Toast.LENGTH_LONG).show();
+							
 							if (arr_pics.get(position).downloadstatus != 1) {
 								String fname = arr_pics.get(position)
 										.getImgname();
@@ -496,20 +509,28 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 												Toast.LENGTH_LONG).show();
 									}
 								} else
-									arr_pics.get(position).downloadstatus = 2;
+									/*if note is not available*/
+									new Downld(
+											"http://wscubetech.org/app/updown/"
+													+ fname, filePath,
+											fname, scrolltab.this);
+								/*Now Started Download.*/
+								arr_pics.get(position).downloadstatus = 2;
 							}
 
 							else
 								arr_pics.get(position).downloadstatus = 1;
 
-						} else if (v.getId() == R.id.imageView3) {
+						} 
+						/*Implementation for Open feature*/
+						else if (v.getId() == R.id.imageView3) {
 							startActivity(new Intent(getApplicationContext(),
 									Notesdetail.class));
 							finish();
 
 						} else {
 							Toast.makeText(getApplicationContext(),
-									"TODO" + v.toString(), Toast.LENGTH_LONG)
+									"TODO", Toast.LENGTH_LONG)
 									.show();
 						}
 

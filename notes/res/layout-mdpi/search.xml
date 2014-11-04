@@ -80,15 +80,7 @@ android:layout_height="@dimen/dim_0"
             android:spinnerMode="dialog" />
 
         
-        <Spinner
-            android:id="@+id/spinner9"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dim_0"
-            android:layout_margin="@dimen/dim_3"
-            android:layout_weight="0.11"
-            android:drawSelectorOnTop="true"
-            android:padding="0dp"
-            android:spinnerMode="dialog" />
+        
         <Spinner
             android:id="@+id/spinner6"
  android:layout_height="@dimen/dim_0"
