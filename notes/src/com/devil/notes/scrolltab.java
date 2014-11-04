@@ -479,20 +479,22 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 								NewNotes.class));
 						finish();
 					} else {
-						/*Implementation for Download feature*/
-						/*Download status -
-						 * 1=Not Downloaded
-						 * 2=Download started
+						/* Implementation for Download feature */
+						/*
+						 * Download status - 1=Not Downloaded 2=Download started
 						 * 3=Note Downloaded properly
-						 * */
-						
-						
-						
+						 */
+
+						// FIXME
+						Toast.makeText(
+								getApplicationContext(),
+								"V:" + v.toString() + "\n\nID:"
+										+ String.valueOf(v.getId())
+										+ "\n\nVID:"
+										+ String.valueOf(R.id.imageView2),
+								Toast.LENGTH_LONG).show();
+
 						if (v.getId() == R.id.imageView2) {
-							Toast.makeText(getApplicationContext(),
-									"let's start Download"+v.toString(),
-											Toast.LENGTH_LONG).show();
-							
 							if (arr_pics.get(position).downloadstatus != 1) {
 								String fname = arr_pics.get(position)
 										.getImgname();
@@ -509,29 +511,28 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 												Toast.LENGTH_LONG).show();
 									}
 								} else
-									/*if note is not available*/
+									/* if note is not available */
 									new Downld(
 											"http://wscubetech.org/app/updown/"
-													+ fname, filePath,
-											fname, scrolltab.this);
-								/*Now Started Download.*/
+													+ fname, filePath, fname,
+											scrolltab.this);
+								/* Now Started Download. */
 								arr_pics.get(position).downloadstatus = 2;
 							}
 
 							else
 								arr_pics.get(position).downloadstatus = 1;
 
-						} 
-						/*Implementation for Open feature*/
+						}
+						/* Implementation for Open feature */
 						else if (v.getId() == R.id.imageView3) {
 							startActivity(new Intent(getApplicationContext(),
 									Notesdetail.class));
 							finish();
 
 						} else {
-							Toast.makeText(getApplicationContext(),
-									"TODO", Toast.LENGTH_LONG)
-									.show();
+							Toast.makeText(getApplicationContext(), "TODO",
+									Toast.LENGTH_LONG).show();
 						}
 
 					}

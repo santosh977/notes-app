@@ -27,7 +27,6 @@
         android:layout_height="@dimen/dim_40"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-          android:clickable="true"
         android:src="@drawable/setting" />
 
     <ImageView
@@ -36,8 +35,6 @@
         android:layout_height="@dimen/dim_40"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/imageView3"
-        android:clickable="true"
-
         android:src="@drawable/download" />
 
     <TextView
@@ -47,8 +44,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginRight="@dimen/dim_21"
         android:layout_toLeftOf="@+id/imageView3"
-     
-        android:text="time" />
+     	android:text="time" />
 
     <TextView
         android:id="@+id/textView1"

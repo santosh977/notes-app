@@ -31,7 +31,7 @@ public class Search extends Action {
 	String[] year = { "1", "2", "3", "4", "5",
 
 	};
-	
+
 	String[] category = { "Notes", "Assignment", "quizzes",
 
 	};
@@ -41,7 +41,7 @@ public class Search extends Action {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.search);
 		// ---Spinner View---
-		s4= (Spinner) findViewById(R.id.spinner4);
+		s4 = (Spinner) findViewById(R.id.spinner4);
 		ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, mainstream);
 		s4.setAdapter(adapter4);
@@ -67,7 +67,7 @@ public class Search extends Action {
 		s3.setPrompt("Select a College");
 
 		s5 = (Spinner) findViewById(R.id.spinner5);
-		ArrayAdapter<String> adapter5= new ArrayAdapter<String>(this,
+		ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, branch);
 		s5.setAdapter(adapter5);
 		s5.setPrompt("Select a Branch");
@@ -77,24 +77,23 @@ public class Search extends Action {
 				android.R.layout.simple_spinner_item, year);
 		s6.setAdapter(adapter6);
 		s6.setPrompt("Select a Year");
-/*
-		s7 = (Spinner) findViewById(R.id.spinner7);
-		ArrayAdapter<String> adapter6 = new ArrayAdapter<String>(this,
-				android.R.layout.simple_spinner_item, semester);
-		s7.setAdapter(adapter6);
-		s7.setPrompt("Select a Semester");*/
+		/*
+		 * s7 = (Spinner) findViewById(R.id.spinner7); ArrayAdapter<String>
+		 * adapter6 = new ArrayAdapter<String>(this,
+		 * android.R.layout.simple_spinner_item, semester);
+		 * s7.setAdapter(adapter6); s7.setPrompt("Select a Semester");
+		 */
 		s8 = (Spinner) findViewById(R.id.spinner8);
 		ArrayAdapter<String> adapter8 = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, country);
 		s8.setAdapter(adapter8);
 		s8.setPrompt("Select a Country");
-		
-		  s7 = (Spinner) findViewById(R.id.spinner7); ArrayAdapter<String>
-		  adapter7 = new ArrayAdapter<String>(this,
-		  android.R.layout.simple_spinner_item, category);
-		  s7.setAdapter(adapter7);
-		  s7.setPrompt("Select a Category");
-		 
+
+		s7 = (Spinner) findViewById(R.id.spinner7);
+		ArrayAdapter<String> adapter7 = new ArrayAdapter<String>(this,
+				android.R.layout.simple_spinner_item, category);
+		s7.setAdapter(adapter7);
+		s7.setPrompt("Select a Category");
 
 	}
 
