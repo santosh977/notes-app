@@ -31,17 +31,15 @@
         <activity android:name="com.devil.notes.Search" />
         <activity android:name="com.devil.notes.Upload" />
         <activity android:name="com.devil.notes.Submitnotes" />
-        <activity android:name="com.devil.notes.Note" />
+     
         <activity android:name="com.devil.notes.Loginpage1" />
         <activity android:name="com.devil.notes.TabsPagerAdapter" />
-        <activity android:name="com.devil.notes.NotesFragement" />
-        <activity android:name="com.devil.notes.AssignmentFragement" />
-        <activity android:name="com.devil.notes.QuizesFragement" />
+
         <activity android:name="com.devil.notes.Clges" />
-        <activity android:name="com.devil.notes.CollapseAnimation" />
+        
         <activity android:name="com.devil.notes.CustomGrid" />
         <activity android:name="com.devil.notes.Item" />
-        <activity android:name="com.devil.notes.Handlers" />
+   
         <activity android:name="com.devil.notes.scrolltab" />
         <activity android:name="com.devil.notes.LayerStack" />
         <activity
@@ -77,10 +75,7 @@
             android:label="@string/title_activity_notesdetail"
             android:theme="@android:style/Theme.Dialog" >
         </activity>
-        <activity
-            android:name="com.devil.notes.Base"
-            android:label="@string/title_activity_base" >
-        </activity>
+    
         <activity
             android:name="com.devil.notes.MainActivity1"
             android:label="@string/title_activity_main_activity1" >

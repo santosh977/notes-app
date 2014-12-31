@@ -12,5 +12,48 @@
         android:icon="@drawable/search"
         android:orderInCategory="100"
         android:showAsAction="always"
+         android:title="Item 1"
         />
+    <item
+        android:id="@+id/menu2"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="Menu">
+        <menu>
+            <item
+                android:id="@+id/menu2_1"
+                android:title="home"/>
+            <item
+                android:id="@+id/menu2_2"
+                android:title="college"/>
+            <item
+                android:id="@+id/menu2_3"
+                android:title="purpose"/>
+             <item
+                android:id="@+id/menu2_4"
+                android:title="submit notes"/>
+    <item
+                android:id="@+id/menu2_5"
+                android:title="users"/>
+        <item
+                android:id="@+id/menu2_6"
+                android:title="newsfeed"/>
+          <item
+                android:id="@+id/menu2_7"
+                android:title="team"/>
+         <item
+                android:id="@+id/menu2_8"
+                android:title="suggestion"/>
+        <item
+                android:id="@+id/menu2_9"
+                android:title="logout"/>
+          <item
+                android:id="@+id/menu2_10"
+                android:title="setting"/>
+       
+                                                
+            
+            
+        </menu>
+         </item>
 </menu>
