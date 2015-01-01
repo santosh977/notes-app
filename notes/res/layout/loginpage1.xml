@@ -16,7 +16,8 @@
                 
             android:layout_marginLeft="@dimen/dim_30"
               android:layout_marginRight="@dimen/dim_30"
-              android:maxLength="26"
+              android:maxLength="20"
+             android:minEms="10"
     
             android:background="@android:color/transparent"
             android:hint="abc@xyz.com"
@@ -46,7 +47,8 @@
                android:layout_marginLeft="@dimen/dim_30"
               android:layout_marginRight="@dimen/dim_30"
           android:layout_below="@+id/rel2"
-     android:maxLength="15"
+     android:maxLength="20"
+             android:minEms="8"
       
             android:background="@android:color/transparent"
             android:hint="Password"

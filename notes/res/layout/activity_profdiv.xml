@@ -11,6 +11,7 @@
          android:layout_alignParentTop="true" 
          android:layout_centerHorizontal="true" /> 
   <ImageView android:id="@+id/imageView1" 
+      
       android:layout_width="fill_parent"
 android:layout_height="@dimen/dim_500"
  android:layout_alignBottom="@+id/quickContactBadge1" 

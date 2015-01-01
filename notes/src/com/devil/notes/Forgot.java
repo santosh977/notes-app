@@ -127,7 +127,7 @@ public class Forgot extends Action {
 		}
 	}
 
-	public void SliderClick(View v) {
+	/*public void SliderClick(View v) {
 
 		switch (v.getId()) {
 		case R.id.menu_item_1:
@@ -157,7 +157,7 @@ public class Forgot extends Action {
 					.show();
 			break;
 		}
-	}
+	}*/
 
 	public boolean onOptionsItemSelected(MenuItem item) {
 		return super.onOptionsItemSelected(item);

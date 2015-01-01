@@ -4,9 +4,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.style.TypefaceSpan;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -46,6 +51,9 @@ public class Signup extends Action {
 		setContentView(R.layout.signup);
 		// ---Spinner View---
 		s4 = (Spinner) findViewById(R.id.spinner4);
+		Typeface myCustomFont= Typeface.createFromAsset(getAssets(), "fonts/windsong.ttf");
+		//TODO
+		//s4.setTypeface(myCustomFont);
 		ArrayAdapter<String> adapter7 = new ArrayAdapter<String>(this,
 				android.R.layout.simple_spinner_item, mainstream);
 		s4.setAdapter(adapter7);
@@ -180,9 +188,18 @@ public class Signup extends Action {
 			finish();
 
 		} else {
-			Toast.makeText(getApplicationContext(),
+			
+			Toast toast=new Toast(this);
+			toast.setDuration(Toast.LENGTH_LONG);
+			toast.setGravity(Gravity.CENTER_HORIZONTAL ,0,0);
+			  
+			LayoutInflater inflater=getLayoutInflater();
+			View apperance = inflater.inflate(R.layout.errortoast, (ViewGroup)findViewById(R.id.root));
+			toast.setView(apperance);
+			toast.show();
+			/*Toast.makeText(getApplicationContext(),
 					"Confirm and the normal one are not twins.",
-					Toast.LENGTH_LONG).show();
+					Toast.LENGTH_LONG).show();*/
 		}
 	}
 

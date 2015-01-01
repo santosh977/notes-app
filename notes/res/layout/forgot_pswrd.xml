@@ -305,7 +305,7 @@
 
         <!-- android:background="@android:color/white" -->
 
-        <RelativeLayout
+       <!--  <RelativeLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dim_50"
@@ -331,7 +331,7 @@
                 android:contentDescription="@string/description"
                 android:src="@drawable/icon_menu"
                 android:visibility="visible" />
-        </RelativeLayout>
+        </RelativeLayout> -->
 
         <View
             android:id="@+id/dividerHeaderBottom"

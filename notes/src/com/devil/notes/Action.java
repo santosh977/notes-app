@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.support.v4.widget.DrawerLayout;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -66,6 +68,8 @@ public class Action extends Activity {
 		}*/
 
 		//startActivity(new Intent(getApplicationContext(), Search.class));
+		
+		
 		Toast.makeText(this,item.getTitle(), Toast.LENGTH_LONG).show();
         return true;    
 
