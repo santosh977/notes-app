@@ -9,9 +9,7 @@
     <string name="quizes_fragment">Quizzes</string>
     <string name="notes_fragment">Notes</string>
     <string name="title_activity_new_notes">NewNotes</string>
-    <string name="hello_world">Hello world!</string>
     <string name="menu_title">MENU</string>
-    <string name="item_1"></string>
     <string name="item_2">Home</string>
     <string name="description">Description</string>
     <string name="title_activity_clges">Clges</string>
@@ -24,8 +22,7 @@
     <string name="item_9">Setting</string>
     <string name="item_10">College</string>
     <string name="item_7">NewsFeed</string>
-    <string name="about_text">-&gt; Easing into the education\n -&gt;Making another way to share our knowledge.\n-&gt;Study and share like ants teach to each other.
-</string>
+    <string name="about_text">-&gt; Easing into the education\n -&gt;Making another way to share our knowledge.\n-&gt;Study and share like ants teach to each other.</string>
     <string name="item_12">Name</string>
     <string name="item_13">Logout</string>
     <string name="title_activity_chatroom">Chatroom</string>
@@ -44,14 +41,17 @@
         <item>suggestion    </item>
         <item>Logout    </item>
         <item>Setting    </item>
-        
     </string-array>
 
     <string name="title_activity_base">Base</string>
-    
-     <string name="drawer_open">Open Navigation Drawer</string>
+    <string name="drawer_open">Open Navigation Drawer</string>
     <string name="drawer_close">Close Navigation Drawer</string>
-  <string name="title_activity_main_activity1">Notes</string>
-      <!-- <string name="title_activity_main_activity2">MainActivity2</string> -->
- <string name="title_activity_purpose">Purpose</string>
+    <string name="title_activity_main_activity1">Notes</string>
+    <!-- <string name="title_activity_main_activity2">MainActivity2</string> -->
+    <string name="title_activity_purpose">Purpose</string>
+    <string name="server_address">http://wscubetech.org/</string>
+    <string name="item_1" />
+    <string name="title_activity_open_note_view">OpenNoteView</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

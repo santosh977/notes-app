@@ -19,10 +19,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnHoverListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -67,7 +65,7 @@ class PicNote {
 @SuppressLint("NewApi")
 @SuppressWarnings("deprecation")
 public class scrolltab extends TabActivity implements TabHost.TabContentFactory {
-
+	TextView type;
 	TextView txt;
 	TextView txtcount;
 	TextView timebox;
@@ -101,7 +99,8 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 
 		contactList = new ArrayList<HashMap<String, String>>();
 		// Calling async task to get json
-		String urlquery = "http://wscubetech.org/app/appkit/download.php";
+		String urlquery = getResources().getString(R.string.server_address)
+				.toString() + "app/appkit/download.php";
 		urlquery = new String(urlquery);
 
 		GetContacts jsonResult = new GetContacts(urlquery);
@@ -341,6 +340,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 			img = (ImageView) list.findViewById(R.id.imageView1);
 			img2 = (ImageView) list.findViewById(R.id.imageView2);
 			img3 = (ImageView) list.findViewById(R.id.imageView3);
+			type = (TextView) list.findViewById(R.id.textView1);
 			txt = (TextView) list.findViewById(R.id.textView2);
 			txtcount = (TextView) list.findViewById(R.id.textView3);
 			timebox = (TextView) list.findViewById(R.id.textView7);
@@ -480,6 +480,7 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 					 */
 
 					int item_position = 0;
+					String fname = "", filePath = "";
 
 					/* Implementation for Download feature */
 					/*
@@ -502,23 +503,25 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 					}
 
 					// FIXME
-					Toast.makeText(
-							getApplicationContext(),
-							"V:" + v.toString() + "\n\nID:"
-									+ String.valueOf(v.getId()) + "\n\nVID:"
-									+ String.valueOf(R.id.imageView2)
-									+ "\n\nV2D:"
-									+ String.valueOf(R.id.imageView3),
-							Toast.LENGTH_LONG).show();
+
+					/*
+					 * Toast.makeText( getApplicationContext(), "V:" +
+					 * v.toString() + "\n\nID:" + String.valueOf(v.getId()) +
+					 * "\n\nVID:" + String.valueOf(R.id.imageView2) + "\n\nV2D:"
+					 * + String.valueOf(R.id.imageView3),
+					 * Toast.LENGTH_LONG).show();
+					 */
+					if (item_position < arr_pics.size()) {
+						fname = arr_pics.get(item_position).getImgname();
+						filePath = new String(Environment
+								.getExternalStorageDirectory()
+								.getAbsolutePath()
+								+ "/NotesStation/");
+					}
 
 					if (v.getId() == R.id.imageView2) {
 						if (arr_pics.get(item_position).downloadstatus != 1) {
-							String fname = arr_pics.get(item_position)
-									.getImgname();
-							String filePath = new String(Environment
-									.getExternalStorageDirectory()
-									.getAbsolutePath()
-									+ "/NotesStation/");
+
 							File dfile = new File(filePath, fname);
 							if (dfile.exists()) {
 								if (dfile.length() != 0) {
@@ -547,8 +550,20 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 						finish();
 
 					} else {
-						Toast.makeText(getApplicationContext(), "TODO",
-								Toast.LENGTH_LONG).show();
+						/*
+						 * Toast.makeText(getApplicationContext(), "Open:TODO",
+						 * Toast.LENGTH_LONG).show();
+						 */
+						Intent openNoteIntent = new Intent(
+								getApplicationContext(), OpenNoteView.class);
+						openNoteIntent.putExtra("noteImagePath", filePath);
+						openNoteIntent.putExtra("noteImageName", fname);
+						openNoteIntent
+								.putExtra("noteImageType", type.getText());
+						openNoteIntent.putExtra("noteImagePosition",
+								item_position);
+						openNoteIntent.putExtra("noteImageText", txt.getText());
+						startActivity(openNoteIntent);
 					}
 
 				}
@@ -556,27 +571,25 @@ public class scrolltab extends TabActivity implements TabHost.TabContentFactory 
 			};
 
 			// btn.setOnClickListener(NotesListButtonClick);
-			list.setOnHoverListener(new OnHoverListener() {
-
-				@Override
-				public boolean onHover(View v, MotionEvent arg1) {
-
-					return false;
-				}
-			});
+			/*
+			 * list.setOnHoverListener(new OnHoverListener() {
+			 * 
+			 * @Override public boolean onHover(View v, MotionEvent arg1) {
+			 * 
+			 * return false; } });
+			 */
 			// img3.setOnClickListener(NotesListButtonClick);
 			list.setOnClickListener(NotesListButtonClick);
-
-			OnClickListener NotesImageButtonClick = new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					// TODO
-					Toast.makeText(getApplicationContext(), "Download :TODO",
-							Toast.LENGTH_LONG).show();
-				}
-			};
-			img2.setOnClickListener(NotesImageButtonClick);
+			img2.setOnClickListener(NotesListButtonClick);
+			img3.setOnClickListener(NotesListButtonClick);
+			/*
+			 * OnClickListener NotesImageButtonClick = new OnClickListener() {
+			 * 
+			 * @Override public void onClick(View v) { // TODO
+			 * Toast.makeText(getApplicationContext(), "Download :TODO",
+			 * Toast.LENGTH_LONG).show(); } };
+			 */
+			// img2.setOnClickListener(NotesImageButtonClick);
 			return list;
 		}
 	}

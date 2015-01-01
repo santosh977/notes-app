@@ -27,87 +27,99 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.devil.notes.Signup" 
-                    android:screenOrientation="portrait"/>
-        <activity android:name="com.devil.notes.Profdiv"
-                    android:screenOrientation="portrait" />
-        <activity android:name="com.devil.notes.Search" 
-                    android:screenOrientation="portrait"/>
-        <activity android:name="com.devil.notes.Upload" 
-                    android:screenOrientation="portrait"/>
-        <activity android:name="com.devil.notes.Submitnotes"
-                    android:screenOrientation="portrait" />
-     
-        <activity android:name="com.devil.notes.Loginpage1"
-                    android:screenOrientation="portrait" />
-        <activity android:name="com.devil.notes.TabsPagerAdapter"
-                    android:screenOrientation="portrait" />
-
-        <activity android:name="com.devil.notes.Clges" 
-                    android:screenOrientation="portrait"/>
-        
-        <activity android:name="com.devil.notes.CustomGrid"
-                    android:screenOrientation="portrait" />
-        <activity android:name="com.devil.notes.Item" 
-                   android:screenOrientation="portrait" 
-           />
-   
-        <activity android:name="com.devil.notes.scrolltab"
-                    android:screenOrientation="portrait" />
-        <activity android:name="com.devil.notes.LayerStack"
-                    android:screenOrientation="portrait" />
+        <activity
+            android:name="com.devil.notes.Signup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.devil.notes.Profdiv"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.devil.notes.Search"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.devil.notes.Upload"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.devil.notes.Submitnotes"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.devil.notes.Loginpage1"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.devil.notes.TabsPagerAdapter"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.devil.notes.Clges"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.devil.notes.CustomGrid"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.devil.notes.Item"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.devil.notes.scrolltab"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.devil.notes.LayerStack"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.devil.notes.Purpose"
-             android:label="@string/title_activity_purpose"
-            android:theme="@android:style/Theme.Dialog" 
-                    android:screenOrientation="portrait"/>
+            android:label="@string/title_activity_purpose"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" />
         <!-- android:name="com.example.notes.NotesActivity -->
         <activity android:name="com.devil.notes.Forgot" />
-          android:theme="@android:style/Theme.NoTitleBar"
+          android:theme="@android:style/Theme.NoTitleBar"
         <activity
             android:name="com.devil.notes.NotesActivity"
             android:label="@string/title_activity_notes"
-                    android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.devil.notes.Members"
             android:label="@string/title_activity_members"
-                    android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.devil.notes.NewNotes"
             android:label="@string/title_activity_new_notes"
-                    android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.devil.notes.NewsFeed"
             android:label="@string/title_activity_news_feed"
-            android:theme="@android:style/Theme.Dialog" 
-                    android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" >
         </activity>
         <activity
             android:name="com.devil.notes.Usernotes"
             android:label="@string/title_activity_usernotes"
-                    android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.devil.notes.Notesdetail"
             android:label="@string/title_activity_notesdetail"
-            android:theme="@android:style/Theme.Dialog" 
-                    android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" >
         </activity>
-    
         <activity
             android:name="com.devil.notes.MainActivity1"
             android:label="@string/title_activity_main_activity1"
-                    android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" >
         </activity>
-   <activity android:name=".Chatroom"
+        <activity
+            android:name="com.devil.notes.Chatroom"
             android:label="@string/title_activity_chatroom"
             android:parentActivityName="com.devil.notes.Loginpage"
-                    android:screenOrientation="portrait">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.devil.notes.Loginpage" />
+        </activity>
+        <activity
+            android:name="com.devil.notes.OpenNoteView"
+            android:label="@string/title_activity_open_note_view" >
         </activity>
     </application>
 

@@ -113,7 +113,7 @@ public class LayerStack extends Action {
 			startActivity(new Intent(getApplicationContext(),
 					MainActivity1.class));
 			break;
-		
+
 		case R.id.newsfeed:
 			startActivity(new Intent(getApplicationContext(), NewsFeed.class));
 			break;

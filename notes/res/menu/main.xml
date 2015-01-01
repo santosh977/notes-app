@@ -12,7 +12,7 @@
         android:icon="@drawable/search"
         android:orderInCategory="100"
         android:showAsAction="always"
-         android:title="Item 1"
+         android:title="Search"
         />
     <item
         android:id="@+id/menu2"
@@ -22,34 +22,31 @@
         <menu>
             <item
                 android:id="@+id/menu2_1"
-                android:title="home"/>
+                android:title="Home"/>
             <item
                 android:id="@+id/menu2_2"
-                android:title="college"/>
+                android:title="College"/>
             <item
                 android:id="@+id/menu2_3"
-                android:title="purpose"/>
+                android:title="Team&amp;Purpose"/>
              <item
                 android:id="@+id/menu2_4"
-                android:title="submit notes"/>
+                android:title="Submit notes"/>
     <item
                 android:id="@+id/menu2_5"
-                android:title="users"/>
+                android:title="Users"/>
         <item
                 android:id="@+id/menu2_6"
-                android:title="newsfeed"/>
-          <item
-                android:id="@+id/menu2_7"
-                android:title="team"/>
+                android:title="Newsfeed"/>
          <item
                 android:id="@+id/menu2_8"
-                android:title="suggestion"/>
+                android:title="Suggestions"/>
         <item
                 android:id="@+id/menu2_9"
-                android:title="logout"/>
+                android:title="Logout"/>
           <item
                 android:id="@+id/menu2_10"
-                android:title="setting"/>
+                android:title="Settings"/>
        
                                                 
             
