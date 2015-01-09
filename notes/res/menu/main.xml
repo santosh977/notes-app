@@ -22,31 +22,36 @@
         <menu>
             <item
                 android:id="@+id/menu2_1"
-                android:title="Home"/>
+                android:title="Profile"/>
             <item
                 android:id="@+id/menu2_2"
-                android:title="College"/>
+                android:title="Homepage"/>
+            
             <item
                 android:id="@+id/menu2_3"
+                android:title="College"/>
+            <item
+                android:id="@+id/menu2_4"
                 android:title="Team&amp;Purpose"/>
              <item
-                android:id="@+id/menu2_4"
+                android:id="@+id/menu2_5"
                 android:title="Submit notes"/>
     <item
-                android:id="@+id/menu2_5"
+                android:id="@+id/menu2_6"
                 android:title="Users"/>
         <item
-                android:id="@+id/menu2_6"
+                android:id="@+id/menu2_7"
                 android:title="Newsfeed"/>
-         <item
-                android:id="@+id/menu2_8"
-                android:title="Suggestions"/>
+         
         <item
-                android:id="@+id/menu2_9"
+                android:id="@+id/menu2_8"
                 android:title="Logout"/>
+       <!--  <item
+                android:id="@+id/menu2_9"
+                android:title="Suggestions"/>
           <item
                 android:id="@+id/menu2_10"
-                android:title="Settings"/>
+                android:title="Settings"/> -->
        
                                                 
             

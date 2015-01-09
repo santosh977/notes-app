@@ -35,34 +35,42 @@ public class Action extends Activity {
 		switch (item.getItemId()) {
 		case R.id.menu1:
 			startActivity(new Intent(getApplicationContext(), Search.class));
-			finish();
+			//finish();
 			break;
 		case R.id.menu2_1:
 			startActivity(new Intent(getApplicationContext(), Profdiv.class));
-			finish();
+			//finish();
 			break;
 		case R.id.menu2_2:
-			startActivity(new Intent(getApplicationContext(), Clges.class));
-			finish();
+			startActivity(new Intent(getApplicationContext(), LayerStack.class));
+			//finish();
 			break;
 		case R.id.menu2_3:
-			startActivity(new Intent(getApplicationContext(), Members.class));
-			finish();
+			startActivity(new Intent(getApplicationContext(), Clges.class));
+			//finish();
 			break;
 		case R.id.menu2_4:
-			startActivity(new Intent(getApplicationContext(), NewNotes.class));
-			finish();
+			startActivity(new Intent(getApplicationContext(), Members.class));
+			//finish();
 			break;
 		case R.id.menu2_5:
-			startActivity(new Intent(getApplicationContext(), Loginpage.class));
-			finish();
+			startActivity(new Intent(getApplicationContext(), NewNotes.class));
+			//finish();
 			break;
 		case R.id.menu2_6:
-			startActivity(new Intent(getApplicationContext(), NewsFeed.class));
+			startActivity(new Intent(getApplicationContext(), Handlers.class));
 			finish();
 			break;
+		case R.id.menu2_7:
+			startActivity(new Intent(getApplicationContext(), NewsFeed.class));
+			//finish();
+			break;
+		case R.id.menu2_8:
+			startActivity(new Intent(getApplicationContext(), Loginpage1.class));
+			//finish();
+			break;
 		default:
-			Toast.makeText(this, item.getTitle(), Toast.LENGTH_LONG).show();
+			//Toast.makeText(this, item.getTitle(), Toast.LENGTH_LONG).show();
 			break;
 		}
 		return true;
