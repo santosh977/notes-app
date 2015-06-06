@@ -29,6 +29,8 @@
     <string name="title_activity_usernotes">Usernotes</string>
     <string name="title_activity_uploadss">Uploads</string>
     <string name="title_activity_notesdetail">Notesdetail</string>
+    <string name="title_activity_handlers">Notesdetail</string>
+
 
     <string-array name="planets">
         <item>Home    </item>

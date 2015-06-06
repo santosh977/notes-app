@@ -241,7 +241,6 @@ import android.widget.Toast;
 public class Loginpage extends Action {
 
 	Button b, b1, btnn2;
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

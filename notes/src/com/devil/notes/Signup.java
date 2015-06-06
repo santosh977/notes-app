@@ -4,9 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.text.style.TypefaceSpan;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -51,8 +49,8 @@ public class Signup extends Action {
 		setContentView(R.layout.signup);
 		// ---Spinner View---
 		s4 = (Spinner) findViewById(R.id.spinner4);
-		Typeface myCustomFont = Typeface.createFromAsset(getAssets(),
-				"fonts/windsong.ttf");
+		//Typeface myCustomFont = Typeface.createFromAsset(getAssets(),
+				//"fonts/windsong.ttf");
 		// TODO
 		// s4.setTypeface(myCustomFont);
 		ArrayAdapter<String> adapter7 = new ArrayAdapter<String>(this,

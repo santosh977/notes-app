@@ -98,6 +98,11 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name="com.devil.notes.Handlers"
+            android:label="@string/title_activity_handlers"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name="com.devil.notes.Notesdetail"
             android:label="@string/title_activity_notesdetail"
             android:screenOrientation="portrait"
