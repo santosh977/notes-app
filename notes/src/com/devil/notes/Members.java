@@ -16,8 +16,8 @@ public class Members extends Action {
 		setContentView(R.layout.members);
 
 		startActivity(new Intent(Members.this, Purpose.class));
-		names = "\n Members -" + "\n Nikhar" + "\n Gunjan" + "\n Divya"
-				+ "\n Sapna" + "\n Santosh" + "\n Divyavrat";
+		names = "\n Members -" + "\n Nikhar"+ "\n Divya"
+				 + "\n Santosh" + "\n Divyavrat";
 		tv = (TextView) findViewById(R.id.textView1);
 		tv.setText(names);
 	}
